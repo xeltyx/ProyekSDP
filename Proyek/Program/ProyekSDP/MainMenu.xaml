@@ -1,0 +1,31 @@
+﻿<Page x:Class="ProyekSDP.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProyekSDP"
+      mc:Ignorable="d"
+      Title="MainMenu" Width="615.5" Height="538.5">
+
+    <Grid Background="White">
+        <Image HorizontalAlignment="Left" Height="241" VerticalAlignment="Top" Width="616" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466"/>
+        <Label Content="Alterna" HorizontalAlignment="Left" Margin="25,18,0,0" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36"/>
+        <Label Content="Tech" HorizontalAlignment="Left" Margin="118,73,0,0" VerticalAlignment="Top" Height="61" Width="151" FontFamily="Georgia" FontSize="48"/>
+        <Button Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="544,31,29,465" Height="42" Width="43" BorderBrush="#FF9999FF">
+            <Button.Background>
+                <ImageBrush ImageSource="menuicon.png" Stretch="Uniform"/>
+            </Button.Background>
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Keranjang" />
+                    <MenuItem Header="Profile" />
+                    <Separator />
+                    <MenuItem Header="Logout" />
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+        <ComboBox x:Name="cbkategori" HorizontalAlignment="Left" Margin="24,200,0,0" VerticalAlignment="Top" Width="178" Height="23"/>
+        <TextBox x:Name="tbsearch" HorizontalAlignment="Left" Height="23" Margin="389,200,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="198"/>
+        <DataGrid HorizontalAlignment="Left" Height="262" Margin="24,246,0,0" VerticalAlignment="Top" Width="563"/>
+    </Grid>
+</Page>

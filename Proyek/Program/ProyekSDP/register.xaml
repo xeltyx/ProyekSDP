@@ -1,0 +1,39 @@
+﻿<Page x:Class="ProyekSDP.register"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProyekSDP"
+      mc:Ignorable="d"
+      Title="register" Height="653" Width="525">
+
+    <Grid Margin="0,0,0,10" Background="#FF151A51">
+        <Rectangle HorizontalAlignment="Left" Height="558" Margin="47,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="431" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF90AFC9" Offset="1"/>
+                    <GradientStop Color="#FF1464A6"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.241"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Label Content="Register" HorizontalAlignment="Left" Margin="203,54,0,0" VerticalAlignment="Top" Height="54" Width="137" Foreground="#FF29FFA8" FontSize="36" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="tbemail" HorizontalAlignment="Left" Height="32" Margin="80,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
+        <PasswordBox x:Name="tbpassword" HorizontalAlignment="Left" Margin="80,222,0,0" VerticalAlignment="Top" Width="376" Height="30"/>
+        <Label x:Name="lblogin" Content="Have an account? Goto Login" HorizontalAlignment="Left" Margin="80,468,0,0" VerticalAlignment="Top" Height="26" Width="202" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
+        <Button x:Name="btnregister" Content="Register" HorizontalAlignment="Left" Margin="80,509,0,0" VerticalAlignment="Top" Width="376" Height="32"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="80,123,0,0" VerticalAlignment="Top" Height="26" Width="96" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14" AutomationProperties.IsRequiredForForm="True"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="80,191,0,0" VerticalAlignment="Top" Height="26" Width="69" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
+        <Label Content="Confirm Password:" HorizontalAlignment="Left" Margin="80,257,0,0" VerticalAlignment="Top" Height="26" Width="126" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="1.014,2.5" FontSize="14"/>
+        <PasswordBox x:Name="tbpassword_Copy" HorizontalAlignment="Left" Margin="80,288,0,0" VerticalAlignment="Top" Width="376" Height="30"/>
+        <TextBox x:Name="tbemail_Copy" HorizontalAlignment="Left" Height="32" Margin="80,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
+        <Label Content="Nomor Telepon:" HorizontalAlignment="Left" Margin="80,323,0,0" VerticalAlignment="Top" Height="26" Width="105" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14" AutomationProperties.IsRequiredForForm="True"/>
+    </Grid>
+</Page>
