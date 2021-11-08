@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace ProyekSDP
 {
@@ -20,9 +22,19 @@ namespace ProyekSDP
     /// </summary>
     public partial class Page1 : Page
     {
+        Connection conn = new Connection();
+        MySqlCommand cmd;
+        MySqlDataAdapter dataAdapter;
+        DataTable dt;
         public Page1()
         {
             InitializeComponent();
+            conn.Connect();
+        }
+
+        private void btnlogin_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
