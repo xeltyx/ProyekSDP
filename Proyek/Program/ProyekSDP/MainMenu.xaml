@@ -11,7 +11,7 @@
         <Image HorizontalAlignment="Left" Height="241" VerticalAlignment="Top" Width="616" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466"/>
         <Label Content="Alterna" HorizontalAlignment="Left" Margin="25,18,0,0" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36"/>
         <Label Content="Tech" HorizontalAlignment="Left" Margin="118,73,0,0" VerticalAlignment="Top" Height="61" Width="151" FontFamily="Georgia" FontSize="48"/>
-        <Button Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="544,31,29,465" Height="42" Width="43" BorderBrush="#FF9999FF">
+        <Button Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="563,18,10,478" Height="42" Width="43" BorderBrush="#FF9999FF">
             <Button.Background>
                 <ImageBrush ImageSource="menuicon.png" Stretch="Uniform"/>
             </Button.Background>

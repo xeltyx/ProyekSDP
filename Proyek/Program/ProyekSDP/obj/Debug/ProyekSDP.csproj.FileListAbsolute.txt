@@ -23,3 +23,28 @@ C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Pr
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.pdb
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\MySql.Data.DLL
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe.config
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe.config
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe.manifest
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.xbap
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.pdb
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csprojAssemblyReference.cache
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\MainMenu.g.cs
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Page1.g.cs
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\register.g.cs
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\App.g.cs
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP_MarkupCompile.cache
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP_MarkupCompile.lref
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\MainMenu.baml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Page1.baml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\register.baml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.g.resources
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.Properties.Resources.resources
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.GenerateResource.cache
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.CoreCompileInputs.cache
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.TrustInfo.xml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.exe.manifest
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.xbap
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.CopyComplete
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.exe
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.pdb
