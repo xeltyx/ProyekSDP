@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
+using System.Windows.Navigation;
 
 namespace ProyekSDP
 {
@@ -26,6 +27,8 @@ namespace ProyekSDP
         MySqlCommand cmd;
         MySqlDataAdapter dataAdapter;
         DataTable dt;
+        string email;
+        string password;
         public Page1()
         {
             InitializeComponent();
@@ -34,7 +37,38 @@ namespace ProyekSDP
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
+            email = tbemail.Text.ToString();
+            password = tbpassword.Password.ToString();
+
+            if (email.Length > 0 && password.Length > 0)
+            {
+                MessageBox.Show($"{email} {password}");
+                //conn.conn.Open();
+                //cmd = new MySqlCommand();
+                
+
+            }
+            else
+            {
+                MessageBox.Show("Data tidak boleh kosong");
+            }
+        }
+
+        private void lbregister_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
             
+            var reg = new register();
+            this.NavigationService.Navigate(reg);
+        }
+
+        private void lbregister_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lbregister_MouseLeave(object sender, MouseEventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
         }
     }
 }

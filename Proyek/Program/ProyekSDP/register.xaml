@@ -26,14 +26,16 @@
         </Rectangle>
         <Label Content="Register" HorizontalAlignment="Left" Margin="203,54,0,0" VerticalAlignment="Top" Height="54" Width="137" Foreground="#FF29FFA8" FontSize="36" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5"/>
         <TextBox x:Name="tbemail" HorizontalAlignment="Left" Height="32" Margin="80,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
-        <PasswordBox x:Name="tbpassword" HorizontalAlignment="Left" Margin="80,222,0,0" VerticalAlignment="Top" Width="376" Height="30"/>
-        <Label x:Name="lblogin" Content="Have an account? Goto Login" HorizontalAlignment="Left" Margin="80,468,0,0" VerticalAlignment="Top" Height="26" Width="202" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
-        <Button x:Name="btnregister" Content="Register" HorizontalAlignment="Left" Margin="80,509,0,0" VerticalAlignment="Top" Width="376" Height="32"/>
+        <PasswordBox x:Name="tbpassword" HorizontalAlignment="Left" Margin="80,295,0,0" VerticalAlignment="Top" Width="376" Height="30"/>
+        <Label x:Name="lblogin" Content="Have an account? Goto Login" HorizontalAlignment="Left" Margin="80,468,0,0" VerticalAlignment="Top" Height="26" Width="202" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14" PreviewMouseDown="lblogin_PreviewMouseDown" MouseEnter="lblogin_MouseEnter" MouseLeave="lblogin_MouseLeave"/>
+        <Button x:Name="btnregister" Content="Register" HorizontalAlignment="Left" Margin="80,509,0,0" VerticalAlignment="Top" Width="376" Height="32" Click="btnregister_Click"/>
         <Label Content="Email:" HorizontalAlignment="Left" Margin="80,123,0,0" VerticalAlignment="Top" Height="26" Width="96" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14" AutomationProperties.IsRequiredForForm="True"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Margin="80,191,0,0" VerticalAlignment="Top" Height="26" Width="69" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
-        <Label Content="Confirm Password:" HorizontalAlignment="Left" Margin="80,257,0,0" VerticalAlignment="Top" Height="26" Width="126" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="1.014,2.5" FontSize="14"/>
-        <PasswordBox x:Name="tbpassword_Copy" HorizontalAlignment="Left" Margin="80,288,0,0" VerticalAlignment="Top" Width="376" Height="30"/>
-        <TextBox x:Name="tbemail_Copy" HorizontalAlignment="Left" Height="32" Margin="80,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
-        <Label Content="Nomor Telepon:" HorizontalAlignment="Left" Margin="80,323,0,0" VerticalAlignment="Top" Height="26" Width="105" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14" AutomationProperties.IsRequiredForForm="True"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="80,264,0,0" VerticalAlignment="Top" Height="26" Width="69" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
+        <Label Content="Confirm Password:" HorizontalAlignment="Left" Margin="80,330,0,0" VerticalAlignment="Top" Height="26" Width="126" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="1.014,2.5" FontSize="14"/>
+        <PasswordBox x:Name="tbpassconf" HorizontalAlignment="Left" Margin="80,361,0,0" VerticalAlignment="Top" Width="376" Height="30"/>
+        <TextBox x:Name="tbnomor" HorizontalAlignment="Left" Height="32" Margin="80,431,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" PreviewTextInput="tbnomor_PreviewTextInput"/>
+        <Label Content="Nomor Telepon:" HorizontalAlignment="Left" Margin="80,399,0,0" VerticalAlignment="Top" Height="26" Width="105" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14" AutomationProperties.IsRequiredForForm="True"/>
+        <Label Content="Username: " HorizontalAlignment="Left" Margin="80,191,0,0" VerticalAlignment="Top" Height="26" Width="69" Foreground="White" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
+        <TextBox x:Name="tbusername" HorizontalAlignment="Left" Height="32" Margin="80,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
     </Grid>
 </Page>

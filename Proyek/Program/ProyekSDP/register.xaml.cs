@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Navigation;
+using System.Text.RegularExpressions;
 
 namespace ProyekSDP
 {
@@ -23,6 +25,53 @@ namespace ProyekSDP
         public register()
         {
             InitializeComponent();
+        }
+
+        private void lblogin_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var page1 = new Page1();
+            this.NavigationService.Navigate(page1);
+        }
+
+        private void lblogin_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lblogin_MouseLeave(object sender, MouseEventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+        }
+
+        private void btnregister_Click(object sender, RoutedEventArgs e)
+        {
+            string email = tbemail.Text.ToString();
+            string username = tbusername.Text.ToString();
+            string pass = tbpassword.Password.ToString();
+            string passconf = tbpassconf.Password.ToString();
+            string nomor = tbnomor.Text.ToString();
+
+            if(email.Length > 0 && username.Length > 0 && pass.Length > 0 && passconf.Length > 0 && nomor.Length > 0)
+            {
+                if(pass == passconf)
+                {
+                      
+                }
+                else
+                {
+                    MessageBox.Show("Konfirmasi password tidak sesuai");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Data tidak boleh kosong");
+            }
+        }
+
+        private void tbnomor_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }
