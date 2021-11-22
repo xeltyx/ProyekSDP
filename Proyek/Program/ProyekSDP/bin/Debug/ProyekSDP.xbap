@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ProyekSDP.exe.manifest" size="3746">
+    <dependentAssembly dependencyType="install" codebase="ProyekSDP.exe.manifest" size="5079">
       <assemblyIdentity name="ProyekSDP.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>v3Jm47lfdjfOd8+fq3wh/DE6JO1hcGAGNK3NfFZoMFc=</dsig:DigestValue>
+        <dsig:DigestValue>yZNUjb72Q2xUJIJpl9d6mj8PSwyjLkTCff6qx1VwWsU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

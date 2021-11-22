@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
 using System.Text.RegularExpressions;
+using MySql.Data.MySqlClient;
 
 namespace ProyekSDP
 {
@@ -22,9 +23,13 @@ namespace ProyekSDP
     /// </summary>
     public partial class register : Page
     {
+
+        Connection conn = new Connection();
+        MySqlCommand cmd;
         public register()
         {
             InitializeComponent();
+            conn.Connect();
         }
 
         private void lblogin_PreviewMouseDown(object sender, MouseButtonEventArgs e)
@@ -50,12 +55,25 @@ namespace ProyekSDP
             string pass = tbpassword.Password.ToString();
             string passconf = tbpassconf.Password.ToString();
             string nomor = tbnomor.Text.ToString();
+            string name = tbname.Text.ToString();
 
-            if(email.Length > 0 && username.Length > 0 && pass.Length > 0 && passconf.Length > 0 && nomor.Length > 0)
+
+            if (email.Length > 0 && username.Length > 0 && pass.Length > 0 && passconf.Length > 0 && nomor.Length > 0)
             {
                 if(pass == passconf)
                 {
-                      
+                    try
+                    {
+                        conn.conn.Open();
+                        MySqlCommand cmd = new MySqlCommand($"INSERT INTO CUSTOMER(USERNAME, NAMA_CUST, EMAIL,NO_TELP,PASSWORD, SALDO) VALUES('{username}', '{name}', '{email}', '{nomor}', '{pass}', 0)", conn.conn);
+                        
+                        cmd.ExecuteNonQuery();
+                        conn.conn.Close();
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 else
                 {

@@ -42,10 +42,36 @@ namespace ProyekSDP
 
             if (email.Length > 0 && password.Length > 0)
             {
-                MessageBox.Show($"{email} {password}");
-                //conn.conn.Open();
-                //cmd = new MySqlCommand();
-                
+                conn.conn.Open();
+                cmd = new MySqlCommand();
+                cmd = new MySqlCommand($"SELECT * FROM CUSTOMER WHERE EMAIL = '{email}'", conn.conn);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                bool isFound = false;
+                while (reader.Read())
+                {
+                    //data2txt.Text = reader.GetString("id");
+                    //datatxt.Text = reader.GetString("userId");
+                    if (reader[3].ToString() == email)
+                    {
+                        isFound = true;
+                        if(reader[5].ToString() == password)
+                        {
+                            MessageBox.Show("Data sudah benar");
+                        }
+                        else
+                        {
+                            MessageBox.Show("password salah");
+
+                        }
+                    }
+                }
+                conn.conn.Close();
+                if(!isFound)
+                {
+                    MessageBox.Show("User tidak ditemukan");
+
+                }
 
             }
             else

@@ -48,3 +48,7 @@ E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.xbap
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.CopyComplete
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.exe
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.pdb
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.Async.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.xml
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.Async.xml
