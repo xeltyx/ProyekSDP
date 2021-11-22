@@ -45,7 +45,6 @@ namespace ProyekSDP
                 conn.conn.Open();
                 cmd = new MySqlCommand();
                 cmd = new MySqlCommand($"SELECT * FROM CUSTOMER WHERE EMAIL = '{email}'", conn.conn);
-
                 MySqlDataReader reader = cmd.ExecuteReader();
                 bool isFound = false;
                 while (reader.Read())
@@ -62,7 +61,6 @@ namespace ProyekSDP
                         else
                         {
                             MessageBox.Show("password salah");
-
                         }
                     }
                 }
@@ -70,7 +68,6 @@ namespace ProyekSDP
                 if(!isFound)
                 {
                     MessageBox.Show("User tidak ditemukan");
-
                 }
 
             }

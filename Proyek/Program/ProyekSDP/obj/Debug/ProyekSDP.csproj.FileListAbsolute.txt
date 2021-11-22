@@ -52,3 +52,34 @@ C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Re
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.dll
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.xml
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.Async.xml
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe.config
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe.manifest
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.xbap
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.pdb
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.Async.dll
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.dll
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.xml
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.Async.xml
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csprojAssemblyReference.cache
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Admin.g.cs
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\MainMenu.g.cs
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Page1.g.cs
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\register.g.cs
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\App.g.cs
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP_MarkupCompile.cache
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP_MarkupCompile.lref
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\MainMenu.baml
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Page1.baml
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\register.baml
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Admin.baml
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.g.resources
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.Properties.Resources.resources
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.GenerateResource.cache
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.CoreCompileInputs.cache
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.TrustInfo.xml
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.exe.manifest
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.xbap
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.CopyComplete
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.exe
+C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.pdb
