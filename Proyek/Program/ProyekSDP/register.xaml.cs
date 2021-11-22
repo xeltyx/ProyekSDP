@@ -73,6 +73,7 @@ namespace ProyekSDP
                     catch(Exception ex)
                     {
                         MessageBox.Show(ex.Message);
+                        conn.conn.Close();
                     }
                 }
                 else
