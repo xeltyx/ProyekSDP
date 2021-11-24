@@ -37,43 +37,55 @@ namespace ProyekSDP
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
+
             email = tbemail.Text.ToString();
             password = tbpassword.Password.ToString();
 
             if (email.Length > 0 && password.Length > 0)
             {
-                conn.conn.Open();
-                cmd = new MySqlCommand();
-                cmd = new MySqlCommand($"SELECT * FROM CUSTOMER WHERE EMAIL = '{email}'", conn.conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                bool isFound = false;
-                while (reader.Read())
+                if (email.ToLower() == "admin" && password.ToLower() == "admin")
                 {
-                    //data2txt.Text = reader.GetString("id");
-                    //datatxt.Text = reader.GetString("userId");
-                    if (reader[3].ToString() == email)
+                    var admin = new Admin();
+                    this.NavigationService.Navigate(admin);
+                }
+                else
+                {
+                    conn.conn.Open();
+                    cmd = new MySqlCommand();
+                    cmd = new MySqlCommand($"SELECT * FROM CUSTOMER WHERE EMAIL = '{email}'", conn.conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    bool isFound = false;
+                    while (reader.Read())
                     {
-                        isFound = true;
-                        if(reader[5].ToString() == password)
+                        //data2txt.Text = reader.GetString("id");
+                        //datatxt.Text = reader.GetString("userId");
+                        if (reader[3].ToString() == email)
                         {
-                            MessageBox.Show("Data sudah benar");
-                        }
-                        else
-                        {
-                            MessageBox.Show("password salah");
+                            isFound = true;
+                            if (reader[5].ToString() == password)
+                            {
+                                MessageBox.Show("Data sudah benar");
+                            }
+                            else
+                            {
+                                MessageBox.Show("password salah");
+                            }
                         }
                     }
+                    conn.conn.Close();
+                    if (!isFound)
+                    {
+                        MessageBox.Show("User tidak ditemukan");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data tidak boleh kosong");
+                    }
                 }
-                conn.conn.Close();
-                if(!isFound)
-                {
-                    MessageBox.Show("User tidak ditemukan");
-                }
-
             }
             else
             {
-                MessageBox.Show("Data tidak boleh kosong");
+                MessageBox.Show("Fill Blank !!");
             }
         }
 
