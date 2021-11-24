@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,9 +24,11 @@ namespace ProyekSDP
     {
         Connection conn = new Connection();
         MySqlCommand cmd;
+        
         public Admin()
         {
             InitializeComponent();
+            loadUser();
         }
 
         private void loadUser()
@@ -34,6 +37,10 @@ namespace ProyekSDP
             cmd = new MySqlCommand();
             cmd = new MySqlCommand($"SELECT * FROM CUSTOMER", conn.conn);
             MySqlDataReader reader = cmd.ExecuteReader();
+            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvUser.DataContext = dt.DefaultView;
             conn.conn.Close();
         }
 

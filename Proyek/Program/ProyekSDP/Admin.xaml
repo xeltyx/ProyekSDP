@@ -22,6 +22,7 @@
             <Button Content="page3" HorizontalAlignment="Left" Margin="24,236,0,0" VerticalAlignment="Top" Width="189" Height="44"/>
             <Button Content="page4" HorizontalAlignment="Left" Margin="24,306,0,0" VerticalAlignment="Top" Width="189" Height="44"/>
             <Button Content="Logout" HorizontalAlignment="Left" Margin="24,664,0,0" VerticalAlignment="Top" Width="189" Height="44"/>
+            <DataGrid x:Name="dgvUser" HorizontalAlignment="Left" Height="699" Margin="235,23,0,0" VerticalAlignment="Top" Width="913"/>
         </Grid>
     </Grid>
 </Page>
