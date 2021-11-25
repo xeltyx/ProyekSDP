@@ -83,3 +83,34 @@ C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSD
 C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.CopyComplete
 C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.exe
 C:\Users\Tan\Desktop\Semester 4\Proyek New PCS\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.pdb
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe.config
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe.manifest
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.xbap
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.pdb
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.Async.dll
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.dll
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.xml
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.Async.xml
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csprojAssemblyReference.cache
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\Admin.g.cs
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\MainMenu.g.cs
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\Page1.g.cs
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\register.g.cs
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\App.g.cs
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP_MarkupCompile.cache
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP_MarkupCompile.lref
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\Admin.baml
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\MainMenu.baml
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\Page1.baml
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\register.baml
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.g.resources
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.Properties.Resources.resources
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.GenerateResource.cache
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.CoreCompileInputs.cache
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.TrustInfo.xml
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.exe.manifest
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.xbap
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.CopyComplete
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.exe
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.pdb

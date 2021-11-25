@@ -15,14 +15,28 @@
                     <GradientStop Color="#FFBBC5D1" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="699" Margin="235,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="912"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="399" Margin="235,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="912"/>
             <Label Content="Admin Page" HorizontalAlignment="Left" Margin="24,23,0,0" VerticalAlignment="Top" Width="238" Foreground="White" FontSize="24" Height="44" FontFamily="Segoe UI Semibold"/>
             <Button Content="page1" HorizontalAlignment="Left" Margin="24,96,0,0" VerticalAlignment="Top" Width="189" Height="44"/>
             <Button Content="page2" HorizontalAlignment="Left" Margin="24,163,0,0" VerticalAlignment="Top" Width="189" Height="44"/>
             <Button Content="page3" HorizontalAlignment="Left" Margin="24,236,0,0" VerticalAlignment="Top" Width="189" Height="44"/>
             <Button Content="page4" HorizontalAlignment="Left" Margin="24,306,0,0" VerticalAlignment="Top" Width="189" Height="44"/>
             <Button Content="Logout" HorizontalAlignment="Left" Margin="24,664,0,0" VerticalAlignment="Top" Width="189" Height="44"/>
-            <DataGrid x:Name="dgvUser" HorizontalAlignment="Left" Height="699" Margin="235,23,0,0" VerticalAlignment="Top" Width="913"/>
+            <DataGrid x:Name="dgvUser" HorizontalAlignment="Left" Height="399" Margin="235,23,0,0" VerticalAlignment="Top" Width="913" SelectionChanged="dgvUser_SelectionChanged" MouseDoubleClick="dgvUser_MouseDoubleClick"/>
+            <Label Content="Nama Barang:" HorizontalAlignment="Left" Margin="235,472,0,0" VerticalAlignment="Top"/>
+            <Label Content="Merk:" HorizontalAlignment="Left" Margin="235,534,0,0" VerticalAlignment="Top"/>
+            <Label Content="Kategori:" HorizontalAlignment="Left" Margin="512,472,0,0" VerticalAlignment="Top"/>
+            <Label Content="Stok:" HorizontalAlignment="Left" Margin="512,534,0,0" VerticalAlignment="Top"/>
+            <Label Content="Harga:" HorizontalAlignment="Left" Margin="783,472,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="text_nmbarang" HorizontalAlignment="Left" Height="23" Margin="325,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="text_stok" HorizontalAlignment="Left" Height="23" Margin="577,537,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="text_harga" HorizontalAlignment="Left" Height="23" Margin="833,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="text_harga_TextChanged" KeyDown="text_harga_KeyDown"/>
+            <Button x:Name="btn_insert" Content="Insert" HorizontalAlignment="Left" Margin="320,611,0,0" VerticalAlignment="Top" Width="75" Click="btn_insert_Click"/>
+            <Button x:Name="btn_update" Content="Update" HorizontalAlignment="Left" Margin="467,611,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_delete" Content="Delete" HorizontalAlignment="Left" Margin="622,611,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="770,611,0,0" VerticalAlignment="Top" Width="75" Click="btn_clear_Click"/>
+            <ComboBox x:Name="combo_merk" HorizontalAlignment="Left" Margin="325,538,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="combo_kategori" HorizontalAlignment="Left" Margin="577,472,0,0" VerticalAlignment="Top" Width="120"/>
         </Grid>
     </Grid>
 </Page>
