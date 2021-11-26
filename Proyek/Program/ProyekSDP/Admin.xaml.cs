@@ -119,6 +119,7 @@ namespace ProyekSDP
             if (dgvUser.SelectedIndex != -1)
             {
                 editmode();
+                index = Convert.ToInt32(dgvUser.SelectedIndex.ToString());
                 text_nmbarang.Text = dt.Rows[dgvUser.SelectedIndex][1].ToString();
                 combo_kategori.SelectedIndex = combo_kategori.Items.IndexOf(dt.Rows[dgvUser.SelectedIndex][2]);
                 combo_merk.SelectedIndex = combo_merk.Items.IndexOf(dt.Rows[dgvUser.SelectedIndex][3]);
@@ -147,6 +148,47 @@ namespace ProyekSDP
         private void btn_clear_Click(object sender, RoutedEventArgs e)
         {
             normalmode();
+        }
+        int index = 0;
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            if (text_nmbarang.Text.Length != 0 || text_harga.Text.Length != 0 || text_stok.Text.Length != 0)
+            {
+                if (combo_kategori.SelectedIndex != -1 || combo_merk.SelectedIndex != -1)
+                {
+                    getkodekat();
+                    getkodemerk();
+                    conn.conn.Open();
+                    using (MySqlTransaction trans = conn.conn.BeginTransaction())
+                    {
+                        try
+                        {
+                            MySqlCommand cmd = new MySqlCommand($"Update Barang SET STOK = '" +  Convert.ToInt32(text_stok.Text)  + "',HARGA = '" + Convert.ToInt32(text_harga.Text) + "Where id = " + index +  conn.conn);
+                            cmd.ExecuteNonQuery();
+                            trans.Commit();
+                            conn.conn.Close();
+                            MessageBox.Show("Update berhasil");
+                        }
+                        catch (Exception ex)
+                        {
+                            trans.Rollback();
+                            conn.conn.Close();
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    conn.conn.Close();
+                    loadBarang();
+                    normalmode();
+                }
+                else
+                {
+                    MessageBox.Show("Pilih combobox terlebih dahulu");
+                }
+            }
+            else
+            {
+                MessageBox.Show("isi textbox terlebih dahulu");
+            }
         }
 
         private void btn_insert_Click(object sender, RoutedEventArgs e)
