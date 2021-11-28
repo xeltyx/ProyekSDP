@@ -31,7 +31,7 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.DLL" size="766464">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.dll" size="766464">
       <assemblyIdentity name="MySql.Data" version="8.0.17.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProyekSDP.exe" size="94720">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProyekSDP.exe" size="95232">
       <assemblyIdentity name="ProyekSDP" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gT9anRIL5NOjKmA1ppZY0+5+3kH8ytibmB1H4iPAIXQ=</dsig:DigestValue>
+        <dsig:DigestValue>5D46A0UjntFBbWD/648pP6tGKpB81F6QVzg876vQBM0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
