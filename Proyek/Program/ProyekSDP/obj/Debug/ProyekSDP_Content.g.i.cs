@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("menuicon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("prev-button.png")]
 
 

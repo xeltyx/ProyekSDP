@@ -64,7 +64,10 @@ namespace ProyekSDP
                             isFound = true;
                             if (reader[5].ToString() == password)
                             {
-                                MessageBox.Show("Data sudah benar");
+                                int id = Convert.ToInt32(reader[0].ToString());
+                                var menu = new MainMenu(id);
+                                this.NavigationService.Navigate(menu);
+                                break;
                             }
                             else
                             {
@@ -77,15 +80,11 @@ namespace ProyekSDP
                     {
                         MessageBox.Show("User tidak ditemukan");
                     }
-                    else
-                    {
-                        MessageBox.Show("Data tidak boleh kosong");
-                    }
                 }
             }
             else
             {
-                MessageBox.Show("Fill Blank !!");
+                MessageBox.Show("data tidak boleh kosong");
             }
         }
 

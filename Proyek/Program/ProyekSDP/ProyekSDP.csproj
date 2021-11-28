@@ -85,7 +85,9 @@
     <Compile Include="Admin.xaml.cs">
       <DependentUpon>Admin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Barang.cs" />
     <Compile Include="Connection.cs" />
+    <Compile Include="loggedUser.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
@@ -161,6 +163,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="person-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="dummy-img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="next-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="prev-button.png" />
   </ItemGroup>
   <PropertyGroup>
     <StartArguments />

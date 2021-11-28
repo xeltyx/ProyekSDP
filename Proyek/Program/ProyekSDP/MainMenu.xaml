@@ -5,27 +5,60 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProyekSDP"
       mc:Ignorable="d"
-      Title="MainMenu" Width="615.5" Height="538.5">
+      Title="MainMenu" Width="615.5" Height="538.5" Opacity="0.975">
 
     <Grid Background="White">
-        <Image HorizontalAlignment="Left" Height="241" VerticalAlignment="Top" Width="616" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblprod4" Content="Label" HorizontalAlignment="Left" Margin="465,395,0,0" VerticalAlignment="Top" Width="122"/>
+        <Image x:Name="imgprod4" HorizontalAlignment="Left" Height="110" Margin="465,285,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+        <Image x:Name="imgprod3" HorizontalAlignment="Left" Height="110" Margin="318,285,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="616" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466"/>
         <Label Content="Alterna" HorizontalAlignment="Left" Margin="25,18,0,0" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36"/>
         <Label Content="Tech" HorizontalAlignment="Left" Margin="118,73,0,0" VerticalAlignment="Top" Height="61" Width="151" FontFamily="Georgia" FontSize="48"/>
-        <Button Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="563,18,10,478" Height="42" Width="43" BorderBrush="#FF9999FF">
+        <Button x:Name="menubtn" Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="563,18,10,478" Height="42" Width="43" BorderBrush="#FF9999FF" Click="menubtn_Click">
+
             <Button.Background>
                 <ImageBrush ImageSource="menuicon.png" Stretch="Uniform"/>
             </Button.Background>
-            <Button.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="Keranjang" />
-                    <MenuItem Header="Profile" />
-                    <Separator />
-                    <MenuItem Header="Logout" />
-                </ContextMenu>
-            </Button.ContextMenu>
+
         </Button>
-        <ComboBox x:Name="cbkategori" HorizontalAlignment="Left" Margin="24,200,0,0" VerticalAlignment="Top" Width="178" Height="23"/>
+        <ComboBox x:Name="cbkategori" HorizontalAlignment="Left" Margin="24,200,0,0" VerticalAlignment="Top" Width="178" Height="23">
+            <ComboBox.BindingGroup>
+                <BindingGroup/>
+            </ComboBox.BindingGroup>
+        </ComboBox>
         <TextBox x:Name="tbsearch" HorizontalAlignment="Left" Height="23" Margin="389,200,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="198"/>
-        <DataGrid HorizontalAlignment="Left" Height="262" Margin="24,246,0,0" VerticalAlignment="Top" Width="563"/>
+        <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="536" Margin="412,2,0,0" VerticalAlignment="Top" Width="204" Background="#FF7777FB" Visibility="Hidden" MouseLeave="menugrid_MouseLeave">
+            <Label x:Name="userLabel" Content="Optimum Pride" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="154" FontSize="20" VerticalContentAlignment="Center" Margin="50,0,0,0"/>
+            <StackPanel HorizontalAlignment="Left" Height="368" Margin="0,90,0,0" VerticalAlignment="Top" Width="204">
+                <Button Content="  My Profile" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
+                <Button Content="  Cart" Height="59" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
+            </StackPanel>
+            <Image HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="49" Source="person-icon.png"/>
+            <Button x:Name="logoutbtn" Content="  Logout" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FFE68FA7" BorderThickness="0,1" Margin="0,477,0,0" Click="Button_Click"/>
+        </Grid>
+        <Image x:Name="imgprod1" HorizontalAlignment="Left" Height="110" Margin="25,285,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+        <Image x:Name="imgprod2" HorizontalAlignment="Left" Height="110" Margin="171,285,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+        <Label x:Name="lblprod1" Content="Label" HorizontalAlignment="Left" Margin="25,395,0,0" VerticalAlignment="Top" Width="122"/>
+        <Label x:Name="lblprod2" Content="Label" HorizontalAlignment="Left" Margin="171,395,0,0" VerticalAlignment="Top" Width="122"/>
+        <Label x:Name="lblprod3" Content="Label" HorizontalAlignment="Left" Margin="318,395,0,0" VerticalAlignment="Top" Width="122"/>
+        <Button x:Name="nextbtn" Content="" HorizontalAlignment="Left" Margin="318,453,0,0" VerticalAlignment="Top" Width="35" Height="35" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="next-button.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="nextbtn_Copy" Content="" HorizontalAlignment="Left" Margin="258,453,0,0" VerticalAlignment="Top" Width="35" Height="35" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="prev-button.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="findbtn" Content="Find" HorizontalAlignment="Left" Margin="207,200,0,0" VerticalAlignment="Top" Width="35" Height="23" Click="findbtn_Click"/>
+
+
+
+
+
     </Grid>
 </Page>
