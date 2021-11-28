@@ -33,7 +33,7 @@
             <TextBox x:Name="text_harga" HorizontalAlignment="Left" Height="23" Margin="833,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="text_harga_TextChanged" KeyDown="text_harga_KeyDown"/>
             <Button x:Name="btn_insert" Content="Insert" HorizontalAlignment="Left" Margin="320,611,0,0" VerticalAlignment="Top" Width="75" Click="btn_insert_Click"/>
             <Button x:Name="btn_update" Content="Update" HorizontalAlignment="Left" Margin="467,611,0,0" VerticalAlignment="Top" Width="75" Click="btn_update_Click"/>
-            <Button x:Name="btn_delete" Content="Delete" HorizontalAlignment="Left" Margin="622,611,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_delete" Content="Delete" HorizontalAlignment="Left" Margin="622,611,0,0" VerticalAlignment="Top" Width="75" Click="btn_delete_Click"/>
             <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="770,611,0,0" VerticalAlignment="Top" Width="75" Click="btn_clear_Click"/>
             <ComboBox x:Name="combo_merk" HorizontalAlignment="Left" Margin="325,538,0,0" VerticalAlignment="Top" Width="120"/>
             <ComboBox x:Name="combo_kategori" HorizontalAlignment="Left" Margin="577,472,0,0" VerticalAlignment="Top" Width="120"/>

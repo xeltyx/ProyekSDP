@@ -176,7 +176,6 @@ namespace ProyekSDP
                             trans.Rollback();
                             conn.conn.Close();
                             MessageBox.Show(ex.Message);
-                            MessageBox.Show(index+"");
                         }
                     }
                     conn.conn.Close();
@@ -192,6 +191,31 @@ namespace ProyekSDP
             {
                 MessageBox.Show("isi textbox terlebih dahulu");
             }
+        }
+
+        private void btn_delete_Click(object sender, RoutedEventArgs e)
+        {
+            conn.conn.Open();
+            using (MySqlTransaction trans = conn.conn.BeginTransaction())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand($"delete from barang where ID = {index+1}", conn.conn);
+                    cmd.ExecuteNonQuery();
+                    trans.Commit();
+                    conn.conn.Close();
+                    MessageBox.Show("delete berhasil");
+                }
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    conn.conn.Close();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            conn.conn.Close();
+            loadBarang();
+            normalmode();
         }
 
         private void btn_insert_Click(object sender, RoutedEventArgs e)
