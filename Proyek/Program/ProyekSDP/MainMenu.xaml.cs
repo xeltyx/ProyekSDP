@@ -152,6 +152,12 @@ namespace ProyekSDP
             int id = cbkategori.SelectedIndex;
             loadBarang(id);
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var profil = new userprofil(user.id);
+            this.NavigationService.Navigate(profil);
+        }
     }
 
     

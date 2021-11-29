@@ -8,13 +8,13 @@ namespace ProyekSDP
 {
     class loggedUser
     {
-        int id { get; set; }
+        public int id { get; set; }
         public string username { get; set; }
-        string nama { get; set; }
-        string email { get; set; }
-        string nomor { get; set; }
+        public string nama { get; set; }
+        public string email { get; set; }
+        public string nomor { get; set; }
         string password { get; set; }
-        int saldo { get; set; }
+        public int saldo { get; set; }
 
         public loggedUser(int id, string username, string nama, string email, string nomor, string password, int saldo)
         {

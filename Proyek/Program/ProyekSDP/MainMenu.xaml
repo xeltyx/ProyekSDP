@@ -30,10 +30,11 @@
             </ComboBox.BindingGroup>
         </ComboBox>
         <TextBox x:Name="tbsearch" HorizontalAlignment="Left" Height="23" Margin="389,200,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="198"/>
-        <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="536" Margin="412,2,0,0" VerticalAlignment="Top" Width="204" Background="#FF7777FB" Visibility="Hidden" MouseLeave="menugrid_MouseLeave">
+        <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="536" Margin="412,2,0,0" VerticalAlignment="Top" Width="204" Background="#FF7777FB" Visibility="Visible" MouseLeave="menugrid_MouseLeave">
             <Label x:Name="userLabel" Content="Optimum Pride" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="154" FontSize="20" VerticalContentAlignment="Center" Margin="50,0,0,0"/>
             <StackPanel HorizontalAlignment="Left" Height="368" Margin="0,90,0,0" VerticalAlignment="Top" Width="204">
-                <Button Content="  My Profile" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
+                <Button x:Name="Homebtn" Content="  Home" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
+                <Button Content="  My Profile" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Click_1"/>
                 <Button Content="  Cart" Height="59" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
             </StackPanel>
             <Image HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="49" Source="person-icon.png"/>

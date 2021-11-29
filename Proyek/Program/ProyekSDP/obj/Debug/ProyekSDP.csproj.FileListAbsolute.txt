@@ -116,3 +116,5 @@ D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.exe
 D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.pdb
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Admin.g.cs
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Admin.baml
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\userprofil.g.cs
+D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\userprofil.baml

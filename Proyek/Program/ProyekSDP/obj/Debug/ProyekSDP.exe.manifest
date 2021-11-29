@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProyekSDP.exe" size="95744">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProyekSDP.exe" size="101376">
       <assemblyIdentity name="ProyekSDP" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>I54arWGmh4RBm1iLPuJQKmY2OKG+gsQ6LUNhfjLxMLg=</dsig:DigestValue>
+        <dsig:DigestValue>2j6HR4ohRja5VnQM1ID1Y3iGi6FTDhH5qhbpzbwmwgI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
