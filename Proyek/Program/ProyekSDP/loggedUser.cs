@@ -13,7 +13,7 @@ namespace ProyekSDP
         public string nama { get; set; }
         public string email { get; set; }
         public string nomor { get; set; }
-        string password { get; set; }
+        public string password { get; set; }
         public int saldo { get; set; }
 
         public loggedUser(int id, string username, string nama, string email, string nomor, string password, int saldo)

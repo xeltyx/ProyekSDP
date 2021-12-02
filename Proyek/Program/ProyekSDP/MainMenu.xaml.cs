@@ -27,6 +27,7 @@ namespace ProyekSDP
         List<Barang> barangList = new List<Barang>();
         Label[] labelList = new Label[4];
         Image[] imgList = new Image[4];
+        int indexingItem = 0;
         public MainMenu(int id)
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace ProyekSDP
             imgList[1] = imgprod2;
             imgList[2] = imgprod3;
             imgList[3] = imgprod4;
-
+            prevButton.IsEnabled = false;
 
             loadData(id);
         }
@@ -95,8 +96,8 @@ namespace ProyekSDP
         private void loadBarang(int kat)
         {
             barangList.Clear();
-
-            if(kategori[kat] == "All")
+            indexingItem = 0;
+            if (kategori[kat] == "All")
             {
                 conn.conn.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY ID DESC", conn.conn);
@@ -142,11 +143,42 @@ namespace ProyekSDP
                     }
                     
                 }
+                MessageBox.Show(barangList.Count() + "");
             }
-            
-
         }
 
+ 
+        private void loadBarangIdx()
+        {
+            
+            int ctr = 0;
+            for (int i = (0 + (indexingItem * 4)); i < (4 +(indexingItem * 4)); i++)
+            {
+                if (i < barangList.Count())
+                {
+                    labelList[ctr].Content = barangList[i].namaBarang;
+                    imgList[ctr].Visibility = Visibility.Visible;
+                    labelList[ctr].Visibility = Visibility.Visible;
+
+                } 
+                else
+                {
+                    imgList[ctr].Visibility = Visibility.Hidden;
+                    labelList[ctr].Visibility = Visibility.Hidden;
+                }
+                ctr++;
+
+            }
+            if (indexingItem == Math.Ceiling(Convert.ToDouble(barangList.Count() / 4)))
+            {
+                nextbtn.IsEnabled = false;
+            }
+
+            if (indexingItem == 0)
+            {
+                prevButton.IsEnabled = false;
+            }
+        }
         private void findbtn_Click(object sender, RoutedEventArgs e)
         {
             int id = cbkategori.SelectedIndex;
@@ -157,6 +189,32 @@ namespace ProyekSDP
         {
             var profil = new userprofil(user.id);
             this.NavigationService.Navigate(profil);
+        }
+
+        private void nextbtn_Click(object sender, RoutedEventArgs e)
+        {
+            indexingItem++;
+            loadBarangIdx();
+            prevButton.IsEnabled = true;
+            if (indexingItem == Math.Ceiling(Convert.ToDouble(barangList.Count() / 4)))
+            {
+                nextbtn.IsEnabled = false;
+            }
+        }
+
+        private void prevButton_Click(object sender, RoutedEventArgs e)
+        {
+            indexingItem--;
+            loadBarangIdx();
+            nextbtn.IsEnabled = true;
+
+            if (indexingItem == 0)
+            {
+                prevButton.IsEnabled = false;
+            }
+
+
+
         }
     }
 
