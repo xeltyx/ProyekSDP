@@ -32,7 +32,18 @@ namespace ProyekSDP
             
 
         }
-
+        private void Update(string name, string email, string notelp,string password)
+        {
+            conn.conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE User SET name=@name,email=@email, Notelp=@notelp " +
+                    "WHERE password =@password",conn.conn);
+                cmd.Parameters.AddWithValue("@name",name);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@notelp", notelp);
+                cmd.Parameters.AddWithValue("@password", password);
+                cmd.ExecuteNonQuery();
+                conn.conn.Close();
+        }
         public void loaduser(int id)
         {
             conn.conn.Open();
