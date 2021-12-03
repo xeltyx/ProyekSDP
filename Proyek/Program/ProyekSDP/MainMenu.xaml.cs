@@ -109,12 +109,16 @@ namespace ProyekSDP
 
                 conn.conn.Close();
 
-                for (int i = 0; i < 4; i++)
+                if(barangList.Count>0)
                 {
-                    labelList[i].Content = barangList[i].namaBarang;
-                    imgList[i].Visibility = Visibility.Visible;
-                    labelList[i].Visibility = Visibility.Visible;
+                    for (int i = 0; i < 4; i++)
+                    {
+                        labelList[i].Content = barangList[i].namaBarang;
+                        imgList[i].Visibility = Visibility.Visible;
+                        labelList[i].Visibility = Visibility.Visible;
+                    }
                 }
+                
             }
             else
             {

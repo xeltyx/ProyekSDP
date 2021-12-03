@@ -34,7 +34,7 @@ namespace ProyekSDP
             loadBarang();
             isimerk();
             isikategori();
-
+            loadUser();
         }
 
         private void loadBarang()
@@ -47,6 +47,19 @@ namespace ProyekSDP
             dt = new DataTable();
             sda.Fill(dt);
             dgvUser.ItemsSource = dt.DefaultView;
+            conn.conn.Close();
+        }
+
+        private void loadUser()
+        {
+            conn.conn.Open();
+            cmd = new MySqlCommand();
+            cmd = new MySqlCommand($"SELECT CUSTOMER.ID ,CUSTOMER.NAMA_CUST AS \"NAMA CUSTOMER\",CUSTOMER.SALDO AS \"SALDO\" FROM CUSTOMER ORDER BY id ASC", conn.conn);
+            //  MySqlDataReader reader = cmd.ExecuteReader();
+            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            sda.Fill(dt);
+            dgvcustomer.ItemsSource = dt.DefaultView;
             conn.conn.Close();
         }
 
@@ -216,6 +229,27 @@ namespace ProyekSDP
             conn.conn.Close();
             loadBarang();
             normalmode();
+        }
+
+        private void btnPageUser_Click(object sender, RoutedEventArgs e)
+        {
+            gridbarang.Visibility = Visibility.Hidden;
+            griduser.Visibility = Visibility.Visible;
+        }
+
+        private void btnPageBarang_Click(object sender, RoutedEventArgs e)
+        {
+            gridbarang.Visibility = Visibility.Visible;
+            griduser.Visibility = Visibility.Hidden;
+        }
+
+        private void dgvcustomer_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (dgvcustomer.SelectedIndex != -1)
+            {
+                tbcustomer_name.Text = dt.Rows[dgvcustomer.SelectedIndex][1].ToString();
+                tbcustomer_saldo.Text = dt.Rows[dgvcustomer.SelectedIndex][2].ToString();
+            }
         }
 
         private void btn_insert_Click(object sender, RoutedEventArgs e)

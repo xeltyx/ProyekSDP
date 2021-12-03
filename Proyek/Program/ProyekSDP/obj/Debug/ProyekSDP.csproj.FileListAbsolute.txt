@@ -28,7 +28,6 @@ E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe.manife
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.xbap
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.pdb
-E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csprojAssemblyReference.cache
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\MainMenu.g.cs
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Page1.g.cs
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\register.g.cs
@@ -120,3 +119,12 @@ D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\userprofil.g.
 D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\userprofil.baml
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\userprofil.g.cs
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\userprofil.baml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.Async.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.xml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Renci.SshNet.Async.xml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.AssemblyReference.cache
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Admin.g.cs
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\userprofil.g.cs
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Admin.baml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\userprofil.baml
