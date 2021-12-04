@@ -1,4 +1,4 @@
-﻿<Page x:Class="ProyekSDP.Page1"
+﻿<Page x:Name="bg" x:Class="ProyekSDP.Page1"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,8 +6,8 @@
       xmlns:local="clr-namespace:ProyekSDP"
       mc:Ignorable="d"
       Title="Page1" Width="510.891" Height="525.362">
-    <Grid Background="#FF25727E">
-        <Rectangle HorizontalAlignment="Left" Height="447" Margin="37,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="431" RenderTransformOrigin="0.5,0.5" Fill="#FF8ECCCC">
+    <Grid x:Name="bgCol" Background="#FF25727E" Margin="-859,-567,-849,-353" HorizontalAlignment="Right" Width="2219" Height="1445" VerticalAlignment="Bottom">
+        <Rectangle Margin="0,605,892,0" Stroke="Black" RenderTransformOrigin="0.5,0.5" Fill="#FF8ECCCC" Height="447" VerticalAlignment="Top" HorizontalAlignment="Right" Width="431">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -17,13 +17,13 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="209,65,0,0" VerticalAlignment="Top" Height="54" Width="100" Foreground="Navy" FontSize="36" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="tbemail" HorizontalAlignment="Left" Height="32" Margin="69,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
-        <PasswordBox x:Name="tbpassword" HorizontalAlignment="Left" Margin="69,250,0,0" VerticalAlignment="Top" Width="376" Height="30"/>
-        <Label x:Name="lbregister" Content="Dont have account? Register here" HorizontalAlignment="Left" Margin="80,374,0,0" VerticalAlignment="Top" Height="26" Width="202" Foreground="Navy" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14" PreviewMouseDown="lbregister_PreviewMouseDown" MouseEnter="lbregister_MouseEnter" MouseLeave="lbregister_MouseLeave"/>
-        <Label Content="Lupa password?" HorizontalAlignment="Left" Margin="333,374,0,0" VerticalAlignment="Top" Height="26" Width="123" Foreground="Navy" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
-        <Button x:Name="btnlogin" Content="Login" HorizontalAlignment="Left" Margin="69,418,0,0" VerticalAlignment="Top" Width="376" Height="32" Click="btnlogin_Click"/>
-        <Label Content="Email/No telp:" HorizontalAlignment="Left" Margin="69,136,0,0" VerticalAlignment="Top" Height="26" Width="96" Foreground="Black" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Margin="69,219,0,0" VerticalAlignment="Top" Height="26" Width="69" Foreground="Black" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
+        <Label Content="Login" HorizontalAlignment="Right" Margin="0,632,1051,0" VerticalAlignment="Top" Height="54" Width="100" Foreground="Navy" FontSize="36" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="tbemail" HorizontalAlignment="Right" Height="32" Margin="0,734,915,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
+        <PasswordBox x:Name="tbpassword" HorizontalAlignment="Right" Margin="0,817,915,0" VerticalAlignment="Top" Width="376" Height="30"/>
+        <Label x:Name="lbregister" Content="Dont have account? Register here" HorizontalAlignment="Right" Margin="0,941,1078,0" VerticalAlignment="Top" Height="26" Width="202" Foreground="Navy" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14" PreviewMouseDown="lbregister_PreviewMouseDown" MouseEnter="lbregister_MouseEnter" MouseLeave="lbregister_MouseLeave"/>
+        <Label Content="Lupa password?" HorizontalAlignment="Right" Margin="0,941,904,0" VerticalAlignment="Top" Height="26" Width="123" Foreground="Navy" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
+        <Button x:Name="btnlogin" Content="Login" HorizontalAlignment="Right" Margin="0,985,915,0" VerticalAlignment="Top" Width="376" Height="32" Click="btnlogin_Click"/>
+        <Label Content="Email/No telp:" HorizontalAlignment="Right" Margin="0,703,1195,0" VerticalAlignment="Top" Height="26" Width="96" Foreground="Black" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
+        <Label Content="Password:" HorizontalAlignment="Right" Margin="0,786,1222,0" VerticalAlignment="Top" Height="26" Width="69" Foreground="Black" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5" FontSize="14"/>
     </Grid>
 </Page>
