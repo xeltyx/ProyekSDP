@@ -26,6 +26,7 @@ namespace ProyekSDP
         MySqlCommand cmd;
         DataTable dt;
         string kodekat, kodemerk;
+        int getiduser;
         int index = 0;
         public Admin()
         {
@@ -35,6 +36,7 @@ namespace ProyekSDP
             isimerk();
             isikategori();
             loadUser();
+            isilistcustomer();
         }
 
         private void loadBarang()
@@ -60,6 +62,33 @@ namespace ProyekSDP
             dt = new DataTable();
             sda.Fill(dt);
             dgvcustomer.ItemsSource = dt.DefaultView;
+            conn.conn.Close();
+        }
+
+        private void loadLaporan()
+        {
+            conn.conn.Open();
+            cmd = new MySqlCommand();
+            cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG AS \"NAMA BARANG\",H_BELI.NOMOR_NOTA AS \"NOMOR NOTA\",D_BELI.jumlah,H_BELI.TOTAL_PEMBELIAN as \"Total Pembelian\" from Barang,H_BELI,D_BELI,Customer where Customer.id={getiduser} and H_BELI.ID_CUSTOMER=CUSTOMER.ID and D_BELI.NOMOR_NOTA=H_BELI.NOMOR_NOTA and BARANG.ID=D_BELI.ID_BARANG ORDER BY BARANG.NAMA_BARANG", conn.conn);
+            //  MySqlDataReader reader = cmd.ExecuteReader();
+            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            sda.Fill(dt);
+            dgvlaporan.ItemsSource = dt.DefaultView;
+            conn.conn.Close();
+        }
+
+        private void isilistcustomer()
+        {
+            cblistcustomer.Items.Clear();
+            MySqlCommand cmd = new MySqlCommand($"select ID,Nama_Cust as \"Nama customer\" from Customer ORDER BY id", conn.conn);
+            conn.conn.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                cblistcustomer.Items.Add(reader.GetString(0) + " - " + reader.GetString(1));
+            }
+            cblistcustomer.SelectedIndex = -1;
             conn.conn.Close();
         }
 
@@ -235,12 +264,14 @@ namespace ProyekSDP
         {
             gridbarang.Visibility = Visibility.Hidden;
             griduser.Visibility = Visibility.Visible;
+            gridlaporan.Visibility = Visibility.Hidden;
         }
 
         private void btnPageBarang_Click(object sender, RoutedEventArgs e)
         {
             gridbarang.Visibility = Visibility.Visible;
             griduser.Visibility = Visibility.Hidden;
+            gridlaporan.Visibility = Visibility.Hidden;
         }
 
         private void dgvcustomer_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -250,6 +281,29 @@ namespace ProyekSDP
                 tbcustomer_name.Text = dt.Rows[dgvcustomer.SelectedIndex][1].ToString();
                 tbcustomer_saldo.Text = dt.Rows[dgvcustomer.SelectedIndex][2].ToString();
             }
+        }
+
+        private void btnloadlistcustomer_Click(object sender, RoutedEventArgs e)
+        {
+            if (cblistcustomer.SelectedIndex != -1)
+            {
+                string[] temp = cblistcustomer.SelectedItem.ToString().Split('-');
+                getiduser = int.Parse(temp[0]);
+                loadLaporan();
+            }
+        }
+
+        private void btnlaporan_Click(object sender, RoutedEventArgs e)
+        {
+            gridlaporan.Visibility = Visibility.Visible;
+            gridbarang.Visibility = Visibility.Hidden;
+            griduser.Visibility = Visibility.Hidden;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var login = new Page1();
+            this.NavigationService.Navigate(login);
         }
 
         private void btn_insert_Click(object sender, RoutedEventArgs e)
