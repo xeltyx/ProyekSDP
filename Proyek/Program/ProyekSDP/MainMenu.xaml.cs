@@ -110,11 +110,23 @@ namespace ProyekSDP
                 conn.conn.Open();
                 if(filtercb.SelectedIndex == 0)
                 {
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY ID DESC", conn.conn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    if (tbsearch.Text.Length > 0)
                     {
-                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE UPPER(NAMA_BARANG) like '%{tbsearch.Text.ToUpper()}%' ORDER BY ID DESC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
+                    }
+                    else
+                    {
+                        MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY ID DESC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
                     }
 
                     conn.conn.Close();
@@ -130,11 +142,23 @@ namespace ProyekSDP
                     }
                 }else if (filtercb.SelectedIndex == 1)
                 {
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY harga DESC", conn.conn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    if (tbsearch.Text.Length > 0)
                     {
-                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE UPPER(NAMA_BARANG) like '%{tbsearch.Text.ToUpper()}%' ORDER BY harga DESC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
+                    }
+                    else
+                    {
+                        MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY harga DESC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
                     }
 
                     conn.conn.Close();
@@ -150,11 +174,23 @@ namespace ProyekSDP
                     }
                 }else if (filtercb.SelectedIndex == 2)
                 {
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY harga ASC", conn.conn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    if (tbsearch.Text.Length > 0)
                     {
-                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE  UPPER(NAMA_BARANG) like '%{tbsearch.Text.ToUpper()}%' ORDER BY harga ASC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
+                    }
+                    else
+                    {
+                        MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY harga ASC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
                     }
 
                     conn.conn.Close();
