@@ -174,33 +174,94 @@ namespace ProyekSDP
             }
             else
             {
-                conn.conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' ORDER BY ID DESC", conn.conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                if(filtercb.SelectedIndex == 0)
                 {
-                    barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
-                }
+                    conn.conn.Open();
+                    MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' ORDER BY ID DESC", conn.conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                    }
 
-                conn.conn.Close();
+                    conn.conn.Close();
 
-                for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (i < barangList.Count())
+                        {
+                            labelList[i].Content = barangList[i].namaBarang;
+                            imgList[i].Visibility = Visibility.Visible;
+                            labelList[i].Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            imgList[i].Visibility = Visibility.Hidden;
+                            labelList[i].Visibility = Visibility.Hidden;
+                        }
+
+                    }
+                    MessageBox.Show(barangList.Count() + "");
+                }else if (filtercb.SelectedIndex == 1)
                 {
-                    if(i < barangList.Count())
+
+                    conn.conn.Open();
+                    MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' ORDER BY harga DESC", conn.conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
                     {
-                        labelList[i].Content = barangList[i].namaBarang;
-                        imgList[i].Visibility = Visibility.Visible;
-                        labelList[i].Visibility = Visibility.Visible;
+                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
                     }
-                    else
+
+                    conn.conn.Close();
+
+                    for (int i = 0; i < 4; i++)
                     {
-                        imgList[i].Visibility = Visibility.Hidden;
-                        labelList[i].Visibility = Visibility.Hidden;
+                        if (i < barangList.Count())
+                        {
+                            labelList[i].Content = barangList[i].namaBarang;
+                            imgList[i].Visibility = Visibility.Visible;
+                            labelList[i].Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            imgList[i].Visibility = Visibility.Hidden;
+                            labelList[i].Visibility = Visibility.Hidden;
+                        }
+
                     }
-                    
+                    MessageBox.Show(barangList.Count() + "");
+                }else if (filtercb.SelectedIndex == 2)
+                {
+                    conn.conn.Open();
+                    MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' ORDER BY harga ASC", conn.conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                    }
+
+                    conn.conn.Close();
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (i < barangList.Count())
+                        {
+                            labelList[i].Content = barangList[i].namaBarang;
+                            imgList[i].Visibility = Visibility.Visible;
+                            labelList[i].Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            imgList[i].Visibility = Visibility.Hidden;
+                            labelList[i].Visibility = Visibility.Hidden;
+                        }
+
+                    }
+                    MessageBox.Show(barangList.Count() + "");
                 }
-                MessageBox.Show(barangList.Count() + "");
             }
+               
         }
 
  
