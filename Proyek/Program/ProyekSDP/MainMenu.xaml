@@ -24,12 +24,12 @@
             </Button.Background>
 
         </Button>
-        <ComboBox x:Name="cbkategori" HorizontalAlignment="Left" Margin="24,138,0,0" VerticalAlignment="Top" Width="158" Height="23">
+        <ComboBox x:Name="cbkategori" HorizontalAlignment="Left" Margin="24,138,0,0" VerticalAlignment="Top" Width="158" Height="23" SelectionChanged="cbkategori_SelectionChanged">
             <ComboBox.BindingGroup>
                 <BindingGroup/>
             </ComboBox.BindingGroup>
         </ComboBox>
-        <TextBox x:Name="tbsearch" HorizontalAlignment="Left" Height="23" Margin="347,138,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="151"/>
+        <TextBox x:Name="tbsearch" HorizontalAlignment="Left" Height="23" Margin="347,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
         <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="598" Margin="904,0,0,0" VerticalAlignment="Top" Width="276" Background="#FF7777FB" Visibility="Hidden" MouseLeave="menugrid_MouseLeave">
             <Label x:Name="userLabel" Content="Optimum Pride" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="154" FontSize="20" VerticalContentAlignment="Center" Margin="50,0,0,0"/>
             <StackPanel HorizontalAlignment="Left" Height="368" Margin="0,90,0,0" VerticalAlignment="Top" Width="276">

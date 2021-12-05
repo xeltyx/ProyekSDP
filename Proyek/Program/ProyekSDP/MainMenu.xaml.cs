@@ -28,6 +28,7 @@ namespace ProyekSDP
         Label[] labelList = new Label[4];
         Image[] imgList = new Image[4];
         int indexingItem = 0;
+        String[] isicombosort = {"no filter","sort by highest price","sort by lowest price"};
         public MainMenu(int id)
         {
             InitializeComponent();
@@ -75,7 +76,7 @@ namespace ProyekSDP
             conn.conn.Close();
 
             userLabel.Content = user.username;
-
+            filtercombo();
             cbkategori.Items.Add("All");
             kategori.Add("All");
             conn.conn.Open();
@@ -92,6 +93,13 @@ namespace ProyekSDP
             loadBarang(cbkategori.SelectedIndex);
 
         }
+        private void filtercombo()
+        {
+            filtercb.Items.Add(isicombosort[0]);
+            filtercb.Items.Add(isicombosort[1]);
+            filtercb.Items.Add(isicombosort[2]);
+            filtercb.SelectedIndex = 0;
+        }
 
         private void loadBarang(int kat)
         {
@@ -100,25 +108,69 @@ namespace ProyekSDP
             if (kategori[kat] == "All")
             {
                 conn.conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY ID DESC", conn.conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                if(filtercb.SelectedIndex == 0)
                 {
-                    barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
-                }
-
-                conn.conn.Close();
-
-                if(barangList.Count>0)
-                {
-                    for (int i = 0; i < 4; i++)
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY ID DESC", conn.conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
                     {
-                        labelList[i].Content = barangList[i].namaBarang;
-                        imgList[i].Visibility = Visibility.Visible;
-                        labelList[i].Visibility = Visibility.Visible;
+                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                    }
+
+                    conn.conn.Close();
+
+                    if (barangList.Count > 0)
+                    {
+                        for (int i = 0; i < 4; i++)
+                        {
+                            labelList[i].Content = barangList[i].namaBarang;
+                            imgList[i].Visibility = Visibility.Visible;
+                            labelList[i].Visibility = Visibility.Visible;
+                        }
+                    }
+                }else if (filtercb.SelectedIndex == 1)
+                {
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY harga DESC", conn.conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                    }
+
+                    conn.conn.Close();
+
+                    if (barangList.Count > 0)
+                    {
+                        for (int i = 0; i < 4; i++)
+                        {
+                            labelList[i].Content = barangList[i].namaBarang;
+                            imgList[i].Visibility = Visibility.Visible;
+                            labelList[i].Visibility = Visibility.Visible;
+                        }
+                    }
+                }else if (filtercb.SelectedIndex == 2)
+                {
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY harga ASC", conn.conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                    }
+
+                    conn.conn.Close();
+
+                    if (barangList.Count > 0)
+                    {
+                        for (int i = 0; i < 4; i++)
+                        {
+                            labelList[i].Content = barangList[i].namaBarang;
+                            imgList[i].Visibility = Visibility.Visible;
+                            labelList[i].Visibility = Visibility.Visible;
+                        }
                     }
                 }
-                
+
+
             }
             else
             {
@@ -218,6 +270,11 @@ namespace ProyekSDP
             }
 
 
+
+        }
+
+        private void cbkategori_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
     }
