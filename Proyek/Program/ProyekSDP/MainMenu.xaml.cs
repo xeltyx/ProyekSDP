@@ -212,14 +212,27 @@ namespace ProyekSDP
             {
                 if(filtercb.SelectedIndex == 0)
                 {
-                    conn.conn.Open();
-                    MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' ORDER BY ID DESC", conn.conn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    if (tbsearch.Text.Length > 0)
                     {
-                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        conn.conn.Open();
+                        MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' AND UPPER(NAMA_BARANG) like '%{tbsearch.Text.ToUpper()}%' ORDER BY ID DESC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
                     }
-
+                    else
+                    {
+                        conn.conn.Open();
+                        MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' ORDER BY ID DESC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
+                    }
+                   
                     conn.conn.Close();
 
                     for (int i = 0; i < 4; i++)
@@ -240,14 +253,28 @@ namespace ProyekSDP
                     MessageBox.Show(barangList.Count() + "");
                 }else if (filtercb.SelectedIndex == 1)
                 {
-
-                    conn.conn.Open();
-                    MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' ORDER BY harga DESC", conn.conn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    if (tbsearch.Text.Length > 0)
                     {
-                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        conn.conn.Open();
+                        MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' AND UPPER(NAMA_BARANG) like '%{tbsearch.Text.ToUpper()}%' ORDER BY harga DESC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
                     }
+                    else
+                    {
+                        conn.conn.Open();
+                        MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' ORDER BY harga DESC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
+                    }
+
+                    
 
                     conn.conn.Close();
 
@@ -269,12 +296,25 @@ namespace ProyekSDP
                     MessageBox.Show(barangList.Count() + "");
                 }else if (filtercb.SelectedIndex == 2)
                 {
-                    conn.conn.Open();
-                    MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' ORDER BY harga ASC", conn.conn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    if (tbsearch.Text.Length > 0)
                     {
-                        barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        conn.conn.Open();
+                        MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' AND UPPER(NAMA_BARANG) like '%{tbsearch.Text.ToUpper()}%' ORDER BY harga ASC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
+                    }
+                    else
+                    {
+                        conn.conn.Open();
+                        MySqlCommand cmd = new MySqlCommand($"SELECT * FROM BARANG WHERE KATEGORI='{kategori[kat]}' ORDER BY harga ASC", conn.conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                        }
                     }
 
                     conn.conn.Close();
