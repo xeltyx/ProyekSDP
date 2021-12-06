@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +27,8 @@ namespace ProyekSDP
         loggedUser user;
         List<string> kategori = new List<string>();
         List<Barang> barangList = new List<Barang>();
-        Label[] labelList = new Label[4];
-        Image[] imgList = new Image[4];
+        Label[] labelList = new Label[8];
+        Image[] imgList = new Image[8];
         int indexingItem = 0;
         String[] isicombosort = {"no filter","sort by highest price","sort by lowest price"};
         public MainMenu(int id)
@@ -37,11 +39,19 @@ namespace ProyekSDP
             labelList[1] = lblprod2;
             labelList[2] = lblprod3;
             labelList[3] = lblprod4;
+            labelList[4] = lblprod5;
+            labelList[5] = lblprod6;
+            labelList[6] = lblprod7;
+            labelList[7] = lblprod8;
 
             imgList[0] = imgprod1;
             imgList[1] = imgprod2;
             imgList[2] = imgprod3;
             imgList[3] = imgprod4;
+            imgList[4] = imgprod5;
+            imgList[5] = imgprod6;
+            imgList[6] = imgprod7;
+            imgList[7] = imgprod8;
             prevButton.IsEnabled = false;
 
             loadData(id);
@@ -116,30 +126,27 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
                     {
                         MySqlCommand cmd = new MySqlCommand("SELECT * FROM BARANG ORDER BY ID DESC", conn.conn);
                         MySqlDataReader reader = cmd.ExecuteReader();
+                        int ctr = 1;
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            MessageBox.Show(ctr + "");
+                            ctr++;
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
 
                     conn.conn.Close();
 
-                    if (barangList.Count > 0)
-                    {
-                        for (int i = 0; i < 4; i++)
-                        {
-                            labelList[i].Content = barangList[i].namaBarang;
-                            imgList[i].Visibility = Visibility.Visible;
-                            labelList[i].Visibility = Visibility.Visible;
-                        }
-                    }
+                    
                 }else if (filtercb.SelectedIndex == 1)
                 {
                     if (tbsearch.Text.Length > 0)
@@ -148,7 +155,8 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
@@ -157,21 +165,12 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
 
                     conn.conn.Close();
-
-                    if (barangList.Count > 0)
-                    {
-                        for (int i = 0; i < 4; i++)
-                        {
-                            labelList[i].Content = barangList[i].namaBarang;
-                            imgList[i].Visibility = Visibility.Visible;
-                            labelList[i].Visibility = Visibility.Visible;
-                        }
-                    }
                 }else if (filtercb.SelectedIndex == 2)
                 {
                     if (tbsearch.Text.Length > 0)
@@ -180,7 +179,8 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
@@ -189,24 +189,13 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
 
                     conn.conn.Close();
-
-                    if (barangList.Count > 0)
-                    {
-                        for (int i = 0; i < 4; i++)
-                        {
-                            labelList[i].Content = barangList[i].namaBarang;
-                            imgList[i].Visibility = Visibility.Visible;
-                            labelList[i].Visibility = Visibility.Visible;
-                        }
-                    }
                 }
-
-
             }
             else
             {
@@ -219,7 +208,8 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
@@ -229,28 +219,14 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                    
                     conn.conn.Close();
 
-                    for (int i = 0; i < 4; i++)
-                    {
-                        if (i < barangList.Count())
-                        {
-                            labelList[i].Content = barangList[i].namaBarang;
-                            imgList[i].Visibility = Visibility.Visible;
-                            labelList[i].Visibility = Visibility.Visible;
-                        }
-                        else
-                        {
-                            imgList[i].Visibility = Visibility.Hidden;
-                            labelList[i].Visibility = Visibility.Hidden;
-                        }
-
-                    }
-                    MessageBox.Show(barangList.Count() + "");
+                    
                 }else if (filtercb.SelectedIndex == 1)
                 {
                     if (tbsearch.Text.Length > 0)
@@ -260,7 +236,8 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            byte[] binaryData = Convert.FromBase64String(reader[6].ToString());
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
@@ -270,30 +247,13 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            byte[] binaryData = Convert.FromBase64String(reader[6].ToString());
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
-
-                    
-
                     conn.conn.Close();
 
-                    for (int i = 0; i < 4; i++)
-                    {
-                        if (i < barangList.Count())
-                        {
-                            labelList[i].Content = barangList[i].namaBarang;
-                            imgList[i].Visibility = Visibility.Visible;
-                            labelList[i].Visibility = Visibility.Visible;
-                        }
-                        else
-                        {
-                            imgList[i].Visibility = Visibility.Hidden;
-                            labelList[i].Visibility = Visibility.Hidden;
-                        }
-
-                    }
-                    MessageBox.Show(barangList.Count() + "");
+                    
                 }else if (filtercb.SelectedIndex == 2)
                 {
                     if (tbsearch.Text.Length > 0)
@@ -303,7 +263,8 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            byte[] binaryData = Convert.FromBase64String(reader[6].ToString());
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
@@ -313,44 +274,46 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString())));
+                            byte[] binaryData = Convert.FromBase64String(reader[6].ToString());
+                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
 
                     conn.conn.Close();
 
-                    for (int i = 0; i < 4; i++)
-                    {
-                        if (i < barangList.Count())
-                        {
-                            labelList[i].Content = barangList[i].namaBarang;
-                            imgList[i].Visibility = Visibility.Visible;
-                            labelList[i].Visibility = Visibility.Visible;
-                        }
-                        else
-                        {
-                            imgList[i].Visibility = Visibility.Hidden;
-                            labelList[i].Visibility = Visibility.Hidden;
-                        }
-
-                    }
-                    MessageBox.Show(barangList.Count() + "");
+                    
                 }
             }
-               
+            loadBarangScreen();
+            nextbtn.IsEnabled = true;
+            MessageBox.Show(Math.Ceiling(Convert.ToDouble(barangList.Count() / 8)) + "");
+            if (indexingItem == Math.Ceiling(Convert.ToDouble(barangList.Count() / 8)))
+            {
+                nextbtn.IsEnabled = false;
+            }
+            
+
+            if (indexingItem == 0)
+            {
+                prevButton.IsEnabled = false;
+            }
         }
 
  
-        private void loadBarangIdx()
+        private void loadBarangScreen()
         {
             
             int ctr = 0;
-            for (int i = (0 + (indexingItem * 4)); i < (4 +(indexingItem * 4)); i++)
+            for (int i = 0 + (indexingItem * 8); i < 8 + (indexingItem * 8); i++)
             {
                 if (i < barangList.Count())
                 {
-                    labelList[ctr].Content = barangList[i].namaBarang;
+                    
+
+                    
+                    labelList[ctr].Content = barangList[i].namaBarang + "\n" + String.Format(CultureInfo.GetCultureInfo("id-ID"), "{0:C2}", barangList[i].Harga);
                     imgList[ctr].Visibility = Visibility.Visible;
+                    imgList[ctr].Source = ByteImageConverter.ByteToImage(barangList[i].Gambar);
                     labelList[ctr].Visibility = Visibility.Visible;
 
                 } 
@@ -362,7 +325,7 @@ namespace ProyekSDP
                 ctr++;
 
             }
-            if (indexingItem == Math.Ceiling(Convert.ToDouble(barangList.Count() / 4)))
+            if (indexingItem == Math.Ceiling(Convert.ToDouble(barangList.Count() / 8)))
             {
                 nextbtn.IsEnabled = false;
             }
@@ -387,7 +350,7 @@ namespace ProyekSDP
         private void nextbtn_Click(object sender, RoutedEventArgs e)
         {
             indexingItem++;
-            loadBarangIdx();
+            loadBarangScreen();
             prevButton.IsEnabled = true;
             if (indexingItem == Math.Ceiling(Convert.ToDouble(barangList.Count() / 4)))
             {
@@ -398,7 +361,7 @@ namespace ProyekSDP
         private void prevButton_Click(object sender, RoutedEventArgs e)
         {
             indexingItem--;
-            loadBarangIdx();
+            loadBarangScreen();
             nextbtn.IsEnabled = true;
 
             if (indexingItem == 0)
@@ -416,5 +379,21 @@ namespace ProyekSDP
         }
     }
 
-    
+    public class ByteImageConverter
+    {
+        public static ImageSource ByteToImage(byte[] imageData)
+        {
+            BitmapImage biImg = new BitmapImage();
+            MemoryStream ms = new MemoryStream(imageData);
+            biImg.BeginInit();
+            biImg.StreamSource = ms;
+            biImg.EndInit();
+
+            ImageSource imgSrc = biImg as ImageSource;
+
+            return imgSrc;
+        }
+    }
+
+
 }
