@@ -15,7 +15,8 @@ namespace ProyekSDP
         public int Stok { get; set; }
         public int Harga { get; set; }
 
-        public Barang(int id, string namaBarang, string merk, string kategori, int stok, int harga)
+        public byte[] Gambar { get; set; }
+        public Barang(int id, string namaBarang, string merk, string kategori, int stok, int harga, byte[] Gambar)
         {
             this.id = id;
             this.namaBarang = namaBarang;
@@ -23,6 +24,7 @@ namespace ProyekSDP
             Kategori = kategori;
             Stok = stok;
             Harga = harga;
+            this.Gambar = Gambar;
         }
 
 
