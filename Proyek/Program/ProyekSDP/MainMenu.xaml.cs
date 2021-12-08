@@ -236,7 +236,7 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            byte[] binaryData = Convert.FromBase64String(reader[6].ToString());
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
                             barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
@@ -247,7 +247,7 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            byte[] binaryData = Convert.FromBase64String(reader[6].ToString());
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
                             barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
@@ -263,7 +263,7 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            byte[] binaryData = Convert.FromBase64String(reader[6].ToString());
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
                             barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
@@ -274,14 +274,11 @@ namespace ProyekSDP
                         MySqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            byte[] binaryData = Convert.FromBase64String(reader[6].ToString());
+                            byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
                             barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
-
                     conn.conn.Close();
-
-                    
                 }
             }
             loadBarangScreen();
