@@ -14,15 +14,10 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="479" Margin="15,105,0,0" VerticalAlignment="Top" Width="167">
             <Label Content="Recommended!" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="9,9,0,0"/>
         </Border>
-
-
-
-
-
         <Label x:Name="lblprod4" Content="Label" HorizontalAlignment="Left" Margin="849,304,0,0" VerticalAlignment="Top" Width="122"/>
         <Image x:Name="imgprod4" HorizontalAlignment="Left" Height="110" Margin="849,194,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
         <Image x:Name="imgprod3" HorizontalAlignment="Left" Height="110" Margin="702,194,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="1378" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466" Stretch="Fill" Margin="0,0,-6,0"/>
+        <Image HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="1372" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466" Stretch="Fill"/>
         <Label Content="Alterna" HorizontalAlignment="Left" Margin="5,-4,0,0" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36"/>
         <Label Content="Tech" HorizontalAlignment="Left" Margin="98,40,0,0" VerticalAlignment="Top" Height="60" Width="154" FontFamily="Georgia" FontSize="48"/>
         <Button x:Name="menubtn" Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="1317,10,10,546" Height="42" Width="43" BorderBrush="#FF9999FF" Click="menubtn_Click">
@@ -44,6 +39,7 @@
                 <Button x:Name="Homebtn" Content="  Home" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
                 <Button Content="  My Profile" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Click_1"/>
                 <Button Content="  Cart" Height="59" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
+                <Button Content="  Tokoku" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
             </StackPanel>
             <Image HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="49" Source="person-icon.png"/>
             <Button x:Name="logoutbtn" Content="  Logout" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FFE68FA7" BorderThickness="0,1" Margin="0,538,0,0" Click="Button_Click"/>
@@ -84,10 +80,5 @@
         <Image x:Name="imgprod1_Copy1" HorizontalAlignment="Left" Height="110" Margin="36,304,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
         <Border BorderBrush="Black" BorderThickness="4 " HorizontalAlignment="Left" Height="483" Margin="252,105,0,0" VerticalAlignment="Top" Width="0"/>
         <Image x:Name="imgprod1_Copy2" HorizontalAlignment="Left" Height="110" Margin="36,432,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-
-
-
-
-
     </Grid>
 </Page>

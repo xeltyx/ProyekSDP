@@ -128,3 +128,5 @@ E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Admin.g.cs
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\userprofil.g.cs
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Admin.baml
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\userprofil.baml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\top_user.g.cs
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\top_user.baml

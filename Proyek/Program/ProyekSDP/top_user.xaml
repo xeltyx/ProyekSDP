@@ -1,0 +1,48 @@
+﻿<Page x:Class="ProyekSDP.top_user"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProyekSDP"
+      mc:Ignorable="d"
+      Title="MainMenu" Width="615.5" Height="538.5" Opacity="0.975" >
+
+    <Grid Background="White" HorizontalAlignment="Right" Width="1372" Margin="-382,-60,-374,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="1372" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466" Stretch="Fill"/>
+        <Label Content="Alterna" HorizontalAlignment="Left" Margin="5,-4,0,0" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36"/>
+        <Label Content="Tech" HorizontalAlignment="Left" Margin="98,40,0,0" VerticalAlignment="Top" Height="60" Width="154" FontFamily="Georgia" FontSize="48"/>
+        <Button x:Name="menubtn" Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="1317,10,10,546" Height="42" Width="43" BorderBrush="#FF9999FF" Click="menubtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="menuicon.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Rectangle HorizontalAlignment="Left" Height="458" Margin="169,110,0,0" Stroke="White" VerticalAlignment="Top" Width="1051" Fill="#FFECECEC"/>
+        <Label Content="Top up saldo" HorizontalAlignment="Left" Margin="576,126,0,0" Height="77" Width="250" FontSize="40" VerticalAlignment="Top" FontWeight="SemiBold"/>
+        <TextBox x:Name="tb_nominal" HorizontalAlignment="Left" Height="37" Margin="412,436,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="741" IsEnabled="False" PreviewTextInput="tb_nominal_PreviewTextInput"/>
+        <Grid x:Name="nominal_grid" HorizontalAlignment="Left" Height="229" Margin="235,202,0,0" VerticalAlignment="Top" Width="956">
+            <Button x:Name="btn_100k" Content="Rp. 100.000" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="254" Height="71" FontSize="20" FontFamily="Sitka Text" BorderThickness="1" Click="btn_100k_Click"/>
+            <Button x:Name="btn_200k" Content="Rp. 200.000" HorizontalAlignment="Left" Margin="341,10,0,0" VerticalAlignment="Top" Width="254" Height="71" FontSize="20" FontFamily="Sitka Text" Click="btn_200k_Click"/>
+            <Button x:Name="btn_400k" Content="Rp. 400.000" HorizontalAlignment="Left" Margin="670,10,0,0" VerticalAlignment="Top" Width="254" Height="71" FontSize="20" FontFamily="Sitka Text" Click="btn_400k_Click"/>
+            <Button x:Name="btn_600k" Content="Rp. 600.000" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="254" Height="70" FontSize="20" FontFamily="Sitka Text" Click="btn_600k_Click"/>
+            <Button x:Name="btn_1m" Content="Rp. 1.000.000" HorizontalAlignment="Left" Margin="341,130,0,0" VerticalAlignment="Top" Width="254" Height="71" FontSize="20" FontFamily="Sitka Text" Click="btn_1m_Click"/>
+            <Button x:Name="btn_2m" Content="Rp. 2.000.000" HorizontalAlignment="Left" Margin="670,130,0,0" VerticalAlignment="Top" Width="254" Height="71" FontSize="20" FontFamily="Sitka Text" Click="btn_2m_Click"/>
+        </Grid>
+        <CheckBox x:Name="cb_custom_nominal" Content="Custom Nominal :" HorizontalAlignment="Left" Margin="250,445,0,0" VerticalAlignment="Top" Height="22" Width="143" FontSize="14" Checked="cb_custom_nominal_Checked" Unchecked="cb_custom_nominal_Unchecked"/>
+        <Button x:Name="btntopup" Content="Top up" HorizontalAlignment="Left" Margin="507,492,0,0" VerticalAlignment="Top" Width="364" Height="46" FontSize="22" Background="#FFD5FFF9" Click="btntopup_Click"/>
+        <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="598" Margin="1096,0,0,0" VerticalAlignment="Top" Width="276" Background="#FF7777FB" Visibility="Hidden" MouseLeave="menugrid_MouseLeave">
+            <Label x:Name="userLabel" Content="Optimum Pride" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="154" FontSize="20" VerticalContentAlignment="Center" Margin="50,0,0,0"/>
+            <StackPanel HorizontalAlignment="Left" Height="368" Margin="0,90,0,0" VerticalAlignment="Top" Width="276">
+                <Button x:Name="Homebtn" Content="  Home" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
+                <Button Content="  My Profile" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Click_1"/>
+                <Button Content="  Cart" Height="59" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
+                <Button Content="  Tokoku" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
+            </StackPanel>
+            <Image HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="49" Source="person-icon.png"/>
+            <Button x:Name="logoutbtn" Content="  Logout" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FFE68FA7" BorderThickness="0,1" Margin="0,538,0,0" Click="Button_Click"/>
+        </Grid>
+    </Grid>
+
+</Page>

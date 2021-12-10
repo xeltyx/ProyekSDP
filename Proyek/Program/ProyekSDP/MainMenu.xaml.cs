@@ -81,7 +81,6 @@ namespace ProyekSDP
             while (reader.Read())
             {
                 user = new loggedUser(id, reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), reader[5].ToString(), Convert.ToInt32(reader[6].ToString()));
-
             }
             conn.conn.Close();
 
@@ -304,10 +303,7 @@ namespace ProyekSDP
             for (int i = 0 + (indexingItem * 8); i < 8 + (indexingItem * 8); i++)
             {
                 if (i < barangList.Count())
-                {
-                    
-
-                    
+                {   
                     labelList[ctr].Content = barangList[i].namaBarang + "\n" + String.Format(CultureInfo.GetCultureInfo("id-ID"), "{0:C2}", barangList[i].Harga);
                     imgList[ctr].Visibility = Visibility.Visible;
                     imgList[ctr].Source = ByteImageConverter.ByteToImage(barangList[i].Gambar);
@@ -365,9 +361,6 @@ namespace ProyekSDP
             {
                 prevButton.IsEnabled = false;
             }
-
-
-
         }
 
         private void cbkategori_SelectionChanged(object sender, SelectionChangedEventArgs e)

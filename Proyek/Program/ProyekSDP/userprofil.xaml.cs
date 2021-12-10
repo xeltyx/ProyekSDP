@@ -29,8 +29,6 @@ namespace ProyekSDP
             InitializeComponent();
             conn.Connect();
             loaduser(id);
-            
-
         }
         private void Update(string name, string email, string notelp,string password)
         {
@@ -161,6 +159,12 @@ namespace ProyekSDP
             {
                 passwordUpd.Text = "Masukkan Password";
             }
+        }
+
+        private void btn_to_topup_Click(object sender, RoutedEventArgs e)
+        {
+            var topup = new top_user(user.id);
+            this.NavigationService.Navigate(topup);
         }
     }
 }

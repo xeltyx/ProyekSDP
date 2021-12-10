@@ -12,11 +12,6 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button x:Name="updBtn" Content="Update" HorizontalAlignment="Left" Margin="412,357,0,0" VerticalAlignment="Top" Width="75" Click="updBtn_Click"/>
-
-
-
-
-
         <TextBox x:Name="notelpUpd" HorizontalAlignment="Left" Height="23" Margin="412,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Text="Update No.Telp" LostFocus="notelpUpd_LostFocus" GotFocus="notelpUpd_GotFocus" PreviewTextInput="notelpUpd_PreviewTextInput"/>
         <TextBox x:Name="emailUpd" HorizontalAlignment="Left" Height="23" Margin="412,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" GotFocus="emailUpd_GotFocus" LostFocus="emailUpd_LostFocus" Text="Update email"/>
         <TextBox x:Name="namaUpd" HorizontalAlignment="Left" Height="23" Margin="412,241,0,0" TextWrapping="Wrap" Text="Update nama" VerticalAlignment="Top" Width="164" GotFocus="namaUpd_GotFocus" LostFocus="namaUpd_LostFocus"/>
@@ -47,6 +42,7 @@
         <Label x:Name="notelp" Content="No.Telp:" HorizontalAlignment="Left" Margin="149,298,0,0" VerticalAlignment="Top"/>
         <Label x:Name="saldo" Content="Saldo:" HorizontalAlignment="Left" Margin="25,340,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="passwordUpd" HorizontalAlignment="Left" Height="23" Margin="412,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" GotFocus="passwordUpd_GotFocus" Text="Masukkan Password" LostFocus="passwordUpd_LostFocus"/>
+        <Button x:Name="btn_to_topup" Content="Top up" HorizontalAlignment="Left" Margin="25,371,0,0" VerticalAlignment="Top" Width="75" Click="btn_to_topup_Click"/>
 
 
 
