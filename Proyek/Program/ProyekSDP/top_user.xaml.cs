@@ -25,6 +25,7 @@ namespace ProyekSDP
         int nominal;
         Connection conn = new Connection();
         MySqlCommand cmd;
+        string request="pending";
         int iduser=-1;
         loggedUser user;
         public top_user(int id)
@@ -148,7 +149,7 @@ namespace ProyekSDP
                 try
                 {
                     conn.conn.Open();
-                    MySqlCommand cmd = new MySqlCommand($"INSERT INTO REQ_SALDO(ID_CUST, SALDOREQ) VALUES('{iduser}','{nominal}')", conn.conn);
+                    MySqlCommand cmd = new MySqlCommand($"INSERT INTO REQ_SALDO(ID_CUST, SALDOREQ,KONFIRMASI) VALUES('{iduser}','{nominal}','{request}')", conn.conn);
                     MessageBox.Show("Sedang memproses topup, jika topup tidak masuk dalam kurung 1x24 jam. Hubungi admin");
                     cmd.ExecuteNonQuery();
                     conn.conn.Close();

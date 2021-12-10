@@ -36,6 +36,7 @@ namespace ProyekSDP
             isimerk();
             isikategori();
             loadUser();
+            LoadSaldo();
             isilistcustomer();
         }
 
@@ -62,6 +63,18 @@ namespace ProyekSDP
             dt = new DataTable();
             sda.Fill(dt);
             dgvcustomer.ItemsSource = dt.DefaultView;
+            conn.conn.Close();
+        }
+        private void LoadSaldo()
+        {
+            conn.conn.Open();
+            cmd = new MySqlCommand();
+            cmd = new MySqlCommand($"SELECT * FROM REQ_SALDO WHERE KONFIRMASI = 'pending' ORDER BY id ASC", conn.conn);
+            //  MySqlDataReader reader = cmd.ExecuteReader();
+            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            sda.Fill(dt);
+            dgvkonfirsaldo.ItemsSource = dt.DefaultView;
             conn.conn.Close();
         }
 
@@ -265,6 +278,7 @@ namespace ProyekSDP
             gridbarang.Visibility = Visibility.Hidden;
             griduser.Visibility = Visibility.Visible;
             gridlaporan.Visibility = Visibility.Hidden;
+            gridsaldo.Visibility = Visibility.Hidden;
         }
 
         private void btnPageBarang_Click(object sender, RoutedEventArgs e)
@@ -272,6 +286,7 @@ namespace ProyekSDP
             gridbarang.Visibility = Visibility.Visible;
             griduser.Visibility = Visibility.Hidden;
             gridlaporan.Visibility = Visibility.Hidden;
+            gridsaldo.Visibility = Visibility.Hidden;
         }
 
         private void dgvcustomer_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -298,12 +313,40 @@ namespace ProyekSDP
             gridlaporan.Visibility = Visibility.Visible;
             gridbarang.Visibility = Visibility.Hidden;
             griduser.Visibility = Visibility.Hidden;
+            gridsaldo.Visibility = Visibility.Hidden;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var login = new Page1();
             this.NavigationService.Navigate(login);
+        }
+
+        private void btnreqsaldo_Click(object sender, RoutedEventArgs e)
+        {
+            gridlaporan.Visibility = Visibility.Hidden;
+            gridbarang.Visibility = Visibility.Hidden;
+            griduser.Visibility = Visibility.Hidden;
+            gridsaldo.Visibility = Visibility.Visible;
+        }
+
+        private void dgvkonfirsaldo_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (dgvkonfirsaldo.SelectedIndex != -1)
+            {
+                tbnamacust.Text = dt.Rows[dgvkonfirsaldo.SelectedIndex][1].ToString();
+                tbsaldo.Text = dt.Rows[dgvkonfirsaldo.SelectedIndex][2].ToString();
+            }
+        }
+
+        private void btnterima_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btntolak_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void btn_insert_Click(object sender, RoutedEventArgs e)
