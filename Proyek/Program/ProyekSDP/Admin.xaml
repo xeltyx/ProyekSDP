@@ -54,7 +54,7 @@
                 <Label Content="Saldo" HorizontalAlignment="Left" Margin="10,430,0,0" VerticalAlignment="Top" Height="39" Width="105"/>
                 <TextBox x:Name="tbcustomer_saldo" HorizontalAlignment="Left" Height="39" Margin="120,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" IsReadOnly="True"/>
             </Grid>
-            <Grid x:Name="gridsaldo" HorizontalAlignment="Left" Height="576" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Visible">
+            <Grid x:Name="gridsaldo" HorizontalAlignment="Left" Height="576" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Hidden">
                 <DataGrid x:Name="dgvkonfirsaldo" HorizontalAlignment="Left" Height="331" Margin="10,10,0,0" VerticalAlignment="Top" Width="849" IsReadOnly="True" Background="#FFF0F0F0" MouseDoubleClick="dgvkonfirsaldo_MouseDoubleClick"/>
                 <TextBox x:Name="tbnamacust" HorizontalAlignment="Left" Height="39" Margin="120,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" IsReadOnly="True"/>
                 <Label Content="Nama Customer" HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" Height="39" Width="105"/>

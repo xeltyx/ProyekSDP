@@ -69,7 +69,7 @@ namespace ProyekSDP
         {
             conn.conn.Open();
             cmd = new MySqlCommand();
-            cmd = new MySqlCommand($"SELECT * FROM REQ_SALDO WHERE KONFIRMASI = 'pending' ORDER BY id ASC", conn.conn);
+            cmd = new MySqlCommand($"SELECT REQ_SALDO.ID AS \"ID\",CUSTOMER.NAMA_CUST AS  \"NAMA CUSTOMER\",REQ_SALDO.saldoreq AS  \"SALDO\" FROM REQ_SALDO,CUSTOMER WHERE CUSTOMER.ID = REQ_SALDO.ID_CUST AND REQ_SALDO.KONFIRMASI = 'pending' ORDER BY REQ_SALDO.id ASC", conn.conn);
             //  MySqlDataReader reader = cmd.ExecuteReader();
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             dt = new DataTable();
@@ -341,12 +341,67 @@ namespace ProyekSDP
 
         private void btnterima_Click(object sender, RoutedEventArgs e)
         {
-
+            if (tbnamacust.Text.Length != 0 || tbsaldo.Text.Length != 0)
+            {
+                conn.conn.Open();
+                using (MySqlTransaction trans = conn.conn.BeginTransaction())
+                {
+                    try
+                    {
+                        MySqlCommand cmd = new MySqlCommand($"Update CUSTOMER SET SALDO = {Convert.ToInt32(tbsaldo.Text)} WHERE NAMA_CUST = '{tbnamacust.Text}'" , conn.conn);
+                        MySqlCommand cmd2 = new MySqlCommand($"Update REQ_SALDO SET KONFIRMASI = 'accepted' WHERE ID = {dt.Rows[dgvkonfirsaldo.SelectedIndex][0]}", conn.conn);
+                        cmd.ExecuteNonQuery();
+                        cmd2.ExecuteNonQuery();
+                        trans.Commit();
+                        conn.conn.Close();
+                        MessageBox.Show("Top Up Berhasil Diterima");
+                        LoadSaldo();
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        conn.conn.Close();
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                   
+            }
+            else
+            {
+                MessageBox.Show("pilihan tidak boleh kosong");
+            }
         }
 
         private void btntolak_Click(object sender, RoutedEventArgs e)
         {
-
+            if (tbnamacust.Text.Length != 0 || tbsaldo.Text.Length != 0)
+            {
+                conn.conn.Open();
+                using (MySqlTransaction trans = conn.conn.BeginTransaction())
+                {
+                    try
+                    {
+                        MySqlCommand cmd = new MySqlCommand($"Update REQ_SALDO SET KONFIRMASI = 'rejected' WHERE ID = {dt.Rows[dgvkonfirsaldo.SelectedIndex][0]}", conn.conn);
+                        cmd.ExecuteNonQuery();
+                        trans.Commit();
+                        conn.conn.Close();
+                        MessageBox.Show("Top Up Berhasil Ditolak");
+                        LoadSaldo();
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        conn.conn.Close();
+                        MessageBox.Show(ex.Message);
+                    }
+                    tbnamacust.Clear();
+                    tbsaldo.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("pilihan tidak boleh kosong");
+            }
         }
 
         private void btn_insert_Click(object sender, RoutedEventArgs e)
