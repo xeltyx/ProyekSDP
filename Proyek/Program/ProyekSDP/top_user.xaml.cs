@@ -52,13 +52,13 @@ namespace ProyekSDP
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var Main = new MainMenu(user.id);
+            var Main = new Page1();
             this.NavigationService.Navigate(Main);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var profil = new userprofil(user.id);
+            var profil = new userprofil(iduser);
             this.NavigationService.Navigate(profil);
         }
 
