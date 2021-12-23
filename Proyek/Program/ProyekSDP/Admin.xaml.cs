@@ -27,6 +27,7 @@ namespace ProyekSDP
         DataTable dt;
         string kodekat, kodemerk;
         int getiduser;
+        List<ReportData> dbeliData = new List<ReportData>();
         int index = 0;
         public Admin()
         {
@@ -79,16 +80,30 @@ namespace ProyekSDP
         }
 
         private void loadLaporan()
-        {
+        {//laporan
             conn.conn.Open();
             cmd = new MySqlCommand();
-            cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG AS \"NAMA BARANG\",H_BELI.NOMOR_NOTA AS \"NOMOR NOTA\",D_BELI.jumlah,H_BELI.TOTAL_PEMBELIAN as \"Total Pembelian\" from Barang,H_BELI,D_BELI,Customer where Customer.id={getiduser} and H_BELI.ID_CUSTOMER=CUSTOMER.ID and D_BELI.NOMOR_NOTA=H_BELI.NOMOR_NOTA and BARANG.ID=D_BELI.ID_BARANG ORDER BY BARANG.NAMA_BARANG", conn.conn);
+            cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG AS \"NAMA BARANG\",H_BELI.NOMOR_NOTA AS \"NOMOR NOTA\",D_BELI.jumlah,D_BELI.SUBTOTAL as \"Subtotal\" from Barang,H_BELI,D_BELI,Customer where Customer.id={getiduser} and H_BELI.ID_CUSTOMER=CUSTOMER.ID and D_BELI.NOMOR_NOTA=H_BELI.NOMOR_NOTA and BARANG.ID=D_BELI.ID_BARANG ORDER BY BARANG.NAMA_BARANG", conn.conn);
             //  MySqlDataReader reader = cmd.ExecuteReader();
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
-            dgvlaporan.ItemsSource = dt.DefaultView;
+            //dgvlaporan.ItemsSource = dt.DefaultView;
             conn.conn.Close();
+
+
+            conn.conn.Open();
+            cmd = new MySqlCommand();
+            cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG,H_BELI.NOMOR_NOTA,D_BELI.jumlah,D_BELI.SUBTOTAL from Barang,H_BELI,D_BELI,Customer where Customer.id={getiduser} and H_BELI.ID_CUSTOMER=CUSTOMER.ID and D_BELI.NOMOR_NOTA=H_BELI.NOMOR_NOTA and BARANG.ID=D_BELI.ID_BARANG ORDER BY BARANG.NAMA_BARANG", conn.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            
+            while(reader.Read())
+            {
+                dbeliData.Add(new ReportData(reader[0].ToString(), reader[1].ToString(), Convert.ToInt32(reader[2].ToString()), Convert.ToInt32(reader[3].ToString())));
+            }
+
+            conn.conn.Close();
+            
         }
 
         private void isilistcustomer()

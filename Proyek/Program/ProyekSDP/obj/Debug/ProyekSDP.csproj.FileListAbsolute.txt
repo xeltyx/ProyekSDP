@@ -132,3 +132,7 @@ E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\top_user.g.cs
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\top_user.baml
 D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\top_user.g.cs
 D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\top_user.baml
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\top_user.g.cs
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\top_user.baml
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\RdlCompile.cache
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\RdlCompile.compiled
