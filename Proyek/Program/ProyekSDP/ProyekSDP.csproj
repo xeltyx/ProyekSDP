@@ -127,6 +127,9 @@
       <DependentUpon>register.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReportData.cs" />
+    <Compile Include="sellerpage.xaml.cs">
+      <DependentUpon>sellerpage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="top_user.xaml.cs">
       <DependentUpon>top_user.xaml</DependentUpon>
@@ -155,6 +158,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="sellerpage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
