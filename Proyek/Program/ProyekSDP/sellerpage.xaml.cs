@@ -20,7 +20,7 @@ namespace ProyekSDP
     /// </summary>
     public partial class sellerpage : Page
     {
-        public sellerpage()
+        public sellerpage(int id)
         {
             InitializeComponent();
         }

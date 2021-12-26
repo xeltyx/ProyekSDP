@@ -541,6 +541,12 @@ namespace ProyekSDP
 
             conn.conn.Close();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var tokoku = new sellerpage(user.id);
+            this.NavigationService.Navigate(tokoku);
+        }
     }
 
     public class ByteImageConverter

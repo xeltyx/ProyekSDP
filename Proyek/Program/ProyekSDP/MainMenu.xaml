@@ -15,7 +15,7 @@
             <Label Content="Recommended!" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="9,9,0,0"/>
         </Border>
 
-        <Image HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="1372" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="1379" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466" Stretch="Fill" Margin="0,0,-10,0"/>
         <Label Content="Alterna" HorizontalAlignment="Left" Margin="5,-4,0,0" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36"/>
         <Label Content="Tech" HorizontalAlignment="Left" Margin="98,40,0,0" VerticalAlignment="Top" Height="60" Width="154" FontFamily="Georgia" FontSize="48"/>
         <Button x:Name="menubtn" Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="1317,10,10,546" Height="42" Width="43" BorderBrush="#FF9999FF" Click="menubtn_Click">
@@ -27,13 +27,13 @@
         </Button>
 
 
-        <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="598" Margin="1096,0,0,0" VerticalAlignment="Top" Width="276" Background="#FF7777FB" Visibility="Hidden" MouseLeave="menugrid_MouseLeave">
+        <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="598" Margin="1096,0,0,0" VerticalAlignment="Top" Width="276" Background="#FF7777FB" Visibility="Visible" MouseLeave="menugrid_MouseLeave">
             <Label x:Name="userLabel" Content="Optimum Pride" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="154" FontSize="20" VerticalContentAlignment="Center" Margin="50,0,0,0"/>
             <StackPanel HorizontalAlignment="Left" Height="368" Margin="0,90,0,0" VerticalAlignment="Top" Width="276">
                 <Button x:Name="Homebtn" Content="  Home" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
                 <Button Content="  My Profile" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Click_1"/>
                 <Button Content="  Cart" Height="59" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
-                <Button Content="  Tokoku" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
+                <Button Content="  Tokoku" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Click_2"/>
             </StackPanel>
             <Image HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="49" Source="person-icon.png"/>
             <Button x:Name="logoutbtn" Content="  Logout" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FFE68FA7" BorderThickness="0,1" Margin="0,538,0,0" Click="Button_Click"/>
@@ -96,50 +96,5 @@
             <Button x:Name="btnaddcart" Content="Add To Cart" HorizontalAlignment="Left" Margin="366,204,0,0" VerticalAlignment="Top" Width="75" Height="26"/>
         </Grid>
         <Label Content="Label" HorizontalAlignment="Left" Margin="-384,152,0,0" VerticalAlignment="Top"/>
-        <Grid x:Name="gridmenutoko_Copy" HorizontalAlignment="Left" Height="474" Margin="196,110,0,14" VerticalAlignment="Center" Width="721" RenderTransformOrigin="0.504,0.462" Visibility="Visible">
-            <ComboBox x:Name="cbkategori1" HorizontalAlignment="Left" Margin="27,49,0,0" VerticalAlignment="Top" Width="158" Height="23" SelectionChanged="cbkategori_SelectionChanged">
-                <ComboBox.BindingGroup>
-                    <BindingGroup/>
-                </ComboBox.BindingGroup>
-            </ComboBox>
-            <TextBox x:Name="tbsearch1" HorizontalAlignment="Left" Height="23" Margin="377,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
-            <Label x:Name="lblprod9" Content="Label" HorizontalAlignment="Left" Margin="474,205,0,0" VerticalAlignment="Top" Width="122" MouseDoubleClick="lblprod4_MouseDoubleClick"/>
-            <Image x:Name="imgprod9" HorizontalAlignment="Left" Height="110" Margin="474,95,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod10" HorizontalAlignment="Left" Height="110" Margin="327,95,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod11" HorizontalAlignment="Left" Height="110" Margin="34,95,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod12" HorizontalAlignment="Left" Height="110" Margin="180,95,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Label x:Name="lblprod10" Content="Label" HorizontalAlignment="Left" Margin="34,205,0,0" VerticalAlignment="Top" Width="122" MouseDoubleClick="lblprod1_MouseDoubleClick"/>
-            <Label x:Name="lblprod11" Content="Label" HorizontalAlignment="Left" Margin="180,205,0,0" VerticalAlignment="Top" Width="122" MouseDoubleClick="lblprod2_MouseDoubleClick"/>
-            <Label x:Name="lblprod12" Content="Label" HorizontalAlignment="Left" Margin="327,205,0,0" VerticalAlignment="Top" Width="122" MouseDoubleClick="lblprod3_MouseDoubleClick"/>
-            <Button x:Name="nextbtn1" Content="" HorizontalAlignment="Left" Margin="327,421,0,0" VerticalAlignment="Top" Width="35" Height="35" BorderThickness="0" Click="nextbtn_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="next-button.png"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="prevButton1" Content="" HorizontalAlignment="Left" Margin="267,421,0,0" VerticalAlignment="Top" Width="35" Height="35" BorderThickness="0" Click="prevButton_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="prev-button.png"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="findbtn1" Content="Find" HorizontalAlignment="Left" Margin="561,49,0,0" VerticalAlignment="Top" Width="35" Height="23" Click="findbtn_Click" RenderTransformOrigin="-0.314,0.696"/>
-            <Label x:Name="lblprod13" Content="Label" HorizontalAlignment="Left" Margin="474,370,0,0" VerticalAlignment="Top" Width="122" MouseDoubleClick="lblprod8_MouseDoubleClick"/>
-            <Image x:Name="imgprod13" HorizontalAlignment="Left" Height="110" Margin="474,260,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod14" HorizontalAlignment="Left" Height="110" Margin="327,260,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod15" HorizontalAlignment="Left" Height="110" Margin="34,260,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod16" HorizontalAlignment="Left" Height="110" Margin="180,260,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Label x:Name="lblprod14" Content="Label" HorizontalAlignment="Left" Margin="34,370,0,0" VerticalAlignment="Top" Width="122" MouseDoubleClick="lblprod5_MouseDoubleClick"/>
-            <Label x:Name="lblprod15" Content="Label" HorizontalAlignment="Left" Margin="180,370,0,0" VerticalAlignment="Top" Width="122" MouseDoubleClick="lblprod6_MouseDoubleClick"/>
-            <Label x:Name="lblprod16" Content="Label" HorizontalAlignment="Left" Margin="327,370,0,0" VerticalAlignment="Top" Width="122" MouseDoubleClick="lblprod7_MouseDoubleClick"/>
-            <Label Content="Search by Category:" HorizontalAlignment="Left" Margin="27,18,0,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="filtercb1" HorizontalAlignment="Left" Margin="216,49,0,0" VerticalAlignment="Top" Width="134" Height="23">
-                <ComboBox.BindingGroup>
-                    <BindingGroup/>
-                </ComboBox.BindingGroup>
-            </ComboBox>
-            <Label Content="Filter:" HorizontalAlignment="Left" Margin="216,23,0,0" VerticalAlignment="Top"/>
-            <Label Content="Keyword:" HorizontalAlignment="Left" Margin="377,23,0,0" VerticalAlignment="Top"/>
-
-
-        </Grid>
     </Grid>
 </Page>
