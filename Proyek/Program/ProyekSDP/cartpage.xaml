@@ -1,0 +1,41 @@
+﻿<Page x:Class="ProyekSDP.cartpage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProyekSDP"
+      mc:Ignorable="d"
+      Title="MainMenu" Width="615.5" Height="538.5" Opacity="0.975">
+
+    <Grid Background="White" HorizontalAlignment="Right" Width="1372" Margin="-382,-60,-374,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+
+        <Image HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="1379" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466" Stretch="Fill" Margin="0,0,-10,0"/>
+        <Label Content="Alterna" HorizontalAlignment="Left" Margin="5,-4,0,0" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36"/>
+        <Label Content="Tech" HorizontalAlignment="Left" Margin="98,40,0,0" VerticalAlignment="Top" Height="60" Width="154" FontFamily="Georgia" FontSize="48"/>
+        <Button x:Name="menubtn" Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="1317,10,10,546" Height="42" Width="43" BorderBrush="#FF9999FF" Click="menubtn_Click">
+
+            <Button.Background>
+                <ImageBrush ImageSource="menuicon.png" Stretch="Uniform"/>
+            </Button.Background>
+
+        </Button>
+
+
+        <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="598" Margin="1096,0,0,0" VerticalAlignment="Top" Width="276" Background="#FF7777FB" Visibility="Hidden" MouseLeave="menugrid_MouseLeave">
+            <Label x:Name="userLabel" Content="Optimum Pride" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="154" FontSize="20" VerticalContentAlignment="Center" Margin="50,0,0,0"/>
+            <StackPanel HorizontalAlignment="Left" Height="368" Margin="0,90,0,0" VerticalAlignment="Top" Width="276">
+                <Button x:Name="Homebtn" Content="  Home" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Homebtn_Click"/>
+                <Button Content="  My Profile" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Click_1"/>
+                <Button Content="  Cart" Height="59" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
+                <Button Content="  Tokoku" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Click_2"/>
+            </StackPanel>
+            <Image HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="49" Source="person-icon.png"/>
+            <Button x:Name="logoutbtn" Content="  Logout" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FFE68FA7" BorderThickness="0,1" Margin="0,538,0,0" Click="Button_Click"/>
+        </Grid>
+        
+    </Grid>
+</Page>

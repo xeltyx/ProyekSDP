@@ -81,18 +81,28 @@ namespace ProyekSDP
 
         private void loadLaporan()
         {//laporan
+            int sub = 0;
             conn.conn.Open();
             cmd = new MySqlCommand();
             cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG AS \"NAMA BARANG\",H_BELI.NOMOR_NOTA AS \"NOMOR NOTA\",D_BELI.jumlah,D_BELI.SUBTOTAL as \"Subtotal\" from Barang,H_BELI,D_BELI,Customer where Customer.id={getiduser} and H_BELI.ID_CUSTOMER=CUSTOMER.ID and D_BELI.NOMOR_NOTA=H_BELI.NOMOR_NOTA and BARANG.ID=D_BELI.ID_BARANG ORDER BY BARANG.NAMA_BARANG", conn.conn);
-            //MySqlDataReader reader = cmd.ExecuteReader();
+            
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
             dgvLaporan.ItemsSource = dt.DefaultView;
             conn.conn.Close();
 
-            customerLb.Content = "Name: " + (cblistcustomer.SelectedItem.ToString().Split('-'))[1];
 
+            conn.conn.Open();
+            cmd = new MySqlCommand($"SELECT D_BELI.SUBTOTAL from Barang,H_BELI,D_BELI,Customer where Customer.id={getiduser} and H_BELI.ID_CUSTOMER=CUSTOMER.ID and D_BELI.NOMOR_NOTA=H_BELI.NOMOR_NOTA and BARANG.ID=D_BELI.ID_BARANG ORDER BY BARANG.NAMA_BARANG", conn.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while(reader.Read())
+            {
+                sub += Convert.ToInt32(reader[0].ToString());
+            }
+            customerLb.Content = "Name: " + (cblistcustomer.SelectedItem.ToString().Split('-'))[1];
+            totalLb.Content = "Total: " + sub.ToString();
 
         }
 

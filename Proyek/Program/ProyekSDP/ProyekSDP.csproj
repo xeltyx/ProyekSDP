@@ -110,6 +110,9 @@
       <DependentUpon>Admin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Barang.cs" />
+    <Compile Include="cartpage.xaml.cs">
+      <DependentUpon>cartpage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="DataSetDBeli.cs">
       <DependentUpon>DataSetDBeli.xsd</DependentUpon>
@@ -138,6 +141,10 @@
       <DependentUpon>userprofil.xaml</DependentUpon>
     </Compile>
     <Page Include="Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="cartpage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

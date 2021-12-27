@@ -29,6 +29,7 @@ namespace ProyekSDP
         List<Barang> barangList = new List<Barang>();
         Label[] labelList = new Label[8];
         Image[] imgList = new Image[8];
+        List<int> cart = new List<int>();
         int indexingItem = 0;
         String[] isicombosort = {"no filter","sort by highest price","sort by lowest price"};
         public MainMenu(int id)
@@ -62,11 +63,7 @@ namespace ProyekSDP
             menugrid.Visibility = Visibility.Visible;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var login = new Page1();
-            this.NavigationService.Navigate(login);
-        }
+        
 
         private void menugrid_MouseLeave(object sender, MouseEventArgs e)
         {
@@ -333,6 +330,12 @@ namespace ProyekSDP
             loadBarang(id);
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var login = new Page1();
+            this.NavigationService.Navigate(login);
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var profil = new userprofil(user.id);
@@ -546,6 +549,27 @@ namespace ProyekSDP
         {
             var tokoku = new sellerpage(user.id);
             this.NavigationService.Navigate(tokoku);
+        }
+
+        private void btnaddcart_Click(object sender, RoutedEventArgs e)
+        {
+            string[] temp = lblprod8.Content.ToString().Split('\n');
+            conn.conn.Open();
+            MySqlCommand cmd = new MySqlCommand($"SELECT ID FROM BARANG WHERE NAMA_BARANG = '{temp[0]}'", conn.conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while(reader.Read())
+            {
+                cart.Add(Convert.ToInt32(reader[0].ToString()));
+            }
+            conn.conn.Close();
+            MessageBox.Show("Sukses menambahkan ke cart");
+        }
+
+        private void cartBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var cartp = new cartpage(cart, user.id);
+            this.NavigationService.Navigate(cartp);
         }
     }
 

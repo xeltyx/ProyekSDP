@@ -27,12 +27,12 @@
         </Button>
 
 
-        <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="598" Margin="1096,0,0,0" VerticalAlignment="Top" Width="276" Background="#FF7777FB" Visibility="Visible" MouseLeave="menugrid_MouseLeave">
+        <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="598" Margin="1096,0,0,0" VerticalAlignment="Top" Width="276" Background="#FF7777FB" Visibility="Hidden" MouseLeave="menugrid_MouseLeave">
             <Label x:Name="userLabel" Content="Optimum Pride" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="154" FontSize="20" VerticalContentAlignment="Center" Margin="50,0,0,0"/>
             <StackPanel HorizontalAlignment="Left" Height="368" Margin="0,90,0,0" VerticalAlignment="Top" Width="276">
                 <Button x:Name="Homebtn" Content="  Home" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
                 <Button Content="  My Profile" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Click_1"/>
-                <Button Content="  Cart" Height="59" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
+                <Button x:Name="cartBtn" Content="  Cart" Height="59" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="cartBtn_Click"/>
                 <Button Content="  Tokoku" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Click_2"/>
             </StackPanel>
             <Image HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="49" Source="person-icon.png"/>
@@ -93,7 +93,7 @@
             <Button x:Name="btnbackmenu" Content="Back to menu" HorizontalAlignment="Left" Margin="595,29,0,0" VerticalAlignment="Top" Width="122" Height="29" Click="btnbackmenu_Click"/>
             <Label x:Name="lbldetail_harga" Content="Label" HorizontalAlignment="Left" Margin="171,119,0,0" VerticalAlignment="Top" Width="270"/>
             <Label x:Name="lbldetail_stok" Content="Label" HorizontalAlignment="Left" Margin="27,204,0,0" VerticalAlignment="Top" Width="122"/>
-            <Button x:Name="btnaddcart" Content="Add To Cart" HorizontalAlignment="Left" Margin="366,204,0,0" VerticalAlignment="Top" Width="75" Height="26"/>
+            <Button x:Name="btnaddcart" Content="Add To Cart" HorizontalAlignment="Left" Margin="366,204,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="btnaddcart_Click"/>
         </Grid>
         <Label Content="Label" HorizontalAlignment="Left" Margin="-384,152,0,0" VerticalAlignment="Top"/>
     </Grid>
