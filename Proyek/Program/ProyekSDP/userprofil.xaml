@@ -11,6 +11,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <TextBox x:Name="passwordUpd" HorizontalAlignment="Left" Height="23" Margin="412,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" GotFocus="passwordUpd_GotFocus" Text="Masukkan Password" LostFocus="passwordUpd_LostFocus"/>
         <Button x:Name="updBtn" Content="Update" HorizontalAlignment="Left" Margin="412,357,0,0" VerticalAlignment="Top" Width="75" Click="updBtn_Click"/>
         <TextBox x:Name="notelpUpd" HorizontalAlignment="Left" Height="23" Margin="412,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Text="Update No.Telp" LostFocus="notelpUpd_LostFocus" GotFocus="notelpUpd_GotFocus" PreviewTextInput="notelpUpd_PreviewTextInput"/>
         <TextBox x:Name="emailUpd" HorizontalAlignment="Left" Height="23" Margin="412,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" GotFocus="emailUpd_GotFocus" LostFocus="emailUpd_LostFocus" Text="Update email"/>
@@ -19,34 +20,27 @@
         <Label Content="Alterna" HorizontalAlignment="Left" Margin="25,18,0,0" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36"/>
         <Label Content="Tech" HorizontalAlignment="Left" Margin="118,73,0,0" VerticalAlignment="Top" Height="61" Width="151" FontFamily="Georgia" FontSize="48"/>
         <Button x:Name="menubtn" Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="563,18,10,478" Height="42" Width="43" BorderBrush="#FF9999FF" Click="menubtn_Click">
-
             <Button.Background>
                 <ImageBrush ImageSource="menuicon.png" Stretch="Uniform"/>
             </Button.Background>
-
         </Button>
+        <Image HorizontalAlignment="Left" Height="93" VerticalAlignment="Top" Width="88" Source="person-icon.png" Margin="25,200,0,0"/>
         <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="536" Margin="412,2,0,0" VerticalAlignment="Top" Width="204" Background="#FF7777FB" Visibility="Hidden" MouseLeave="menugrid_MouseLeave">
             <Label x:Name="userLabel" Content="Optimum Pride" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="154" FontSize="20" VerticalContentAlignment="Center" Margin="50,0,0,0"/>
             <StackPanel HorizontalAlignment="Left" Height="368" Margin="0,90,0,0" VerticalAlignment="Top" Width="204">
                 <Button x:Name="Homebtn" Content="  Home" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Click"/>
                 <Button Content="  My Profile" Height="59" HorizontalContentAlignment="Left" FontSize="20" Margin="0" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1"/>
                 <Button Content="  Cart" Height="59" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Click_1"/>
+                <Button Content=" Tokoku" Height="59" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FF9696FA" BorderThickness="0,1" Click="Button_Toko"/>
             </StackPanel>
             <Image HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="49" Source="person-icon.png"/>
-            <Button x:Name="logoutbtn" Content="  Logout" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FFE68FA7" BorderThickness="0,1" Margin="0,477,0,0" Click="Button_Click"/>
+            <Button x:Name="logoutbtn" Content="  Logout" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FFE68FA7" BorderThickness="0,1" Margin="0,477,0,0" Click="Button_Logout"/>
         </Grid>
-        <Image HorizontalAlignment="Left" Height="93" VerticalAlignment="Top" Width="88" Source="person-icon.png" Margin="25,200,0,0"/>
         <Label x:Name="username" Content="Username:" HorizontalAlignment="Left" Margin="149,208,0,0" VerticalAlignment="Top"/>
         <Label x:Name="name" Content="Nama:" HorizontalAlignment="Left" Margin="149,238,0,0" VerticalAlignment="Top"/>
         <Label x:Name="email" Content="Email:" HorizontalAlignment="Left" Margin="149,268,0,0" VerticalAlignment="Top"/>
         <Label x:Name="notelp" Content="No.Telp:" HorizontalAlignment="Left" Margin="149,298,0,0" VerticalAlignment="Top"/>
         <Label x:Name="saldo" Content="Saldo:" HorizontalAlignment="Left" Margin="25,340,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="passwordUpd" HorizontalAlignment="Left" Height="23" Margin="412,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" GotFocus="passwordUpd_GotFocus" Text="Masukkan Password" LostFocus="passwordUpd_LostFocus"/>
         <Button x:Name="btn_to_topup" Content="Top up" HorizontalAlignment="Left" Margin="25,371,0,0" VerticalAlignment="Top" Width="75" Click="btn_to_topup_Click"/>
-
-
-
-
-
     </Grid>
 </Page>

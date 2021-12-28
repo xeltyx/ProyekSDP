@@ -23,6 +23,7 @@ namespace ProyekSDP
     public partial class userprofil : Page
     {
         Connection conn = new Connection();
+        
         loggedUser user;
         public userprofil(int id)
         {
@@ -79,7 +80,9 @@ namespace ProyekSDP
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            List<int> t = new List<int>();
+            var cart = new cartpage(t, user.id);
+            this.NavigationService.Navigate(cart);
         }
 
         private void namaUpd_GotFocus(object sender, RoutedEventArgs e)
@@ -165,6 +168,18 @@ namespace ProyekSDP
         {
             var topup = new top_user(user.id);
             this.NavigationService.Navigate(topup);
+        }
+
+        private void Button_Logout(object sender, RoutedEventArgs e)
+        {
+            var logout = new Page1();
+            this.NavigationService.Navigate(logout);
+        }
+
+        private void Button_Toko(object sender, RoutedEventArgs e)
+        {
+            var seller = new sellerpage(user.id);
+            this.NavigationService.Navigate(seller);
         }
     }
 }

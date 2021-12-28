@@ -5,76 +5,78 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProyekSDP"
       mc:Ignorable="d"
-      Title="sellerpage" Height="881" Width="1393">
+      Title="sellerpage" Height="758" Width="1375">
 
-    <Grid Background="White" Margin="0,0,11,137">
+    <Grid Background="White" Margin="0,0,0,-118">
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="59*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1381*"/>
+            <ColumnDefinition Width="1350*"/>
+            <ColumnDefinition Width="31*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="1399" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="-7,0,-10,0"/>
-        <Label Content="Alterna" HorizontalAlignment="Left" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36" Grid.RowSpan="2"/>
-        <Label Content="Tech" HorizontalAlignment="Left" Margin="95,0,0,0" VerticalAlignment="Top" Height="60" Width="154" FontFamily="Georgia" FontSize="48" Grid.Row="1"/>
-        <Grid Name="gridseller_insert" Height="692" Margin="48,102,28,-86" VerticalAlignment="Top" Visibility="Hidden" Grid.Row="1">
-            <Rectangle Fill="#FFECECEC" HorizontalAlignment="Left" Height="672" Margin="268,10,0,0" Stroke="White" VerticalAlignment="Top" Width="707"/>
-            <Label Content="Nama:" HorizontalAlignment="Left" Margin="374,102,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="86" FontSize="16"/>
-            <TextBox x:Name="tb_seller_nama" HorizontalAlignment="Left" Height="30" Margin="482,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369"/>
-            <Label Content="Merk :" HorizontalAlignment="Left" Margin="374,164,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="86" FontSize="16"/>
-            <Label Content="Kategori :" HorizontalAlignment="Left" Margin="374,230,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="86" FontSize="16"/>
-            <Label Content="Stok :" HorizontalAlignment="Left" Margin="374,302,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="86" FontSize="16"/>
-            <Label Content="Harga :" HorizontalAlignment="Left" Margin="374,380,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="86" FontSize="16"/>
-            <Label Content="Image :" HorizontalAlignment="Left" Margin="374,470,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="86" FontSize="16"/>
-            <ComboBox x:Name="cb_seller_merk" HorizontalAlignment="Left" Margin="482,164,0,0" VerticalAlignment="Top" Width="369" Height="30"/>
-            <ComboBox x:Name="cb_seller_kat" HorizontalAlignment="Left" Margin="482,230,0,0" VerticalAlignment="Top" Width="369" Height="30"/>
-            <TextBox x:Name="tb_seller_stok" HorizontalAlignment="Left" Height="32" Margin="482,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369"/>
-            <TextBox x:Name="tb_seller_harga" HorizontalAlignment="Left" Height="32" Margin="482,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369"/>
-            <RichTextBox x:Name="rtb_seller_image" HorizontalAlignment="Left" Height="106" Margin="482,470,0,0" VerticalAlignment="Top" Width="369">
+        <Image Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466" Stretch="Fill" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="0,0,0,766"/>
+        <Label Content="Alterna" HorizontalAlignment="Left" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36" Grid.RowSpan="2" Margin="10,0,0,0"/>
+        <Label Content="Tech" HorizontalAlignment="Left" Margin="120,0,0,0" VerticalAlignment="Top" Height="60" Width="154" FontFamily="Georgia" FontSize="48" Grid.Row="1"/>
+        <Grid Name="gridseller_insert" Margin="48,88,28,128" Visibility="Hidden" Grid.Row="1" Grid.ColumnSpan="2">
+            <Rectangle Fill="#FFECECEC" HorizontalAlignment="Left" Margin="31,10,0,29" Stroke="White" Width="1230"/>
+            <Label Content="Nama:" HorizontalAlignment="Left" Margin="98,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="86" FontSize="16"/>
+            <TextBox x:Name="tb_seller_nama" HorizontalAlignment="Left" Height="30" Margin="206,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369"/>
+            <Label Content="Merk :" HorizontalAlignment="Left" Margin="98,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="86" FontSize="16"/>
+            <Label Content="Kategori :" HorizontalAlignment="Left" Margin="98,222,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="86" FontSize="16"/>
+            <Label Content="Stok :" HorizontalAlignment="Left" Margin="98,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="86" FontSize="16"/>
+            <Label Content="Harga :" HorizontalAlignment="Left" Margin="687,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="62" FontSize="16"/>
+            <Label Content="Image (Base64 code):" HorizontalAlignment="Left" Margin="607,161,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="166" FontSize="16" Height="32"/>
+            <ComboBox x:Name="cb_seller_merk" HorizontalAlignment="Left" Margin="206,156,0,0" VerticalAlignment="Top" Width="369" Height="30"/>
+            <ComboBox x:Name="cb_seller_kat" HorizontalAlignment="Left" Margin="206,222,0,0" VerticalAlignment="Top" Width="369" Height="30"/>
+            <TextBox x:Name="tb_seller_stok" HorizontalAlignment="Left" Height="32" Margin="206,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369"/>
+            <TextBox x:Name="tb_seller_harga" HorizontalAlignment="Left" Height="32" Margin="795,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370"/>
+            <RichTextBox x:Name="rtb_seller_image" HorizontalAlignment="Left" Height="106" Margin="795,161,0,0" VerticalAlignment="Top" Width="370">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-            <Button x:Name="btn_seller_insert" Content="Add" HorizontalAlignment="Left" Margin="360,614,0,0" VerticalAlignment="Top" Width="520" Height="44"/>
-            <Label Content="Insert Barang " HorizontalAlignment="Left" Margin="549,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="168" FontSize="24" Height="46" FontWeight="Bold"/>
-            <Grid HorizontalAlignment="Left" Height="100" Margin="482,159,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button x:Name="btn_seller_insert" Content="Add" HorizontalAlignment="Left" Margin="98,373,0,0" VerticalAlignment="Top" Width="1067" Height="62" Click="btn_seller_insert_Click"/>
+            <Label Content="Insert Barang " HorizontalAlignment="Left" Margin="516,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="168" FontSize="24" Height="46" FontWeight="Bold"/>
+            <Grid HorizontalAlignment="Left" Height="100" Margin="206,152,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button x:Name="btn_seller_backtohome" Content="Back to Home" HorizontalAlignment="Left" Margin="98,446,0,0" VerticalAlignment="Top" Width="1067" Height="62" Click="btn_seller_backtohome_Click"/>
         </Grid>
-        <Grid x:Name="gridseller_home" HorizontalAlignment="Left" Height="706" Visibility="Hidden" Margin="48,88,0,-86" VerticalAlignment="Top" Width="1280" Grid.Row="1">
-            <Rectangle Fill="#FFECECEC" HorizontalAlignment="Left" Height="590" Margin="247,10,0,0" Stroke="White" VerticalAlignment="Top" Width="781"/>
-            <Label Content="List Barang Jual" HorizontalAlignment="Left" Margin="488,28,0,0" VerticalAlignment="Top" Height="68" Width="326" FontSize="36" FontWeight="Bold"/>
-            <Label x:Name="lblprod4" Content="Label" HorizontalAlignment="Left" Margin="797,227,0,0" VerticalAlignment="Top" Width="122" />
-            <Image x:Name="imgprod4" HorizontalAlignment="Left" Height="110" Margin="797,117,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod3" HorizontalAlignment="Left" Height="110" Margin="650,117,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod1" HorizontalAlignment="Left" Height="110" Margin="357,117,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod2" HorizontalAlignment="Left" Height="110" Margin="503,117,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Label x:Name="lblprod1" Content="Label" HorizontalAlignment="Left" Margin="357,227,0,0" VerticalAlignment="Top" Width="122"/>
-            <Label x:Name="lblprod2" Content="Label" HorizontalAlignment="Left" Margin="503,227,0,0" VerticalAlignment="Top" Width="122"/>
-            <Label x:Name="lblprod3" Content="Label" HorizontalAlignment="Left" Margin="650,227,0,0" VerticalAlignment="Top" Width="122"/>
-            <Button x:Name="nextbtn" Content="" HorizontalAlignment="Left" Margin="956,226,0,0" VerticalAlignment="Top" Width="35" Height="35" BorderThickness="0" >
+        <Grid x:Name="gridseller_home" HorizontalAlignment="Left" Height="618" Visibility="Visible" Margin="48,88,0,0" VerticalAlignment="Top" Width="1285" Grid.Row="1">
+            <Rectangle Fill="#FFECECEC" HorizontalAlignment="Left" Height="481" Margin="247,10,0,0" Stroke="White" VerticalAlignment="Top" Width="775"/>
+            <Label x:Name="lblprod4" Content="Label" HorizontalAlignment="Left" Margin="797,160,0,0" VerticalAlignment="Top" Width="122" />
+            <Image x:Name="imgprod4" HorizontalAlignment="Left" Height="110" Margin="797,46,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+            <Image x:Name="imgprod3" HorizontalAlignment="Left" Height="110" Margin="650,46,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+            <Image x:Name="imgprod1" HorizontalAlignment="Left" Height="110" Margin="357,46,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+            <Image x:Name="imgprod2" HorizontalAlignment="Left" Height="110" Margin="503,46,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+            <Label x:Name="lblprod1" Content="Label" HorizontalAlignment="Left" Margin="357,161,0,0" VerticalAlignment="Top" Width="122"/>
+            <Label x:Name="lblprod2" Content="Label" HorizontalAlignment="Left" Margin="503,161,0,0" VerticalAlignment="Top" Width="122"/>
+            <Label x:Name="lblprod3" Content="Label" HorizontalAlignment="Left" Margin="650,161,0,0" VerticalAlignment="Top" Width="122"/>
+            <Button x:Name="nextbtn" Content="" HorizontalAlignment="Left" Margin="945,161,0,0" VerticalAlignment="Top" Width="35" Height="35" BorderThickness="0" >
                 <Button.Background>
                     <ImageBrush ImageSource="next-button.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="prevButton" Content="" HorizontalAlignment="Left" Margin="289,226,0,0" VerticalAlignment="Top" Width="36" Height="34" BorderThickness="0" >
+            <Button x:Name="prevButton" Content="" HorizontalAlignment="Left" Margin="292,160,0,0" VerticalAlignment="Top" Width="36" Height="34" BorderThickness="0" >
                 <Button.Background>
                     <ImageBrush ImageSource="prev-button.png"/>
                 </Button.Background>
             </Button>
-            <Label x:Name="lblprod4_Copy" Content="Label" HorizontalAlignment="Left" Margin="797,376,0,0" VerticalAlignment="Top" Width="122" />
-            <Image x:Name="imgprod4_Copy" HorizontalAlignment="Left" Height="110" Margin="797,266,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod3_Copy" HorizontalAlignment="Left" Height="110" Margin="650,266,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod1_Copy" HorizontalAlignment="Left" Height="110" Margin="357,266,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Image x:Name="imgprod2_Copy" HorizontalAlignment="Left" Height="110" Margin="503,266,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
-            <Label x:Name="lblprod1_Copy" Content="Label" HorizontalAlignment="Left" Margin="357,376,0,0" VerticalAlignment="Top" Width="122" />
-            <Label x:Name="lblprod2_Copy" Content="Label" HorizontalAlignment="Left" Margin="503,376,0,0" VerticalAlignment="Top" Width="122"/>
-            <Label x:Name="lblprod3_Copy" Content="Label" HorizontalAlignment="Left" Margin="650,376,0,0" VerticalAlignment="Top" Width="122" />
-            <Button x:Name="btnseller_gotoinsert" Content="Add new " HorizontalAlignment="Left" Margin="357,443,0,0" VerticalAlignment="Top" Width="562" Height="39"/>
-            <Button x:Name="btnseller_delete" Content="Delete" HorizontalAlignment="Left" Margin="357,501,0,0" VerticalAlignment="Top" Width="562" Height="39"/>
+            <Label x:Name="lblprod4_Copy" Content="Label" HorizontalAlignment="Left" Margin="797,317,0,0" VerticalAlignment="Top" Width="122" />
+            <Image x:Name="imgprod4_Copy" HorizontalAlignment="Left" Height="110" Margin="797,194,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+            <Image x:Name="imgprod3_Copy" HorizontalAlignment="Left" Height="110" Margin="650,194,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+            <Image x:Name="imgprod1_Copy" HorizontalAlignment="Left" Height="110" Margin="357,194,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+            <Image x:Name="imgprod2_Copy" HorizontalAlignment="Left" Height="110" Margin="503,194,0,0" VerticalAlignment="Top" Width="122" Source="dummy-img.png" Stretch="Fill"/>
+            <Label x:Name="lblprod1_Copy" Content="Label" HorizontalAlignment="Left" Margin="357,317,0,0" VerticalAlignment="Top" Width="122" />
+            <Label x:Name="lblprod2_Copy" Content="Label" HorizontalAlignment="Left" Margin="503,317,0,0" VerticalAlignment="Top" Width="122"/>
+            <Label x:Name="lblprod3_Copy" Content="Label" HorizontalAlignment="Left" Margin="650,317,0,0" VerticalAlignment="Top" Width="122" />
+            <Button x:Name="btnseller_gotoinsert" Content="Add new " HorizontalAlignment="Left" Margin="357,356,0,0" VerticalAlignment="Top" Width="268" Height="38" Click="btnseller_gotoinsert_Click"/>
+            <Button x:Name="btnseller_delete" Content="Delete" HorizontalAlignment="Left" Margin="650,356,0,0" VerticalAlignment="Top" Width="269" Height="38"/>
+            <Button x:Name="btngoto_MainMenu" Content="Back to Main menu" HorizontalAlignment="Left" Margin="503,420,0,0" VerticalAlignment="Top" Width="269" Height="44" Click="btngoto_MainMenu_Click"/>
         </Grid>
-        <Label Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="1" Margin="506,31,-514,0" VerticalAlignment="Top" Width="9"/>
+        <Label Content="Label" Grid.Column="2" HorizontalAlignment="Left" Height="1" Margin="506,31,-514,0" VerticalAlignment="Top" Width="9"/>
     </Grid>
 </Page>

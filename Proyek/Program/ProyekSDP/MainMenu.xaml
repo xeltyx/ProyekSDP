@@ -15,10 +15,10 @@
             <Label Content="Recommended!" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="9,9,0,0"/>
         </Border>
 
-        <Image HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="1379" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466" Stretch="Fill" Margin="0,0,-10,0"/>
+        <Image HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="1372" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466" Stretch="Fill"/>
         <Label Content="Alterna" HorizontalAlignment="Left" Margin="5,-4,0,0" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36"/>
         <Label Content="Tech" HorizontalAlignment="Left" Margin="98,40,0,0" VerticalAlignment="Top" Height="60" Width="154" FontFamily="Georgia" FontSize="48"/>
-        <Button x:Name="menubtn" Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="1317,10,10,546" Height="42" Width="43" BorderBrush="#FF9999FF" Click="menubtn_Click">
+        <Button x:Name="menubtn" Content="" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="1319,9,10,547" Height="42" Width="43" BorderBrush="#FF9999FF" Click="menubtn_Click">
 
             <Button.Background>
                 <ImageBrush ImageSource="menuicon.png" Stretch="Uniform"/>
@@ -38,7 +38,7 @@
             <Image HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="49" Source="person-icon.png"/>
             <Button x:Name="logoutbtn" Content="  Logout" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FFE68FA7" BorderThickness="0,1" Margin="0,538,0,0" Click="Button_Click"/>
         </Grid>
-        <Grid Name="gridmenutoko" HorizontalAlignment="Left" Height="474" Margin="196,110,0,14.4" VerticalAlignment="Center" Width="745" RenderTransformOrigin="0.504,0.462" Visibility="Visible">
+        <Grid Name="gridmenutoko" HorizontalAlignment="Left" Height="474" Margin="428,110,0,14" VerticalAlignment="Center" Width="628" RenderTransformOrigin="0.504,0.462" Visibility="Visible">
             <ComboBox x:Name="cbkategori" HorizontalAlignment="Left" Margin="27,49,0,0" VerticalAlignment="Top" Width="158" Height="23" SelectionChanged="cbkategori_SelectionChanged">
                 <ComboBox.BindingGroup>
                     <BindingGroup/>
