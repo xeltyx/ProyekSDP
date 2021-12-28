@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,45 @@ namespace ProyekSDP
     /// </summary>
     public partial class sellerpage : Page
     {
+        Connection conn = new Connection();
+        MySqlCommand cmd;
+        int userID;
+        int barangID;
         public sellerpage(int id)
         {
             InitializeComponent();
+            userID = id;
+        }
+
+        private void insertProductDigital()
+        {
+            try
+            {
+                conn.conn.Open();
+                MySqlCommand cmd = new MySqlCommand($"INSERT INTO DIGITAL_SELLER(ID_USER, ID_BARANG) VALUES('{userID}','{barangID}')", conn.conn);
+                cmd.ExecuteNonQuery();
+                conn.conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                conn.conn.Close();
+            }
+        }
+        private void deleteProductDigital()
+        {
+            try
+            {
+                conn.conn.Open();
+                MySqlCommand cmd = new MySqlCommand($"DELETE FROM DIGITAL_SELLER WHERE id = {userID})", conn.conn);
+                cmd.ExecuteNonQuery();
+                conn.conn.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                conn.conn.Close();
+            }
         }
     }
 }
