@@ -81,7 +81,7 @@ namespace ProyekSDP
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             List<int> t = new List<int>();
-            var cart = new cartpage(t, user.id);
+            var cart = new cartpage(user.id);
             this.NavigationService.Navigate(cart);
         }
 

@@ -29,7 +29,6 @@ namespace ProyekSDP
         List<Barang> barangList = new List<Barang>();
         Label[] labelList = new Label[8];
         Image[] imgList = new Image[8];
-        List<int> cart = new List<int>();
         int indexingItem = 0;
         String[] isicombosort = {"no filter","sort by highest price","sort by lowest price"};
         public MainMenu(int id)
@@ -553,22 +552,54 @@ namespace ProyekSDP
 
         private void btnaddcart_Click(object sender, RoutedEventArgs e)
         {
-            string[] temp = lblprod8.Content.ToString().Split('\n');
+            string temp = lbldetail.Content.ToString();
             conn.conn.Open();
-            MySqlCommand cmd = new MySqlCommand($"SELECT ID FROM BARANG WHERE NAMA_BARANG = '{temp[0]}'", conn.conn);
+            int idbrg = -1;
+            MySqlCommand cmd = new MySqlCommand($"SELECT ID FROM BARANG WHERE NAMA_BARANG = '{temp}'", conn.conn);
 
             MySqlDataReader reader = cmd.ExecuteReader();
             while(reader.Read())
             {
-                cart.Add(Convert.ToInt32(reader[0].ToString()));
+                idbrg = Convert.ToInt32(reader[0].ToString());
             }
             conn.conn.Close();
-            MessageBox.Show("Sukses menambahkan ke cart");
+
+            conn.conn.Open();
+
+            cmd = new MySqlCommand($"SELECT ID_BARANG FROM CART WHERE USERNAME='{user.username}'", conn.conn);
+            reader = cmd.ExecuteReader();
+            bool isFound = false;
+            while(reader.Read())
+            {
+                if(idbrg == Convert.ToInt32(reader[0].ToString()))
+                {
+                    isFound = true;
+                }
+            }
+
+            conn.conn.Close();
+
+            if(!isFound)
+            {
+                conn.conn.Open();
+                cmd = new MySqlCommand($"INSERT INTO CART VALUES('{user.username}', {idbrg})", conn.conn);
+                cmd.ExecuteNonQuery();
+                conn.conn.Close();
+                idbrg = -1;
+                
+            }
+            else
+            {
+                MessageBox.Show("Barang sudah ada di dalam cart");
+                idbrg = -1;
+                isFound = false;
+            }
+            
         }
 
         private void cartBtn_Click(object sender, RoutedEventArgs e)
         {
-            var cartp = new cartpage(cart, user.id);
+            var cartp = new cartpage(user.id);
             this.NavigationService.Navigate(cartp);
         }
     }

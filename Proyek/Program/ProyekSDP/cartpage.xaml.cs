@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Globalization;
 
 namespace ProyekSDP
 {
@@ -20,13 +23,53 @@ namespace ProyekSDP
     /// </summary>
     public partial class cartpage : Page
     {
+        Connection conn = new Connection();
+        loggedUser user;
+        DataTable dt;
         int userid;
-        List<int> cart = new List<int>();
-        public cartpage(List<int> cart, int id)
+        public cartpage(int id)
         {
+            conn.Connect();
             InitializeComponent();
-            this.cart = cart;
             this.userid = id;
+            loadData();
+            loadCart();
+        }
+
+        public void loadCart()
+        {
+            conn.conn.Open();
+            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            sda.Fill(dt);
+            dgvCart.ItemsSource = dt.DefaultView;
+            conn.conn.Close();
+            int total = 0;
+
+            conn.conn.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while(reader.Read())
+            {
+                total += Convert.ToInt32(reader[1].ToString());
+            }
+
+            conn.conn.Close();
+
+            lbl_total.Content = $"Total: {String.Format(CultureInfo.GetCultureInfo("id-ID"), "{0:C2}", total)}";
+        }
+
+        public void loadData()
+        {
+            conn.conn.Open();
+            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM CUSTOMER WHERE ID = {userid}", conn.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                user = new loggedUser(userid, reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), reader[5].ToString(), Convert.ToInt32(reader[6].ToString()));
+            }
+            conn.conn.Close();
         }
 
         private void Homebtn_Click(object sender, RoutedEventArgs e)
