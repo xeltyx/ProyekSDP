@@ -277,7 +277,7 @@ namespace ProyekSDP
             }
             loadBarangScreen();
             nextbtn.IsEnabled = true;
-            MessageBox.Show(Math.Ceiling(Convert.ToDouble(barangList.Count() / 8)) + "");
+            //MessageBox.Show(Math.Ceiling(Convert.ToDouble(barangList.Count() / 8)) + "");
             if (indexingItem == Math.Ceiling(Convert.ToDouble(barangList.Count() / 8)))
             {
                 nextbtn.IsEnabled = false;
@@ -372,7 +372,7 @@ namespace ProyekSDP
         private void lblprod1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             string[] temp = lblprod1.Content.ToString().Split('\n');
-            MessageBox.Show(temp[0]);
+            //MessageBox.Show(temp[0]);
             griddetail.Visibility = Visibility.Visible;
             lbldetail.Content = temp[0];
             imgdetail.Source = imgprod1.Source;
@@ -400,7 +400,7 @@ namespace ProyekSDP
         private void lblprod2_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             string[] temp = lblprod2.Content.ToString().Split('\n');
-            MessageBox.Show(temp[0]);
+            //MessageBox.Show(temp[0]);
             griddetail.Visibility = Visibility.Visible;
             lbldetail.Content = temp[0];
             imgdetail.Source = imgprod2.Source;
@@ -421,7 +421,7 @@ namespace ProyekSDP
         private void lblprod3_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             string[] temp = lblprod3.Content.ToString().Split('\n');
-            MessageBox.Show(temp[0]);
+            //MessageBox.Show(temp[0]);
             griddetail.Visibility = Visibility.Visible;
             lbldetail.Content = temp[0];
             imgdetail.Source = imgprod3.Source;
@@ -442,7 +442,7 @@ namespace ProyekSDP
         private void lblprod4_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             string[] temp = lblprod4.Content.ToString().Split('\n');
-            MessageBox.Show(temp[0]);
+            //MessageBox.Show(temp[0]);
             griddetail.Visibility = Visibility.Visible;
             lbldetail.Content = temp[0];
             imgdetail.Source = imgprod4.Source;
@@ -463,7 +463,7 @@ namespace ProyekSDP
         private void lblprod5_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             string[] temp = lblprod5.Content.ToString().Split('\n');
-            MessageBox.Show(temp[0]);
+            //MessageBox.Show(temp[0]);
             griddetail.Visibility = Visibility.Visible;
             lbldetail.Content = temp[0];
             imgdetail.Source = imgprod5.Source;
@@ -484,7 +484,7 @@ namespace ProyekSDP
         private void lblprod6_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             string[] temp = lblprod6.Content.ToString().Split('\n');
-            MessageBox.Show(temp[0]);
+            //MessageBox.Show(temp[0]);
             griddetail.Visibility = Visibility.Visible;
             lbldetail.Content = temp[0];
             imgdetail.Source = imgprod6.Source;
@@ -505,7 +505,7 @@ namespace ProyekSDP
         private void lblprod7_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             string[] temp = lblprod7.Content.ToString().Split('\n');
-            MessageBox.Show(temp[0]);
+            //MessageBox.Show(temp[0]);
             griddetail.Visibility = Visibility.Visible;
             lbldetail.Content = temp[0];
             imgdetail.Source = imgprod7.Source;
@@ -526,7 +526,7 @@ namespace ProyekSDP
         private void lblprod8_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             string[] temp = lblprod8.Content.ToString().Split('\n');
-            MessageBox.Show(temp[0]);
+            //MessageBox.Show(temp[0]);
             griddetail.Visibility = Visibility.Visible;
             lbldetail.Content = temp[0];
             imgdetail.Source = imgprod8.Source;
