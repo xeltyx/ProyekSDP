@@ -41,6 +41,7 @@ namespace ProyekSDP
             isilistcustomer();
         }
 
+
         private void loadBarang()
         {
             conn.conn.Open();
@@ -59,7 +60,6 @@ namespace ProyekSDP
             conn.conn.Open();
             cmd = new MySqlCommand();
             cmd = new MySqlCommand($"SELECT CUSTOMER.ID ,CUSTOMER.NAMA_CUST AS \"NAMA CUSTOMER\",CUSTOMER.SALDO AS \"SALDO\" FROM CUSTOMER ORDER BY id ASC", conn.conn);
-            //  MySqlDataReader reader = cmd.ExecuteReader();
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
@@ -103,6 +103,7 @@ namespace ProyekSDP
             }
             customerLb.Content = "Name: " + (cblistcustomer.SelectedItem.ToString().Split('-'))[1];
             totalLb.Content = "Total: " + sub.ToString();
+            conn.conn.Close();
 
         }
 
@@ -294,6 +295,7 @@ namespace ProyekSDP
             griduser.Visibility = Visibility.Visible;
             gridlaporan.Visibility = Visibility.Hidden;
             gridsaldo.Visibility = Visibility.Hidden;
+            loadUser();
         }
 
         private void btnPageBarang_Click(object sender, RoutedEventArgs e)
@@ -302,6 +304,7 @@ namespace ProyekSDP
             griduser.Visibility = Visibility.Hidden;
             gridlaporan.Visibility = Visibility.Hidden;
             gridsaldo.Visibility = Visibility.Hidden;
+            loadBarang();
         }
 
         private void dgvcustomer_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -343,6 +346,7 @@ namespace ProyekSDP
             gridbarang.Visibility = Visibility.Hidden;
             griduser.Visibility = Visibility.Hidden;
             gridsaldo.Visibility = Visibility.Visible;
+            LoadSaldo();
         }
 
         private void dgvkonfirsaldo_MouseDoubleClick(object sender, MouseButtonEventArgs e)

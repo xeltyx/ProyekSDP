@@ -950,7 +950,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nox+Y/quhaGV+APtE0ZpiMYk4GfvGnGtjpH/vdlNMTs=</dsig:DigestValue>
+        <dsig:DigestValue>DyyTMhZPSVPoNRaOOI28+2I14Z+mn5stIxKpT+NHWJw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
