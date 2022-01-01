@@ -39,7 +39,7 @@ namespace ProyekSDP
         public void loadCart()
         {
             conn.conn.Open();
-            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
+            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.ID, BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
@@ -52,7 +52,7 @@ namespace ProyekSDP
 
             while(reader.Read())
             {
-                total += Convert.ToInt32(reader[1].ToString());
+                total += Convert.ToInt32(reader[2].ToString());
             }
 
             conn.conn.Close();
@@ -106,6 +106,21 @@ namespace ProyekSDP
         {
             var toko = new sellerpage(userid);
             this.NavigationService.Navigate(toko);
+        }
+
+        int index = -1;
+        private void dgvCart_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            index = dgvCart.SelectedIndex;
+            if(index != -1)
+            {
+                conn.conn.Open();
+                MySqlCommand cmd = new MySqlCommand($"DELETE FROM CART WHERE ID_BARANG = {dt.Rows[index][0].ToString()} AND USERNAME = '{user.username}'", conn.conn);
+                cmd.ExecuteNonQuery();
+                conn.conn.Close();
+                MessageBox.Show("Sukses menghapus item dari cart");
+                loadCart();
+            }
         }
     }
 }
