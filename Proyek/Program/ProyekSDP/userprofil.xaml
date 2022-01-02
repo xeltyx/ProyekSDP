@@ -11,11 +11,51 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="passwordUpd" HorizontalAlignment="Left" Height="23" Margin="412,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" GotFocus="passwordUpd_GotFocus" Text="Masukkan Password" LostFocus="passwordUpd_LostFocus"/>
-        <Button x:Name="updBtn" Content="Update" HorizontalAlignment="Left" Margin="412,357,0,0" VerticalAlignment="Top" Width="75" Click="updBtn_Click"/>
-        <TextBox x:Name="notelpUpd" HorizontalAlignment="Left" Height="23" Margin="412,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Text="Update No.Telp" LostFocus="notelpUpd_LostFocus" GotFocus="notelpUpd_GotFocus" PreviewTextInput="notelpUpd_PreviewTextInput"/>
-        <TextBox x:Name="emailUpd" HorizontalAlignment="Left" Height="23" Margin="412,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" GotFocus="emailUpd_GotFocus" LostFocus="emailUpd_LostFocus" Text="Update email"/>
-        <TextBox x:Name="namaUpd" HorizontalAlignment="Left" Height="23" Margin="412,241,0,0" TextWrapping="Wrap" Text="Update nama" VerticalAlignment="Top" Width="164" GotFocus="namaUpd_GotFocus" LostFocus="namaUpd_LostFocus"/>
+        <Grid x:Name="gridprofil" HorizontalAlignment="Left" Height="310" Margin="13,193,0,0" VerticalAlignment="Top" Width="593" Visibility="Visible">
+            <Label x:Name="username" Content="Username:" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="16"/>
+            <Label x:Name="name" Content="Nama:" HorizontalAlignment="Left" Margin="187,56,0,0" VerticalAlignment="Top" FontSize="16" Width="85"/>
+            <Image HorizontalAlignment="Left" Height="139" VerticalAlignment="Top" Width="142" Source="person-icon.png" Margin="10,10,0,0"/>
+            <Label x:Name="saldo" Content="Saldo:" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" FontSize="16" Width="154"/>
+            <Button x:Name="btn_to_topup" Content="Top up" HorizontalAlignment="Left" Margin="10,202,0,0" VerticalAlignment="Top" Width="91" Click="btn_to_topup_Click" Height="31"/>
+            <Label x:Name="notelp" Content="No.Telp:" HorizontalAlignment="Left" Margin="187,153,0,0" VerticalAlignment="Top" FontSize="16"/>
+            <Label x:Name="email" Content="Email:" HorizontalAlignment="Left" Margin="187,104,0,0" VerticalAlignment="Top" FontSize="16" Width="85"/>
+            <Button x:Name="btngotoupdate" Content="Edit profil" HorizontalAlignment="Left" Margin="187,259,0,0" VerticalAlignment="Top" Width="396" Height="31" Click="btngotoupdate_Click"/>
+            <Label Content="Password:" HorizontalAlignment="Left" Margin="187,202,0,0" VerticalAlignment="Top" FontSize="16" Width="82"/>
+            <Button x:Name="btn_to_editpass" Content="Change ur password" HorizontalAlignment="Left" Margin="274,207,0,0" VerticalAlignment="Top" Width="140" Click="btn_to_editpass_Click" Height="23"/>
+        </Grid>
+        <Grid x:Name="gridprofil_password" HorizontalAlignment="Left" Height="292" Margin="25,193,0,0" VerticalAlignment="Top" Width="567" Visibility="Hidden">
+            <PasswordBox x:Name="tbupdate_oldpass" HorizontalAlignment="Left" Margin="194,65,0,0" VerticalAlignment="Top" Width="350" Height="35"/>
+            <Label Content="Old Password :" HorizontalAlignment="Left" Margin="22,65,0,0" VerticalAlignment="Top" Height="35" Width="122" FontSize="16" FontFamily="Segoe UI Light"/>
+            <PasswordBox x:Name="tbupdate_newpass" HorizontalAlignment="Left" Margin="194,124,0,0" VerticalAlignment="Top" Width="350" Height="35"/>
+            <Label Content="New Password :" HorizontalAlignment="Left" Margin="22,124,0,0" VerticalAlignment="Top" Height="35" Width="122" FontSize="16" FontFamily="Segoe UI Light"/>
+            <Label Content="Edit Password" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="29" Width="132" FontSize="18" FontWeight="Bold"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="14,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="543" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <PasswordBox x:Name="tbupdate_confirm" HorizontalAlignment="Left" Margin="194,185,0,0" VerticalAlignment="Top" Width="348" Height="35"/>
+            <Label Content="Password Confirmation:" HorizontalAlignment="Left" Margin="20,185,0,0" VerticalAlignment="Top" Height="35" Width="169" FontSize="16" FontFamily="Segoe UI Light"/>
+            <Button x:Name="btnupdatepass" Content="Update Password" HorizontalAlignment="Left" Margin="20,237,0,0" VerticalAlignment="Top" Width="378" Height="39" Click="btnupdatepass_Click"/>
+            <Button x:Name="btnback" Content="Back to Profil" Margin="417,236,25,0" VerticalAlignment="Top" Height="40" Click="btnback_Click"/>
+        </Grid>
+        <Grid x:Name="gridprofilupdate" HorizontalAlignment="Left" Height="273" Margin="25,193,0,0" VerticalAlignment="Top" Width="581" Visibility="Hidden">
+            <TextBox x:Name="namaUpd" HorizontalAlignment="Left" Height="35" Margin="278,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="293" GotFocus="namaUpd_GotFocus" LostFocus="namaUpd_LostFocus"/>
+            <TextBox x:Name="emailUpd" HorizontalAlignment="Left" Height="35" Margin="278,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="293" GotFocus="emailUpd_GotFocus" LostFocus="emailUpd_LostFocus"/>
+            <TextBox x:Name="notelpUpd" HorizontalAlignment="Left" Height="35" Margin="280,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" LostFocus="notelpUpd_LostFocus" GotFocus="notelpUpd_GotFocus" PreviewTextInput="notelpUpd_PreviewTextInput"/>
+            <Button x:Name="updBtn" Content="Update" HorizontalAlignment="Left" Margin="197,214,0,0" VerticalAlignment="Top" Width="374" Click="updBtn_Click" Height="34"/>
+            <Label Content="Nama :" HorizontalAlignment="Left" Margin="197,27,0,0" VerticalAlignment="Top" Height="35" Width="62" FontSize="16"/>
+            <Label Content="Email :" HorizontalAlignment="Left" Margin="197,84,0,0" VerticalAlignment="Top" Height="35" Width="76" FontSize="16"/>
+            <Label Content="No Telp:" HorizontalAlignment="Left" Margin="197,144,0,0" VerticalAlignment="Top" Height="35" Width="76" FontSize="16"/>
+            <Image HorizontalAlignment="Left" Height="139" VerticalAlignment="Top" Width="142" Source="person-icon.png" Margin="10,10,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="100" Margin="52,27,0,0" VerticalAlignment="Top" Width="100"/>
+            <Button Content="Back to Profil" Margin="18,214,438,0" VerticalAlignment="Top" Height="34" Click="btnback_Click"/>
+        </Grid>
         <Image HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="616" Source="Gambarhalaman.png" RenderTransformOrigin="0.504,0.466"/>
         <Label Content="Alterna" HorizontalAlignment="Left" Margin="25,18,0,0" VerticalAlignment="Top" Height="55" Width="177" FontFamily="Segoe Script" FontSize="36"/>
         <Label Content="Tech" HorizontalAlignment="Left" Margin="118,73,0,0" VerticalAlignment="Top" Height="61" Width="151" FontFamily="Georgia" FontSize="48"/>
@@ -24,7 +64,6 @@
                 <ImageBrush ImageSource="menuicon.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="93" VerticalAlignment="Top" Width="88" Source="person-icon.png" Margin="25,200,0,0"/>
         <Grid x:Name="menugrid" HorizontalAlignment="Left" Height="536" Margin="412,2,0,0" VerticalAlignment="Top" Width="204" Background="#FF7777FB" Visibility="Hidden" MouseLeave="menugrid_MouseLeave">
             <Label x:Name="userLabel" Content="Optimum Pride" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="154" FontSize="20" VerticalContentAlignment="Center" Margin="50,0,0,0"/>
             <StackPanel HorizontalAlignment="Left" Height="368" Margin="0,90,0,0" VerticalAlignment="Top" Width="204">
@@ -36,11 +75,5 @@
             <Image HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="49" Source="person-icon.png"/>
             <Button x:Name="logoutbtn" Content="  Logout" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FFE68FA7" BorderThickness="0,1" Margin="0,477,0,0" Click="Button_Logout"/>
         </Grid>
-        <Label x:Name="username" Content="Username:" HorizontalAlignment="Left" Margin="149,208,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="name" Content="Nama:" HorizontalAlignment="Left" Margin="149,238,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="email" Content="Email:" HorizontalAlignment="Left" Margin="149,268,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="notelp" Content="No.Telp:" HorizontalAlignment="Left" Margin="149,298,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="saldo" Content="Saldo:" HorizontalAlignment="Left" Margin="25,340,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_to_topup" Content="Top up" HorizontalAlignment="Left" Margin="25,371,0,0" VerticalAlignment="Top" Width="75" Click="btn_to_topup_Click"/>
     </Grid>
 </Page>

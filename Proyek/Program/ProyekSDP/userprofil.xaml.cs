@@ -23,26 +23,55 @@ namespace ProyekSDP
     public partial class userprofil : Page
     {
         Connection conn = new Connection();
-        
+        int iduser;
         loggedUser user;
         public userprofil(int id)
         {
             InitializeComponent();
             conn.Connect();
             loaduser(id);
+            iduser = id;
         }
-        private void Update(string name, string email, string notelp,string password)
+        private void Update(string name, string email, string notelp)
         {
             conn.conn.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE User SET name=@name,email=@email, Notelp=@notelp " +
-                    "WHERE password =@password",conn.conn);
-                cmd.Parameters.AddWithValue("@name",name);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@notelp", notelp);
-                cmd.Parameters.AddWithValue("@password", password);
-                cmd.ExecuteNonQuery();
-                conn.conn.Close();
+            MySqlCommand cmd = new MySqlCommand($"UPDATE customer SET NAMA_CUST=@name,EMAIL=@email, NO_TELP=@notelp WHERE ID={iduser}", conn.conn);
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@notelp", notelp);
+            cmd.ExecuteNonQuery();
+            conn.conn.Close();
+            loaduser(user.id);
+            MessageBox.Show("Update berhasil");
         }
+
+        private void changepass(string password)
+        {
+            if(tbupdate_oldpass.Password == user.password)
+            {
+                if (tbupdate_newpass.Password == tbupdate_confirm.Password)
+                {
+                    conn.conn.Open();
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE customer SET Password=@password WHERE ID={iduser}", conn.conn);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.ExecuteNonQuery();
+                    conn.conn.Close();
+                    loaduser(user.id);
+                    MessageBox.Show("Change Password Success");
+                }
+                else
+                {
+                    MessageBox.Show("Password baru dan password confirmation tidak sama");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Password salah");
+            }
+
+        }
+
         public void loaduser(int id)
         {
             conn.conn.Open();
@@ -51,7 +80,6 @@ namespace ProyekSDP
             while (reader.Read())
             {
                 user = new loggedUser(id, reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), reader[5].ToString(), Convert.ToInt32(reader[6].ToString()));
-
             }
             conn.conn.Close();
             userLabel.Content = user.username;
@@ -86,7 +114,7 @@ namespace ProyekSDP
 
         private void namaUpd_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (namaUpd.Text == "Update nama")
+            if (namaUpd.Text == user.nama)
             {
                 namaUpd.Text = "";
             }
@@ -96,13 +124,13 @@ namespace ProyekSDP
         {
             if (namaUpd.Text == "")
             {
-                namaUpd.Text = "Update nama";
+                namaUpd.Text = user.nama;
             }
         }
 
         private void emailUpd_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (emailUpd.Text == "Update email")
+            if (emailUpd.Text == user.email)
             {
                 emailUpd.Text = "";
             }
@@ -112,7 +140,7 @@ namespace ProyekSDP
         {
             if (emailUpd.Text == "")
             {
-                emailUpd.Text = "Update email";
+                emailUpd.Text = user.email;
             }
         }
 
@@ -120,13 +148,13 @@ namespace ProyekSDP
         {
             if (notelpUpd.Text == "")
             {
-                notelpUpd.Text = "Update No.Telp";
+                notelpUpd.Text = user.nomor;
             }
         }
 
         private void notelpUpd_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (notelpUpd.Text == "Update No.Telp")
+            if (notelpUpd.Text == user.nomor)
             {
                 notelpUpd.Text = "";
             }
@@ -137,30 +165,13 @@ namespace ProyekSDP
             string nama = namaUpd.Text.ToString();
             string email = emailUpd.Text.ToString();
             string notelp = notelpUpd.Text.ToString();
-            string password = passwordUpd.Text.ToString();
-
+            Update(nama,email,notelp);
         }
 
         private void notelpUpd_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
-        }
-
-        private void passwordUpd_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (passwordUpd.Text == "Masukkan Password")
-            {
-                passwordUpd.Text = "";
-            }
-        }
-
-        private void passwordUpd_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (passwordUpd.Text == "")
-            {
-                passwordUpd.Text = "Masukkan Password";
-            }
         }
 
         private void btn_to_topup_Click(object sender, RoutedEventArgs e)
@@ -179,6 +190,35 @@ namespace ProyekSDP
         {
             var seller = new sellerpage(user.id);
             this.NavigationService.Navigate(seller);
+        }
+
+        private void btngotoupdate_Click(object sender, RoutedEventArgs e)
+        {
+            gridprofilupdate.Visibility = Visibility.Visible;
+            gridprofil.Visibility = Visibility.Hidden;
+            gridprofil_password.Visibility = Visibility.Hidden;
+            namaUpd.Text = user.nama;
+            emailUpd.Text = user.email;
+            notelpUpd.Text = user.nomor;
+        }
+
+        private void btn_to_editpass_Click(object sender, RoutedEventArgs e)
+        {
+            gridprofilupdate.Visibility = Visibility.Hidden;
+            gridprofil.Visibility = Visibility.Hidden;
+            gridprofil_password.Visibility = Visibility.Visible;
+        }
+
+        private void btnback_Click(object sender, RoutedEventArgs e)
+        {
+            gridprofilupdate.Visibility = Visibility.Hidden;
+            gridprofil.Visibility = Visibility.Visible;
+            gridprofil_password.Visibility = Visibility.Hidden;
+        }
+
+        private void btnupdatepass_Click(object sender, RoutedEventArgs e)
+        {
+            changepass(tbupdate_newpass.Password);
         }
     }
 }
