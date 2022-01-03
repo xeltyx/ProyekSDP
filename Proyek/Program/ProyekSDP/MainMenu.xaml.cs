@@ -23,6 +23,7 @@ namespace ProyekSDP
     /// </summary>
     public partial class MainMenu : Page
     {
+
         Connection conn = new Connection();
         loggedUser user;
         List<string> kategori = new List<string>();

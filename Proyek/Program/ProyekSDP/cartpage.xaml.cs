@@ -122,5 +122,81 @@ namespace ProyekSDP
                 loadCart();
             }
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            conn.conn.Open();
+            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.ID, BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
+            int total = 0;
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                total += Convert.ToInt32(reader[2].ToString());
+            }
+
+            conn.conn.Close();
+
+            if (total <= user.saldo)
+            {
+                List<dBeli> dbeli = new List<dBeli>();
+                string nota = generateNota();
+                conn.conn.Open();
+                cmd = new MySqlCommand($"INSERT INTO H_BELI VALUES(\"{nota}\", {user.id}, {total}, \"{DateTime.Now.ToString("yyyy-MM-dd")}\")",conn.conn);
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand($"UPDATE CUSTOMER SET SALDO = {user.saldo - total} WHERE ID = {user.id}", conn.conn);
+                cmd.ExecuteNonQuery();
+                conn.conn.Close();
+
+                conn.conn.Open();
+                cmd = new MySqlCommand($"SELECT BARANG.ID, BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
+                reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    dbeli.Add(new dBeli(Convert.ToInt32(reader[0].ToString()),reader[1].ToString(), Convert.ToInt32(reader[2].ToString())));
+                }
+                conn.conn.Close();
+
+                conn.conn.Open();
+                foreach(dBeli data in dbeli)
+                {
+                    cmd = new MySqlCommand($"INSERT INTO D_BELI VALUES(\"{nota}\", {Convert.ToInt32(data.idBarang)}, 1, {Convert.ToInt32(data.hargaBarang)})", conn.conn);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.conn.Close();
+
+                conn.conn.Open();
+                cmd = new MySqlCommand($"DELETE FROM CART WHERE USERNAME = \"{user.username}\"", conn.conn);
+                cmd.ExecuteNonQuery();
+                conn.conn.Close();
+                
+                MessageBox.Show("Terima kasih sudah berbelanja");
+                loadData();
+                loadCart();
+                var report = new ReportPembelian(user.id, dbeli);
+                this.NavigationService.Navigate(report);
+            }
+            else
+            {
+                MessageBox.Show("Uang tidak cukup");
+            }
+        }
+
+        private string generateNota()
+        {
+            conn.conn.Open();
+            string temp = $"SELECT CONCAT(\"{ DateTime.Now.ToString("yyyyMMdd")}\" , LPAD((COUNT(NOMOR_NOTA) + 1), 3, '0')) FROM H_BELI WHERE NOMOR_NOTA LIKE '%{DateTime.Now.ToString("yyyyMMdd")}%'";
+            MySqlCommand cmd = new MySqlCommand(temp, conn.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            string nota = "";
+            while(reader.Read())
+            {
+                nota = reader[0].ToString();
+            }
+            conn.conn.Close();
+
+            return nota;
+        }
     }
 }

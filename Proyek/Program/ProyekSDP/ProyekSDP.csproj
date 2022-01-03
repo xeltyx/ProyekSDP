@@ -122,6 +122,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDBeli.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dBeli.cs" />
     <Compile Include="loggedUser.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
@@ -130,6 +131,9 @@
       <DependentUpon>register.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReportData.cs" />
+    <Compile Include="ReportPembelian.xaml.cs">
+      <DependentUpon>ReportPembelian.xaml</DependentUpon>
+    </Compile>
     <Compile Include="sellerpage.xaml.cs">
       <DependentUpon>sellerpage.xaml</DependentUpon>
     </Compile>
@@ -165,6 +169,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPembelian.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

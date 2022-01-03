@@ -35,7 +35,7 @@
             <Button x:Name="btn_seller_insert" Content="Add" HorizontalAlignment="Left" Margin="98,373,0,0" VerticalAlignment="Top" Width="1067" Height="62" Click="btn_seller_insert_Click"/>
             <Label Content="Insert Barang " HorizontalAlignment="Left" Margin="516,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,1.077" Width="168" FontSize="24" Height="46" FontWeight="Bold"/>
             <Grid HorizontalAlignment="Left" Height="100" Margin="206,152,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button x:Name="btn_seller_backtohome" Content="Back to Home" HorizontalAlignment="Left" Margin="98,446,0,0" VerticalAlignment="Top" Width="1067" Height="62" Click="btn_seller_backtohome_Click"/>
+            <Button x:Name="btn_seller_backtohome" Content="Back to Tokoku" HorizontalAlignment="Left" Margin="98,446,0,0" VerticalAlignment="Top" Width="1067" Height="62" Click="btn_seller_backtohome_Click"/>
         </Grid>
         <Grid x:Name="gridseller_home" HorizontalAlignment="Left" Height="618" Visibility="Visible" Margin="48,88,0,0" VerticalAlignment="Top" Width="1285" Grid.Row="1" Background="White">
             <Button x:Name="btnseller_gotoinsert" Content="Add new " HorizontalAlignment="Left" Margin="854,377,0,0" VerticalAlignment="Top" Width="194" Height="38" Click="btnseller_gotoinsert_Click"/>
