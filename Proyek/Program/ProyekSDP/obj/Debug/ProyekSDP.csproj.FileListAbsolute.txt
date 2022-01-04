@@ -397,3 +397,5 @@ E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\cartpage.baml
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\sellerpage.baml
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ReportPembelian.g.cs
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ReportPembelian.baml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ReportPembelian.g.cs
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ReportPembelian.baml

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Globalization;
+using System.Collections;
 
 namespace ProyekSDP
 {
@@ -149,14 +150,25 @@ namespace ProyekSDP
                 cmd.ExecuteNonQuery();
                 conn.conn.Close();
 
+                List<int> listidbarang = new List<int>();
                 conn.conn.Open();
                 cmd = new MySqlCommand($"SELECT BARANG.ID, BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
                 reader = cmd.ExecuteReader();
                 while(reader.Read())
                 {
                     dbeli.Add(new dBeli(Convert.ToInt32(reader[0].ToString()),reader[1].ToString(), Convert.ToInt32(reader[2].ToString())));
+                    listidbarang.Add(Convert.ToInt32(reader[0].ToString()));
                 }
                 conn.conn.Close();
+
+                conn.conn.Open();
+                for (int i = 0; i < dbeli.Count; i++)
+                {
+                    cmd = new MySqlCommand($"UPDATE BARANG SET STOK = STOK-1 WHERE BARANG.ID = {listidbarang[i]}", conn.conn);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.conn.Close();
+                listidbarang.Clear();
 
                 conn.conn.Open();
                 foreach(dBeli data in dbeli)
@@ -170,7 +182,12 @@ namespace ProyekSDP
                 cmd = new MySqlCommand($"DELETE FROM CART WHERE USERNAME = \"{user.username}\"", conn.conn);
                 cmd.ExecuteNonQuery();
                 conn.conn.Close();
-                
+
+                conn.conn.Open();
+                cmd = new MySqlCommand($"DELETE FROM BARANG WHERE STOK = 0", conn.conn);
+                cmd.ExecuteNonQuery();
+                conn.conn.Close();
+
                 MessageBox.Show("Terima kasih sudah berbelanja");
                 loadData();
                 loadCart();
