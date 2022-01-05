@@ -84,7 +84,7 @@ namespace ProyekSDP
             int sub = 0;
             conn.conn.Open();
             cmd = new MySqlCommand();
-            cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG AS \"NAMA BARANG\",H_BELI.NOMOR_NOTA AS \"NOMOR NOTA\",D_BELI.jumlah,D_BELI.SUBTOTAL as \"Subtotal\" from Barang,H_BELI,D_BELI,Customer where Customer.id={getiduser} and H_BELI.ID_CUSTOMER=CUSTOMER.ID and D_BELI.NOMOR_NOTA=H_BELI.NOMOR_NOTA and BARANG.ID=D_BELI.ID_BARANG ORDER BY BARANG.NAMA_BARANG", conn.conn);
+            cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG AS \"NAMA BARANG\",H_BELI.NOMOR_NOTA AS \"NOMOR NOTA\",D_BELI.jumlah,D_BELI.SUBTOTAL as \"Subtotal\" from BARANG,H_BELI,D_BELI,CUSTOMER where CUSTOMER.ID={getiduser} and H_BELI.ID_CUSTOMER=CUSTOMER.ID and D_BELI.NOMOR_NOTA=H_BELI.NOMOR_NOTA and BARANG.ID=D_BELI.ID_BARANG ORDER BY BARANG.NAMA_BARANG", conn.conn);
             
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             dt = new DataTable();
@@ -94,7 +94,7 @@ namespace ProyekSDP
 
 
             conn.conn.Open();
-            cmd = new MySqlCommand($"SELECT D_BELI.SUBTOTAL from Barang,H_BELI,D_BELI,Customer where Customer.id={getiduser} and H_BELI.ID_CUSTOMER=CUSTOMER.ID and D_BELI.NOMOR_NOTA=H_BELI.NOMOR_NOTA and BARANG.ID=D_BELI.ID_BARANG ORDER BY BARANG.NAMA_BARANG", conn.conn);
+            cmd = new MySqlCommand($"SELECT D_BELI.SUBTOTAL FROM BARANG,H_BELI,D_BELI,CUSTOMER WHERE CUSTOMER.ID={getiduser} and H_BELI.ID_CUSTOMER=CUSTOMER.ID AND D_BELI.NOMOR_NOTA=H_BELI.NOMOR_NOTA and BARANG.ID=D_BELI.ID_BARANG ORDER BY BARANG.NAMA_BARANG", conn.conn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while(reader.Read())
@@ -110,7 +110,7 @@ namespace ProyekSDP
         private void isilistcustomer()
         {
             cblistcustomer.Items.Clear();
-            MySqlCommand cmd = new MySqlCommand($"select ID,Nama_Cust as \"Nama customer\" from Customer ORDER BY id", conn.conn);
+            MySqlCommand cmd = new MySqlCommand($"SELECT ID,NAMA_CUST as \"Nama customer\" from CUSTOMER ORDER BY id", conn.conn);
             conn.conn.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -236,7 +236,7 @@ namespace ProyekSDP
                     {
                         try
                         {
-                            MySqlCommand cmd = new MySqlCommand($"Update Barang SET NAMA_BARANG = '{ text_nmbarang.Text }',MERK = '{ kodemerk }',kategori = '{ kodekat }',STOK = {Convert.ToInt32(text_stok.Text)},HARGA = {Convert.ToInt32(text_harga.Text)} Where id = " + (index+1) ,conn.conn);
+                            MySqlCommand cmd = new MySqlCommand($"Update BARANG SET NAMA_BARANG = '{ text_nmbarang.Text }',MERK = '{ kodemerk }',kategori = '{ kodekat }',STOK = {Convert.ToInt32(text_stok.Text)},HARGA = {Convert.ToInt32(text_harga.Text)} Where id = " + (index+1) ,conn.conn);
                             cmd.ExecuteNonQuery();
                             trans.Commit();
                             conn.conn.Close();
@@ -271,7 +271,7 @@ namespace ProyekSDP
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand($"delete from barang where ID = {index+1}", conn.conn);
+                    MySqlCommand cmd = new MySqlCommand($"delete from BARANG where ID = {index+1}", conn.conn);
                     cmd.ExecuteNonQuery();
                     trans.Commit();
                     conn.conn.Close();

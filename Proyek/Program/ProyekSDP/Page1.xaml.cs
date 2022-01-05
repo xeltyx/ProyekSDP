@@ -37,7 +37,6 @@ namespace ProyekSDP
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
-
             email = tbemail.Text.ToString();
             password = tbpassword.Password.ToString();
 
