@@ -64,19 +64,24 @@
                 <Button x:Name="btntolak" Content="Tolak" HorizontalAlignment="Left" Margin="120,492,0,0" VerticalAlignment="Top" Width="85" Height="36" Click="btntolak_Click"/>
                 <TextBox x:Name="tbsaldo" HorizontalAlignment="Left" Height="39" Margin="120,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" IsReadOnly="True"/>
             </Grid>
-            <Grid x:Name="gridlaporan" HorizontalAlignment="Left" Height="633" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Hidden">
+            <Grid x:Name="gridlaporan" HorizontalAlignment="Left" Height="633" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Visible">
                 <ComboBox x:Name="cblistcustomer" HorizontalAlignment="Left" Margin="123,10,0,0" VerticalAlignment="Top" Width="255" Height="36"/>
                 <Label Content="Nama Customer :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="36" Width="108"/>
                 <Button x:Name="btnloadlistcustomer" Content="Load" HorizontalAlignment="Left" Margin="396,10,0,0" VerticalAlignment="Top" Width="85" Height="36" Click="btnloadlistcustomer_Click"/>
-                <DataGrid x:Name="dgvLaporan" HorizontalAlignment="Left" Height="381" Margin="10,149,0,0" VerticalAlignment="Top" Width="849"/>
+                <DataGrid x:Name="dgvLaporan" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="850" ColumnWidth="212"/>
                 <Label x:Name="customerLb" Content="Nama : " HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="totalLb" Content="Total: " HorizontalAlignment="Left" Margin="677,535,0,0" VerticalAlignment="Top" Width="182"/>
+                <Button Content="Print" HorizontalAlignment="Left" Margin="597,538,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
             </Grid>
-            <Grid x:Name="gridlaporanbarang" HorizontalAlignment="Left" Height="633" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Visible">
-                
+            <Grid x:Name="gridlaporanbarang" HorizontalAlignment="Left" Height="633" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="395*"/>
+                    <RowDefinition Height="238*"/>
+                </Grid.RowDefinitions>
+
             </Grid>
 
-            
+
             <Button x:Name="btnreqsaldo_Copy" Content="Laporan Barang" HorizontalAlignment="Left" Margin="24,377,0,0" VerticalAlignment="Top" Width="189" Height="44" Click="btnreqsaldo_Click"/>
         </Grid>
     </Grid>
