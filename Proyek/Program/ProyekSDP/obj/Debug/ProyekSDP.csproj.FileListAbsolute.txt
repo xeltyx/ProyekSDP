@@ -399,3 +399,16 @@ C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Re
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ReportPembelian.baml
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ReportPembelian.g.cs
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ReportPembelian.baml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\MySql.Data.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Google.Protobuf.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Zstandard.Net.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\BouncyCastle.Crypto.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Ubiety.Dns.Core.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\System.Memory.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\System.Buffers.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\K4os.Compression.LZ4.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\K4os.Hash.xxHash.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\System.Numerics.Vectors.dll
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\MySql.Data.xml

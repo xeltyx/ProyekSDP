@@ -13,7 +13,7 @@ namespace ProyekSDP
         public MySqlConnection conn;
         public void Connect()
         {
-            conn = new MySqlConnection("server=localhost;user=root;database=sdp_db;port=3306;password=");
+            conn = new MySqlConnection("server=204.2.63.91;user=admin;database=sdp_db;port=19353;password=doA2q9wq;SSL Mode=None");
             conn.Open();
             conn.Close();
         }
