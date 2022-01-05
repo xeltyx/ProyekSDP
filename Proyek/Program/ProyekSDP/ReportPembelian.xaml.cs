@@ -24,30 +24,29 @@ namespace ProyekSDP
     {
         Connection conn = new Connection();
         loggedUser user;
-        List<dBeli> dbeliList = new List<dBeli>();
+        List<dBeliTemp> dbeliList = new List<dBeliTemp>();
         public ReportPembelian(int id, List<dBeli> dbeli)
         {
             conn.Connect();
-            this.dbeliList = dbeli;
             InitializeComponent();
             loadData(id);
             tanggal_lbl.Content = "Tanggal: " + DateTime.Now.ToString("dd/MM/yyyy");
             namapembeli_lbl.Content = "Nama: " + user.nama;
-            dgvList.ItemsSource = null;
-            dgvList.ItemsSource = dbeli;
+            
 
             int total = 0;
 
             foreach(dBeli data in dbeli)
             {
                 total += data.hargaBarang;
+                dbeliList.Add(new dBeliTemp(data.namaBarang, 1, data.hargaBarang));
             }
 
-            foreach (DataGridColumn c in dgvList.Columns)
-            {
-                c.Width = 0;
-                c.Width = DataGridLength.Auto;
-            }
+            dgvList.ItemsSource = null;
+            dgvList.ItemsSource = dbeliList;
+
+            
+
             total_lbl.Content = $"Total: {String.Format(CultureInfo.GetCultureInfo("id-ID"), "{0:C2}", total)}";
             
 

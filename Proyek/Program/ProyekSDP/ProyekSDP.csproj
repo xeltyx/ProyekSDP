@@ -123,6 +123,7 @@
       <DependentUpon>DataSetDBeli.xsd</DependentUpon>
     </Compile>
     <Compile Include="dBeli.cs" />
+    <Compile Include="dBeliTemp.cs" />
     <Compile Include="loggedUser.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>

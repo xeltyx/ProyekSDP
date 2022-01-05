@@ -72,6 +72,12 @@
                 <Label x:Name="customerLb" Content="Nama : " HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="totalLb" Content="Total: " HorizontalAlignment="Left" Margin="677,535,0,0" VerticalAlignment="Top" Width="182"/>
             </Grid>
+            <Grid x:Name="gridlaporanbarang" HorizontalAlignment="Left" Height="633" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Visible">
+                
+            </Grid>
+
+            
+            <Button x:Name="btnreqsaldo_Copy" Content="Laporan Barang" HorizontalAlignment="Left" Margin="24,377,0,0" VerticalAlignment="Top" Width="189" Height="44" Click="btnreqsaldo_Click"/>
         </Grid>
     </Grid>
 </Page>
