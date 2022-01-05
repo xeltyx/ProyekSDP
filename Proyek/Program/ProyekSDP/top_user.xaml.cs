@@ -141,7 +141,14 @@ namespace ProyekSDP
         {
             if(cb_custom_nominal.IsChecked==true)
             {
-                nominal = Int32.Parse(tb_nominal.Text.ToString());
+                try
+                {
+                    nominal = Int32.Parse(tb_nominal.Text.ToString());
+                }
+                catch(Exception E)
+                {
+                    MessageBox.Show("jumlah top-up max Rp99.000.000");
+                }
             }
 
             if(nominal>0)

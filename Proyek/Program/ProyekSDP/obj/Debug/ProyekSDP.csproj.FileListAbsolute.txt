@@ -2,6 +2,7 @@ C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Pr
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.xbap
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.pdb
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.AssemblyReference.cache
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\MainMenu.g.cs
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Page1.g.cs
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\register.g.cs
@@ -396,4 +397,5 @@ E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\cartpage.baml
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\sellerpage.baml
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ReportPembelian.g.cs
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ReportPembelian.baml
-C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.CopyComplete
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ReportPembelian.g.cs
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ReportPembelian.baml
