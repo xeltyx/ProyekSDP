@@ -423,6 +423,13 @@ namespace ProyekSDP
             }
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var lapor = new laporantranspage(getiduser);
+            this.NavigationService.Navigate(lapor);
+
+        }
+
         private void btn_insert_Click(object sender, RoutedEventArgs e)
         {
             if (text_nmbarang.Text.Length != 0 || text_harga.Text.Length != 0 || text_stok.Text.Length != 0)

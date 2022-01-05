@@ -412,3 +412,5 @@ E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\K4os.Compression.LZ4
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\K4os.Hash.xxHash.dll
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\System.Numerics.Vectors.dll
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\MySql.Data.xml
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\laporantranspage.g.cs
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\laporantranspage.baml

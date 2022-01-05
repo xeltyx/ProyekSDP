@@ -125,6 +125,9 @@
     </Compile>
     <Compile Include="dBeli.cs" />
     <Compile Include="dBeliTemp.cs" />
+    <Compile Include="laporantranspage.xaml.cs">
+      <DependentUpon>laporantranspage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="loggedUser.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
@@ -151,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="cartpage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="laporantranspage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
