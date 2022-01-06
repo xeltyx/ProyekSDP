@@ -1,7 +1,8 @@
-﻿using MySql.Data.MySqlClient;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Data;
+using MySql.Data.MySqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace ProyekSDP
         string kodekat, kodemerk;
         int getiduser;
         List<ReportData> dbeliData = new List<ReportData>();
+        bool isAll = false;
         int index = 0;
         public Admin()
         {
@@ -291,19 +293,21 @@ namespace ProyekSDP
 
         private void btnPageUser_Click(object sender, RoutedEventArgs e)
         {
+            gridlaporan.Visibility = Visibility.Hidden;
             gridbarang.Visibility = Visibility.Hidden;
             griduser.Visibility = Visibility.Visible;
-            gridlaporan.Visibility = Visibility.Hidden;
             gridsaldo.Visibility = Visibility.Hidden;
+            gridlaporanbarang.Visibility = Visibility.Hidden;
             loadUser();
         }
 
         private void btnPageBarang_Click(object sender, RoutedEventArgs e)
         {
+            gridlaporan.Visibility = Visibility.Hidden;
             gridbarang.Visibility = Visibility.Visible;
             griduser.Visibility = Visibility.Hidden;
-            gridlaporan.Visibility = Visibility.Hidden;
             gridsaldo.Visibility = Visibility.Hidden;
+            gridlaporanbarang.Visibility = Visibility.Hidden;
             loadBarang();
         }
 
@@ -332,6 +336,7 @@ namespace ProyekSDP
             gridbarang.Visibility = Visibility.Hidden;
             griduser.Visibility = Visibility.Hidden;
             gridsaldo.Visibility = Visibility.Hidden;
+            gridlaporanbarang.Visibility = Visibility.Hidden;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -346,6 +351,7 @@ namespace ProyekSDP
             gridbarang.Visibility = Visibility.Hidden;
             griduser.Visibility = Visibility.Hidden;
             gridsaldo.Visibility = Visibility.Visible;
+            gridlaporanbarang.Visibility = Visibility.Hidden;
             LoadSaldo();
         }
 
@@ -428,6 +434,51 @@ namespace ProyekSDP
             var lapor = new laporantranspage(getiduser);
             this.NavigationService.Navigate(lapor);
 
+        }
+
+        string date = "";
+        private void Load_Click(object sender, RoutedEventArgs e)
+        {
+            isAll = false;
+            date = tglbrg.SelectedDate.Value.Date.ToString("yyyyMMdd");
+            conn.conn.Open();
+            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG, COUNT(*) AS COUNT FROM BARANG INNER JOIN D_BELI ON BARANG.ID = D_BELI.ID_BARANG WHERE D_BELI.NOMOR_NOTA LIKE '%{date}%' GROUP BY BARANG.ID ORDER BY COUNT DESC", conn.conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            sda.Fill(dt);
+            dgbrg.ItemsSource = null;
+            dgbrg.ItemsSource = dt.DefaultView;
+            conn.conn.Close();
+        }
+
+        private void Loadall_Click(object sender, RoutedEventArgs e)
+        {
+            tglbrg.SelectedDate = null;
+            date = "";
+            isAll = true;
+            conn.conn.Open();
+            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG, COUNT(*) AS COUNT FROM BARANG INNER JOIN D_BELI ON BARANG.ID = D_BELI.ID_BARANG GROUP BY BARANG.ID ORDER BY COUNT DESC", conn.conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            sda.Fill(dt);
+            dgbrg.ItemsSource = null;
+            dgbrg.ItemsSource = dt.DefaultView;
+            conn.conn.Close();
+        }
+
+        private void reportbrg_Click(object sender, RoutedEventArgs e)
+        {
+            gridlaporan.Visibility = Visibility.Hidden;
+            gridbarang.Visibility = Visibility.Hidden;
+            griduser.Visibility = Visibility.Hidden;
+            gridsaldo.Visibility = Visibility.Hidden;
+            gridlaporanbarang.Visibility = Visibility.Visible;
+        }
+
+        private void print_Click(object sender, RoutedEventArgs e)
+        {
+            var lprbrg = new LaporanBarang(date);
+            this.NavigationService.Navigate(lprbrg);
         }
 
         private void btn_insert_Click(object sender, RoutedEventArgs e)

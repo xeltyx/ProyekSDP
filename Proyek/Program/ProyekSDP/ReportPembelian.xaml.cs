@@ -25,14 +25,14 @@ namespace ProyekSDP
         Connection conn = new Connection();
         loggedUser user;
         List<dBeliTemp> dbeliList = new List<dBeliTemp>();
-        public ReportPembelian(int id, List<dBeli> dbeli)
+        public ReportPembelian(int id, List<dBeli> dbeli, string alamat)
         {
             conn.Connect();
             InitializeComponent();
             loadData(id);
             tanggal_lbl.Content = "Tanggal: " + DateTime.Now.ToString("dd/MM/yyyy");
             namapembeli_lbl.Content = "Nama: " + user.nama;
-            
+            alamatlbl.Content = "Alamat: " + alamat;
 
             int total = 0;
 

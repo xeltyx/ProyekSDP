@@ -126,78 +126,89 @@ namespace ProyekSDP
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            conn.conn.Open();
-            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.ID, BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
-            int total = 0;
 
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            string alamatRumah = alamat.Text.ToString();
+            if(alamatRumah.Length > 0)
             {
-                total += Convert.ToInt32(reader[2].ToString());
-            }
-
-            conn.conn.Close();
-
-            if (total <= user.saldo)
-            {
-                List<dBeli> dbeli = new List<dBeli>();
-                string nota = generateNota();
                 conn.conn.Open();
-                cmd = new MySqlCommand($"INSERT INTO H_BELI VALUES(\"{nota}\", {user.id}, {total}, \"{DateTime.Now.ToString("yyyy-MM-dd")}\")",conn.conn);
-                cmd.ExecuteNonQuery();
-                cmd = new MySqlCommand($"UPDATE CUSTOMER SET SALDO = {user.saldo - total} WHERE ID = {user.id}", conn.conn);
-                cmd.ExecuteNonQuery();
-                conn.conn.Close();
+                MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.ID, BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
+                int total = 0;
 
-                List<int> listidbarang = new List<int>();
-                conn.conn.Open();
-                cmd = new MySqlCommand($"SELECT BARANG.ID, BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
-                reader = cmd.ExecuteReader();
-                while(reader.Read())
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    dbeli.Add(new dBeli(Convert.ToInt32(reader[0].ToString()),reader[1].ToString(), Convert.ToInt32(reader[2].ToString())));
-                    listidbarang.Add(Convert.ToInt32(reader[0].ToString()));
+                    total += Convert.ToInt32(reader[2].ToString());
                 }
+
                 conn.conn.Close();
 
-                conn.conn.Open();
-                for (int i = 0; i < dbeli.Count; i++)
+                if (total <= user.saldo)
                 {
-                    cmd = new MySqlCommand($"UPDATE BARANG SET STOK = STOK-1 WHERE BARANG.ID = {listidbarang[i]}", conn.conn);
+                    List<dBeli> dbeli = new List<dBeli>();
+                    string nota = generateNota();
+                    conn.conn.Open();
+                    cmd = new MySqlCommand($"INSERT INTO H_BELI VALUES(\"{nota}\", {user.id}, {total}, \"{DateTime.Now.ToString("yyyy-MM-dd")}\")", conn.conn);
                     cmd.ExecuteNonQuery();
-                }
-                conn.conn.Close();
-                listidbarang.Clear();
-
-                conn.conn.Open();
-                foreach(dBeli data in dbeli)
-                {
-                    cmd = new MySqlCommand($"INSERT INTO D_BELI VALUES(\"{nota}\", {Convert.ToInt32(data.idBarang)}, 1, {Convert.ToInt32(data.hargaBarang)})", conn.conn);
+                    cmd = new MySqlCommand($"UPDATE CUSTOMER SET SALDO = {user.saldo - total} WHERE ID = {user.id}", conn.conn);
                     cmd.ExecuteNonQuery();
+                    conn.conn.Close();
+
+                    List<int> listidbarang = new List<int>();
+                    conn.conn.Open();
+                    cmd = new MySqlCommand($"SELECT BARANG.ID, BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        dbeli.Add(new dBeli(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), Convert.ToInt32(reader[2].ToString())));
+                        listidbarang.Add(Convert.ToInt32(reader[0].ToString()));
+                    }
+                    conn.conn.Close();
+
+                    conn.conn.Open();
+                    for (int i = 0; i < dbeli.Count; i++)
+                    {
+                        cmd = new MySqlCommand($"UPDATE BARANG SET STOK = STOK-1 WHERE BARANG.ID = {listidbarang[i]}", conn.conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.conn.Close();
+                    listidbarang.Clear();
+
+                    conn.conn.Open();
+                    foreach (dBeli data in dbeli)
+                    {
+                        cmd = new MySqlCommand($"INSERT INTO D_BELI VALUES(\"{nota}\", {Convert.ToInt32(data.idBarang)}, 1, {Convert.ToInt32(data.hargaBarang)})", conn.conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.conn.Close();
+
+                    conn.conn.Open();
+                    cmd = new MySqlCommand($"DELETE FROM CART WHERE USERNAME = \"{user.username}\"", conn.conn);
+                    cmd.ExecuteNonQuery();
+                    conn.conn.Close();
+
+                    conn.conn.Open();
+                    cmd = new MySqlCommand($"DELETE FROM BARANG WHERE STOK = 0", conn.conn);
+                    cmd.ExecuteNonQuery();
+                    conn.conn.Close();
+
+                    MessageBox.Show("Terima kasih sudah berbelanja");
+                    loadData();
+                    loadCart();
+                    var report = new ReportPembelian(user.id, dbeli, alamatRumah);
+                    this.NavigationService.Navigate(report);
                 }
-                conn.conn.Close();
-
-                conn.conn.Open();
-                cmd = new MySqlCommand($"DELETE FROM CART WHERE USERNAME = \"{user.username}\"", conn.conn);
-                cmd.ExecuteNonQuery();
-                conn.conn.Close();
-
-                conn.conn.Open();
-                cmd = new MySqlCommand($"DELETE FROM BARANG WHERE STOK = 0", conn.conn);
-                cmd.ExecuteNonQuery();
-                conn.conn.Close();
-
-                MessageBox.Show("Terima kasih sudah berbelanja");
-                loadData();
-                loadCart();
-                var report = new ReportPembelian(user.id, dbeli);
-                this.NavigationService.Navigate(report);
+                else
+                {
+                    MessageBox.Show("Uang tidak cukup");
+                }
             }
             else
             {
-                MessageBox.Show("Uang tidak cukup");
+                MessageBox.Show("Alamat tidak boleh kosong");
             }
+
+            
         }
 
         private string generateNota()

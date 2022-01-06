@@ -64,7 +64,7 @@
                 <Button x:Name="btntolak" Content="Tolak" HorizontalAlignment="Left" Margin="120,492,0,0" VerticalAlignment="Top" Width="85" Height="36" Click="btntolak_Click"/>
                 <TextBox x:Name="tbsaldo" HorizontalAlignment="Left" Height="39" Margin="120,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" IsReadOnly="True"/>
             </Grid>
-            <Grid x:Name="gridlaporan" HorizontalAlignment="Left" Height="633" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Visible">
+            <Grid x:Name="gridlaporan" HorizontalAlignment="Left" Height="633" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Hidden">
                 <ComboBox x:Name="cblistcustomer" HorizontalAlignment="Left" Margin="123,10,0,0" VerticalAlignment="Top" Width="255" Height="36"/>
                 <Label Content="Nama Customer :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="36" Width="108"/>
                 <Button x:Name="btnloadlistcustomer" Content="Load" HorizontalAlignment="Left" Margin="396,10,0,0" VerticalAlignment="Top" Width="85" Height="36" Click="btnloadlistcustomer_Click"/>
@@ -75,14 +75,18 @@
             </Grid>
             <Grid x:Name="gridlaporanbarang" HorizontalAlignment="Left" Height="633" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Hidden">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="395*"/>
-                    <RowDefinition Height="238*"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
+                <DataGrid x:Name="dgbrg" HorizontalAlignment="Left" Height="284" Margin="10,136,0,0" VerticalAlignment="Top" Width="849" ColumnWidth="424"/>
+                <DatePicker x:Name="tglbrg" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="192"/>
+                <Button x:Name="Load" Content="Load" HorizontalAlignment="Left" Margin="225,95,0,0" VerticalAlignment="Top" Width="75" Click="Load_Click"/>
+                <Button x:Name="print" Content="Print" HorizontalAlignment="Left" Margin="383,438,0,0" VerticalAlignment="Top" Width="74" Click="print_Click"/>
+                <Button x:Name="Loadall" Content="Load All" HorizontalAlignment="Left" Margin="342,95,0,0" VerticalAlignment="Top" Width="75" Click="Loadall_Click"/>
 
             </Grid>
 
 
-            <Button x:Name="btnreqsaldo_Copy" Content="Laporan Barang" HorizontalAlignment="Left" Margin="24,377,0,0" VerticalAlignment="Top" Width="189" Height="44" Click="btnreqsaldo_Click"/>
+            <Button x:Name="reportbrg" Content="Laporan Barang" HorizontalAlignment="Left" Margin="24,377,0,0" VerticalAlignment="Top" Width="189" Height="44" Click="reportbrg_Click"/>
         </Grid>
     </Grid>
 </Page>

@@ -36,9 +36,11 @@
             <Image HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="49" Source="person-icon.png"/>
             <Button x:Name="logoutbtn" Content="  Logout" HorizontalContentAlignment="Left" FontSize="20" Cursor="Hand" BorderBrush="#00707070" Background="#FFE68FA7" BorderThickness="0,1" Margin="0,538,0,0" Click="Button_Click"/>
         </Grid>
-        <DataGrid x:Name="dgvCart" HorizontalAlignment="Left" Height="265" Margin="10,135,0,0" VerticalAlignment="Top" Width="1021" MouseDoubleClick="dgvCart_MouseDoubleClick" IsReadOnly="True"/>
+        <DataGrid x:Name="dgvCart" HorizontalAlignment="Left" Height="265" Margin="10,135,0,0" VerticalAlignment="Top" Width="1021" MouseDoubleClick="dgvCart_MouseDoubleClick" IsReadOnly="True" ColumnWidth="*"/>
         <Button Content="Checkout" HorizontalAlignment="Left" Margin="914,427,0,0" VerticalAlignment="Top" Width="117" Height="38" Click="Button_Click_3"/>
         <Label x:Name="lbl_total" Content="Label" HorizontalAlignment="Left" Margin="778,433,0,0" VerticalAlignment="Top" Width="106"/>
+        <TextBox x:Name="alamat" HorizontalAlignment="Left" Height="22" Margin="377,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="348"/>
+        <Label x:Name="lbl_total_Copy" Content="Alamat: " HorizontalAlignment="Left" Margin="319,433,0,0" VerticalAlignment="Top" Width="58"/>
 
     </Grid>
 </Page>
