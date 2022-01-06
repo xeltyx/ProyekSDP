@@ -123,7 +123,8 @@ namespace ProyekSDP
                         while (reader.Read())
                         {
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
@@ -135,7 +136,8 @@ namespace ProyekSDP
                         {
                             ctr++;
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
 
@@ -151,7 +153,8 @@ namespace ProyekSDP
                         while (reader.Read())
                         {
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
@@ -161,7 +164,8 @@ namespace ProyekSDP
                         while (reader.Read())
                         {
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
 
@@ -175,7 +179,8 @@ namespace ProyekSDP
                         while (reader.Read())
                         {
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
@@ -185,7 +190,8 @@ namespace ProyekSDP
                         while (reader.Read())
                         {
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
 
@@ -204,7 +210,8 @@ namespace ProyekSDP
                         while (reader.Read())
                         {
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
@@ -215,7 +222,8 @@ namespace ProyekSDP
                         while (reader.Read())
                         {
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                    
@@ -232,7 +240,8 @@ namespace ProyekSDP
                         while (reader.Read())
                         {
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
@@ -243,7 +252,8 @@ namespace ProyekSDP
                         while (reader.Read())
                         {
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     conn.conn.Close();
@@ -259,7 +269,8 @@ namespace ProyekSDP
                         while (reader.Read())
                         {
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     else
@@ -270,7 +281,8 @@ namespace ProyekSDP
                         while (reader.Read())
                         {
                             byte[] binaryData = Convert.FromBase64String(Encoding.UTF8.GetString((byte[])(reader[6])));
-                            barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
+                            if (Convert.ToInt32(reader[4].ToString()) > 0)
+                                barangList.Add(new Barang(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4].ToString()), Convert.ToInt32(reader[5].ToString()), binaryData));
                         }
                     }
                     conn.conn.Close();
