@@ -506,3 +506,7 @@ D:\kuliah\semester_5\SDP\proyek\Proyek\Program\ProyekSDP\obj\Debug\sellerpage.ba
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\LaporanBarang.g.cs
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\LaporanBarang.baml
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.csproj.AssemblyReference.cache
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\LaporanBarang.g.cs
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\laporantranspage.g.cs
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\LaporanBarang.baml
+E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\laporantranspage.baml

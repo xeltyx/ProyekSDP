@@ -439,16 +439,20 @@ namespace ProyekSDP
         string date = "";
         private void Load_Click(object sender, RoutedEventArgs e)
         {
-            isAll = false;
-            date = tglbrg.SelectedDate.Value.Date.ToString("yyyyMMdd");
-            conn.conn.Open();
-            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG, COUNT(*) AS COUNT FROM BARANG INNER JOIN D_BELI ON BARANG.ID = D_BELI.ID_BARANG WHERE D_BELI.NOMOR_NOTA LIKE '%{date}%' GROUP BY BARANG.ID ORDER BY COUNT DESC", conn.conn);
-            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
-            dt = new DataTable();
-            sda.Fill(dt);
-            dgbrg.ItemsSource = null;
-            dgbrg.ItemsSource = dt.DefaultView;
-            conn.conn.Close();
+            try
+            {
+                isAll = false;
+                date = tglbrg.SelectedDate.Value.Date.ToString("yyyyMMdd");
+                conn.conn.Open();
+                MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG, COUNT(*) AS COUNT FROM BARANG INNER JOIN D_BELI ON BARANG.ID = D_BELI.ID_BARANG WHERE D_BELI.NOMOR_NOTA LIKE '%{date}%' GROUP BY BARANG.ID ORDER BY COUNT DESC", conn.conn);
+                MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+                dt = new DataTable();
+                sda.Fill(dt);
+                dgbrg.ItemsSource = null;
+                dgbrg.ItemsSource = dt.DefaultView;
+                conn.conn.Close();
+            }
+            catch (Exception E) { }
         }
 
         private void Loadall_Click(object sender, RoutedEventArgs e)
