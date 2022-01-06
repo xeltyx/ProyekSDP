@@ -40,7 +40,7 @@ namespace ProyekSDP
         public void loadCart()
         {
             conn.conn.Open();
-            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.ID, BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
+            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG,1 AS JUMLAH, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
@@ -116,7 +116,7 @@ namespace ProyekSDP
             if(index != -1)
             {
                 conn.conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"DELETE FROM CART WHERE ID_BARANG = {dt.Rows[index][0].ToString()} AND USERNAME = '{user.username}'", conn.conn);
+                MySqlCommand cmd = new MySqlCommand($"DELETE FROM CART WHERE ID_BARANG = (SELECT ID FROM BARANG WHERE NAMA_BARANG = \"{dt.Rows[index][0].ToString()}\") AND USERNAME = '{user.username}'", conn.conn);
                 cmd.ExecuteNonQuery();
                 conn.conn.Close();
                 MessageBox.Show("Sukses menghapus item dari cart");
@@ -187,10 +187,6 @@ namespace ProyekSDP
                     cmd.ExecuteNonQuery();
                     conn.conn.Close();
 
-                    conn.conn.Open();
-                    cmd = new MySqlCommand($"DELETE FROM BARANG WHERE STOK = 0", conn.conn);
-                    cmd.ExecuteNonQuery();
-                    conn.conn.Close();
 
                     MessageBox.Show("Terima kasih sudah berbelanja");
                     loadData();
@@ -226,5 +222,7 @@ namespace ProyekSDP
 
             return nota;
         }
+
+       
     }
 }
