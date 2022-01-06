@@ -40,7 +40,7 @@ namespace ProyekSDP
         public void loadCart()
         {
             conn.conn.Open();
-            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG,1 AS JUMLAH, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
+            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG, CART.JUMLAH, CART.JUMLAH * BARANG.HARGA AS SUBTOTAL FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
@@ -156,11 +156,11 @@ namespace ProyekSDP
 
                     List<int> listidbarang = new List<int>();
                     conn.conn.Open();
-                    cmd = new MySqlCommand($"SELECT BARANG.ID, BARANG.NAMA_BARANG, BARANG.HARGA FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
+                    cmd = new MySqlCommand($"SELECT BARANG.ID, BARANG.NAMA_BARANG, BARANG.HARGA, CART.JUMLAH FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        dbeli.Add(new dBeli(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), Convert.ToInt32(reader[2].ToString())));
+                        dbeli.Add(new dBeli(Convert.ToInt32(reader[0].ToString()), reader[1].ToString(), Convert.ToInt32(reader[2].ToString()), Convert.ToInt32(reader[3].ToString())));
                         listidbarang.Add(Convert.ToInt32(reader[0].ToString()));
                     }
                     conn.conn.Close();
@@ -177,7 +177,7 @@ namespace ProyekSDP
                     conn.conn.Open();
                     foreach (dBeli data in dbeli)
                     {
-                        cmd = new MySqlCommand($"INSERT INTO D_BELI VALUES(\"{nota}\", {Convert.ToInt32(data.idBarang)}, 1, {Convert.ToInt32(data.hargaBarang)})", conn.conn);
+                        cmd = new MySqlCommand($"INSERT INTO D_BELI VALUES(\"{nota}\", {Convert.ToInt32(data.idBarang)}, {data.jumlah}, {Convert.ToInt32(data.hargaBarang)})", conn.conn);
                         cmd.ExecuteNonQuery();
                     }
                     conn.conn.Close();

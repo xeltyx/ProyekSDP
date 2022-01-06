@@ -56,12 +56,10 @@ namespace ProyekSDP
                     bool isFound = false;
                     while (reader.Read())
                     {
-                        //data2txt.Text = reader.GetString("id");
-                        //datatxt.Text = reader.GetString("userId");
                         if (reader[3].ToString() == email)
                         {
                             isFound = true;
-                            if (reader[5].ToString() == password)
+                            if (reader[5].ToString() == CreateMD5(password))
                             {
                                 int id = Convert.ToInt32(reader[0].ToString());
                                 var menu = new MainMenu(id);
@@ -84,6 +82,24 @@ namespace ProyekSDP
             else
             {
                 MessageBox.Show("data tidak boleh kosong");
+            }
+        }
+
+        public static string CreateMD5(string input)
+        {
+            // Use input string to calculate MD5 hash
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                // Convert the byte array to hexadecimal string
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+                return sb.ToString();
             }
         }
 

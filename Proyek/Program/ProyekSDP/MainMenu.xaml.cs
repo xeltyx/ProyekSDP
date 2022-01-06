@@ -566,35 +566,36 @@ namespace ProyekSDP
             conn.conn.Close();
 
             conn.conn.Open();
-
-            cmd = new MySqlCommand($"SELECT ID_BARANG FROM CART WHERE USERNAME='{user.username}'", conn.conn);
+            int ctr = 0;
+            int jum = 0;
+            cmd = new MySqlCommand($"SELECT JUMLAH FROM CART WHERE ID_BARANG = {idbrg} AND USERNAME = '{user.username}'", conn.conn);
             reader = cmd.ExecuteReader();
-            bool isFound = false;
             while(reader.Read())
             {
-                if(idbrg == Convert.ToInt32(reader[0].ToString()))
-                {
-                    isFound = true;
-                }
+                ctr++;
+                jum = reader.GetInt32(0);
             }
-
             conn.conn.Close();
-
-            if(!isFound)
+            if(ctr > 0)
             {
                 conn.conn.Open();
-                cmd = new MySqlCommand($"INSERT INTO CART VALUES('{user.username}', {idbrg})", conn.conn);
+                cmd = new MySqlCommand($"UPDATE CART SET JUMLAH = {jum + Convert.ToInt32(qtyTb.Text.ToString())} WHERE ID_BARANG = {idbrg} AND USERNAME = '{user.username}'", conn.conn);
                 cmd.ExecuteNonQuery();
                 conn.conn.Close();
-                idbrg = -1;
-                
             }
             else
             {
-                MessageBox.Show("Barang sudah ada di dalam cart");
-                idbrg = -1;
-                isFound = false;
+                 conn.conn.Open();
+                 cmd = new MySqlCommand($"INSERT INTO CART VALUES('{user.username}', {idbrg}, {Convert.ToInt32(qtyTb.Text.ToString())})", conn.conn);
+                 cmd.ExecuteNonQuery();
+                 conn.conn.Close();
+                 idbrg = -1;
+
+                
             }
+
+
+            
             
         }
 
@@ -602,6 +603,22 @@ namespace ProyekSDP
         {
             var cartp = new cartpage(user.id);
             this.NavigationService.Navigate(cartp);
+        }
+
+        private void addBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(Convert.ToInt32(qtyTb.Text) < 99)
+            {
+                qtyTb.Text = (Convert.ToInt32(qtyTb.Text) + 1).ToString();
+            }
+        }
+
+        private void minBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(Convert.ToInt32(qtyTb.Text) > 1)
+            {
+                qtyTb.Text = (Convert.ToInt32(qtyTb.Text) - 1).ToString();
+            }
         }
     }
 

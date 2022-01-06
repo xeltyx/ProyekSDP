@@ -94,6 +94,9 @@
             <Label x:Name="lbldetail_harga" Content="Label" HorizontalAlignment="Left" Margin="171,119,0,0" VerticalAlignment="Top" Width="270"/>
             <Label x:Name="lbldetail_stok" Content="Label" HorizontalAlignment="Left" Margin="27,204,0,0" VerticalAlignment="Top" Width="122"/>
             <Button x:Name="btnaddcart" Content="Add To Cart" HorizontalAlignment="Left" Margin="366,204,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="btnaddcart_Click"/>
+            <TextBox x:Name="qtyTb" HorizontalAlignment="Left" Height="26" Margin="270,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Text="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Button x:Name="addBtn" Content="+" HorizontalAlignment="Left" Margin="302,204,0,0" VerticalAlignment="Top" Width="32" Height="26" Click="addBtn_Click"/>
+            <Button x:Name="minBtn" Content="-" HorizontalAlignment="Left" Margin="238,204,0,0" VerticalAlignment="Top" Width="32" Height="26" Click="minBtn_Click"/>
         </Grid>
         <Label Content="Label" HorizontalAlignment="Left" Margin="-384,152,0,0" VerticalAlignment="Top"/>
     </Grid>

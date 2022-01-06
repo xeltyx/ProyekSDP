@@ -38,7 +38,7 @@ namespace ProyekSDP
             this.NavigationService.Navigate(page1);
         }
 
-        private void lblogin_MouseEnter(object sender, MouseEventArgs e)
+private void lblogin_MouseEnter(object sender, MouseEventArgs e)
         {
             this.Cursor = Cursors.Hand;
         }
@@ -46,6 +46,7 @@ namespace ProyekSDP
         private void lblogin_MouseLeave(object sender, MouseEventArgs e)
         {
             this.Cursor = Cursors.Arrow;
+            
         }
 
         private void btnregister_Click(object sender, RoutedEventArgs e)
@@ -65,10 +66,13 @@ namespace ProyekSDP
                     try
                     {
                         conn.conn.Open();
-                        MySqlCommand cmd = new MySqlCommand($"INSERT INTO CUSTOMER(USERNAME, NAMA_CUST, EMAIL,NO_TELP,PASSWORD, SALDO) VALUES('{username}', '{name}', '{email}', '{nomor}', '{pass}', 0)", conn.conn);
+                        MySqlCommand cmd = new MySqlCommand($"INSERT INTO CUSTOMER(USERNAME, NAMA_CUST, EMAIL,NO_TELP,PASSWORD, SALDO) VALUES('{username}', '{name}', '{email}', '{nomor}', '{CreateMD5(pass)}', 0)", conn.conn);
                         
                         cmd.ExecuteNonQuery();
                         conn.conn.Close();
+                        MessageBox.Show("Berhasil Register!");
+                        var login = new Page1();
+                        this.NavigationService.Navigate(login);
                     }
                     catch(Exception ex)
                     {
@@ -92,5 +96,25 @@ namespace ProyekSDP
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
+
+        public static string CreateMD5(string input)
+        {
+            // Use input string to calculate MD5 hash
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                // Convert the byte array to hexadecimal string
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+                return sb.ToString();
+            }
+        }
     }
 }
+
+

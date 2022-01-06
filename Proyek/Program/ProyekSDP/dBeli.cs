@@ -10,13 +10,16 @@ namespace ProyekSDP
     {
         public int idBarang { get; set; }
         public string namaBarang { get; set; }
+
+        public int jumlah { get; set; }
         public int hargaBarang { get; set; }
 
-        public dBeli(int idBarang,string namaBarang, int hargaBarang)
+        public dBeli(int idBarang,string namaBarang, int hargaBarang, int jumlah)
         {
             this.idBarang = idBarang;
             this.namaBarang = namaBarang;
             this.hargaBarang = hargaBarang;
+            this.jumlah = jumlah;
         }
     }
 }

@@ -38,8 +38,8 @@ namespace ProyekSDP
 
             foreach(dBeli data in dbeli)
             {
-                total += data.hargaBarang;
-                dbeliList.Add(new dBeliTemp(data.namaBarang, 1, data.hargaBarang));
+                total += data.hargaBarang * data.jumlah;
+                dbeliList.Add(new dBeliTemp(data.namaBarang, data.jumlah, data.hargaBarang));
             }
 
             dgvList.ItemsSource = null;
