@@ -71,8 +71,8 @@ namespace ProyekSDP
             sda.Fill(dt);
             dgvseller.ItemsSource = dt.DefaultView;
             conn.conn.Close();
-
             lbseller_info.Content = "";
+
         }
 
         private void loadData()
