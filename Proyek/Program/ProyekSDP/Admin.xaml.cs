@@ -72,7 +72,7 @@ namespace ProyekSDP
         {
             conn.conn.Open();
             cmd = new MySqlCommand();
-            cmd = new MySqlCommand($"SELECT REQ_SALDO.ID AS \"ID\",CUSTOMER.NAMA_CUST AS  \"NAMA CUSTOMER\",REQ_SALDO.saldoreq AS  \"SALDO\" FROM REQ_SALDO,CUSTOMER WHERE CUSTOMER.ID = REQ_SALDO.ID_CUST AND REQ_SALDO.KONFIRMASI = 'pending' ORDER BY REQ_SALDO.id ASC", conn.conn);
+            cmd = new MySqlCommand($"SELECT REQ_SALDO.ID AS \"ID\",CUSTOMER.NAMA_CUST AS  \"NAMA CUSTOMER\",REQ_SALDO.saldoreq AS  \"SALDO\",CUSTOMER.NO_TELP AS \"NOMOR TELEPON\" FROM REQ_SALDO,CUSTOMER WHERE CUSTOMER.ID = REQ_SALDO.ID_CUST AND REQ_SALDO.KONFIRMASI = 'pending' ORDER BY REQ_SALDO.id ASC", conn.conn);
             //  MySqlDataReader reader = cmd.ExecuteReader();
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             dt = new DataTable();
@@ -491,6 +491,7 @@ namespace ProyekSDP
             {
                 if (combo_kategori.SelectedIndex != -1 || combo_merk.SelectedIndex != -1)
                 {
+                    var text = new TextRange(rtbgambar.Document.ContentStart, rtbgambar.Document.ContentEnd).Text;
                     getkodekat();
                     getkodemerk();
                     conn.conn.Open();
@@ -498,7 +499,12 @@ namespace ProyekSDP
                     {
                         try
                         {
-                            MySqlCommand cmd = new MySqlCommand($"insert into BARANG(NAMA_BARANG, MERK, KATEGORI,STOK,HARGA) values('{text_nmbarang.Text}','{kodemerk}','{kodekat}',{Convert.ToInt32(text_stok.Text)},{Convert.ToInt32(text_harga.Text)})", conn.conn);
+                            MySqlCommand cmd;
+                            if (text.Length > 0)
+                                cmd = new MySqlCommand($"insert into BARANG(NAMA_BARANG, MERK, KATEGORI,STOK,HARGA,IMG) values('{text_nmbarang.Text}','{kodemerk}','{kodekat}',{Convert.ToInt32(text_stok.Text)},{Convert.ToInt32(text_harga.Text)},'{text}')", conn.conn);
+                            else
+                                cmd = new MySqlCommand($"insert into BARANG(NAMA_BARANG, MERK, KATEGORI,STOK,HARGA,IMG) values('{text_nmbarang.Text}','{kodemerk}','{kodekat}',{Convert.ToInt32(text_stok.Text)},{Convert.ToInt32(text_harga.Text)},'iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEXMzMwAAAB/f39MTEwZGRmysrKZmZlmZmYzMzNjTEbvAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WMU/bQBTA8cPh7IwYHKdjIoGUkaq0YmxIpWR0WkpXpxJRR6gQzUigLXzsvnc+F0ckqK09dPj/pDiPy9M9v8udgzEAAAAAAAAAAAAAAAAAAAAAAAAAAADNCI7iUSbvgwfRkyD6nrx5Ji/QvFsdWQxHec3iYfJ1PtiV4PibkNnsu+vPy4vNea17ybuW4HQ8H3TrVu/J5VKq3vmB7R/S3+7mvPahH5nISvR7Ncu7ijLjvY8vdXmPNue1/bpEHbm03jZQPZJJxj5279PexrxtX92926eL9G/VT4owTPVaLK/N3Ui2Wt3f2Mx9eGfq01l9F8FOOSCxu5PZxUrelq/ed9erBqprq6mda5PRzeM9uF0WdlfztvKzc40XlXuoR1bRdpdxIl22XPWw48ajdKV1t9rTRRzr3jguRjJT24N8x8mBeT+R6oeV6tJ8tXXNM9OTzO7LLb5qqnqgtXJ5nV74/VZWj9Jq6y4vlJcdl/utgeqzng9kV62svDTfXZenm62plbejMpKivvpOWTBdl6dFffW6xc1p+ew0NvVnrbjqhtdt/yTPTHN/1mqfODt5DDt+zYsV0A0fpWvyzDTza35ct3qlJT3m7qnjH6e64X83X8nTY77V02Bs6gkfv03XsvuB6RebSTd82Xw1T1t2PzBBx9RTPVL9XBZV/rbFTi/Oum9+5eilPmf69B+BvxLsfRSZCW4z80EnDPcys39TVHdzR3k1zwwOjH2pH8xem2CyftI/1o5Vx9irePjC1fkSD9d8m2We+TRM4p/u3pZJUrP1irN5GZw/m2fneRk08JAHAAAAAAAAAAAAAAAAAAAAAAAAAAD/mV+CPmI6PVs6jQAAAABJRU5ErkJggg==')", conn.conn);
+
                             cmd.ExecuteNonQuery();
                             trans.Commit();
                             conn.conn.Close();

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<!--<runtime>
+		--><!-- enables legacy CAS policy for this process --><!--
+		<NetFx40_LegacySecurityPolicy enabled="true" />
+	</runtime>-->
+	<runtime>
+		<!-- Treat assemblies from network locations as fully trusted. -->
+		<!-- Caution: Do not point this loaded gun at your foot. -->
+		<loadFromRemoteSources enabled="true" />
+	</runtime>
+</configuration>

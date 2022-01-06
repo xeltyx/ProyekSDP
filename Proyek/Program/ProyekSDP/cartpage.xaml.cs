@@ -126,7 +126,6 @@ namespace ProyekSDP
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-
             string alamatRumah = alamat.Text.ToString();
             if(alamatRumah.Length > 0)
             {
