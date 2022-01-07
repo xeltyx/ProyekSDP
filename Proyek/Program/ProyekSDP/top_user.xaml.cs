@@ -157,7 +157,7 @@ namespace ProyekSDP
                 {
                     conn.conn.Open();
                     MySqlCommand cmd = new MySqlCommand($"INSERT INTO REQ_SALDO(ID_CUST, SALDOREQ,KONFIRMASI) VALUES('{iduser}','{nominal}','{request}')", conn.conn);
-                    MessageBox.Show("Sedang memproses topup, jika topup tidak masuk dalam kurung 1x24 jam. Hubungi admin");
+                    MessageBox.Show("Sedang memproses topup");
                     cmd.ExecuteNonQuery();
                     conn.conn.Close();
                 }
@@ -173,6 +173,24 @@ namespace ProyekSDP
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Homebtn_Click(object sender, RoutedEventArgs e)
+        {
+            var menu = new MainMenu(iduser);
+            this.NavigationService.Navigate(menu);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var cartp = new cartpage(iduser);
+            this.NavigationService.Navigate(cartp);
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var tokoku = new sellerpage(iduser);
+            this.NavigationService.Navigate(tokoku);
         }
     }
 }
