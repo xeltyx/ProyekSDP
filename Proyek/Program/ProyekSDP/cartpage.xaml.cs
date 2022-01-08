@@ -163,7 +163,7 @@ namespace ProyekSDP
                         listidbarang.Add(Convert.ToInt32(reader[0].ToString()));
                     }
                     conn.conn.Close();
-
+                    
                     conn.conn.Open();
                     for (int i = 0; i < dbeli.Count; i++)
                     {
