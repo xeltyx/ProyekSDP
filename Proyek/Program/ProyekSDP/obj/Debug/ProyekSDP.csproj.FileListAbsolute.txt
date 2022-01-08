@@ -20,7 +20,6 @@ C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\Pr
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.xbap
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.exe
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\ProyekSDP.pdb
-C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\MySql.Data.DLL
 C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe.config
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe.config
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\ProyekSDP.exe.manifest
@@ -510,3 +509,15 @@ E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\LaporanBarang.g.cs
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\laporantranspage.g.cs
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\LaporanBarang.baml
 E:\Github data\ProyekSDP\Proyek\Program\ProyekSDP\obj\Debug\laporantranspage.baml
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Google.Protobuf.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Zstandard.Net.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\System.Memory.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\System.Buffers.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\JohnCS\Documents\GitHub\ProyekSDP\Proyek\Program\ProyekSDP\bin\Debug\MySql.Data.xml

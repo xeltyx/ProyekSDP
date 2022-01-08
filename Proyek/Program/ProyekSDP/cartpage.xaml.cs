@@ -167,7 +167,7 @@ namespace ProyekSDP
                     conn.conn.Open();
                     for (int i = 0; i < dbeli.Count; i++)
                     {
-                        cmd = new MySqlCommand($"UPDATE BARANG SET STOK = STOK-1 WHERE BARANG.ID = {listidbarang[i]}", conn.conn);
+                        cmd = new MySqlCommand($"UPDATE BARANG SET STOK = STOK-{dbeli[i].jumlah} WHERE BARANG.ID = {listidbarang[i]}", conn.conn);
                         cmd.ExecuteNonQuery();
                     }
                     conn.conn.Close();
