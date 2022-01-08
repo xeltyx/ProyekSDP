@@ -53,7 +53,7 @@ namespace ProyekSDP
 
             while(reader.Read())
             {
-                total += Convert.ToInt32(reader[2].ToString());
+                total += Convert.ToInt32(reader[3].ToString());
             }
 
             conn.conn.Close();
