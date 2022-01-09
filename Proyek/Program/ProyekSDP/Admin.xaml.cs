@@ -61,7 +61,7 @@ namespace ProyekSDP
         {
             conn.conn.Open();
             cmd = new MySqlCommand();
-            cmd = new MySqlCommand($"SELECT CUSTOMER.ID ,CUSTOMER.NAMA_CUST AS \"NAMA CUSTOMER\",CUSTOMER.SALDO AS \"SALDO\" FROM CUSTOMER ORDER BY id ASC", conn.conn);
+            cmd = new MySqlCommand($"SELECT CUSTOMER.NAMA_CUST AS \"NAMA CUSTOMER\",CUSTOMER.SALDO AS \"SALDO\" FROM CUSTOMER ORDER BY id ASC", conn.conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
@@ -315,8 +315,8 @@ namespace ProyekSDP
         {
             if (dgvcustomer.SelectedIndex != -1)
             {
-                tbcustomer_name.Text = dt.Rows[dgvcustomer.SelectedIndex][1].ToString();
-                tbcustomer_saldo.Text = dt.Rows[dgvcustomer.SelectedIndex][2].ToString();
+                tbcustomer_name.Text = dt.Rows[dgvcustomer.SelectedIndex][0].ToString();
+                tbcustomer_saldo.Text = dt.Rows[dgvcustomer.SelectedIndex][1].ToString();
             }
         }
 

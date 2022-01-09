@@ -40,7 +40,7 @@ namespace ProyekSDP
         public void loadCart()
         {
             conn.conn.Open();
-            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG, CART.JUMLAH, CART.JUMLAH * BARANG.HARGA AS SUBTOTAL FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
+            MySqlCommand cmd = new MySqlCommand($"SELECT BARANG.NAMA_BARANG,CART.JUMLAH,BARANG.HARGA AS \"Harga per barang\",CART.JUMLAH * BARANG.HARGA AS TOTAL FROM BARANG, CART WHERE CART.ID_BARANG = BARANG.ID AND CART.USERNAME = '{user.username}'", conn.conn);
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
@@ -53,7 +53,7 @@ namespace ProyekSDP
 
             while(reader.Read())
             {
-                total += Convert.ToInt32(reader[2].ToString());
+                total += Convert.ToInt32(reader[3].ToString());
             }
 
             conn.conn.Close();

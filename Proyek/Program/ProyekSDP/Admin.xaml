@@ -23,7 +23,7 @@
             <Button x:Name="btnreqsaldo" Content="Konfirmasi Top Up" HorizontalAlignment="Left" Margin="24,306,0,0" VerticalAlignment="Top" Width="189" Height="44" Click="btnreqsaldo_Click"/>
             <Button Content="Logout" HorizontalAlignment="Left" Margin="24,555,0,0" VerticalAlignment="Top" Width="189" Height="44" Click="Button_Click"/>
             <Grid x:Name="gridbarang" HorizontalAlignment="Left" Height="639" Margin="266,17,0,0" VerticalAlignment="Top" Width="870" Visibility="Hidden">
-                <DataGrid x:Name="dgvUser" HorizontalAlignment="Left" Height="349" Margin="10,10,0,0" VerticalAlignment="Top" Width="850" SelectionChanged="dgvUser_SelectionChanged" MouseDoubleClick="dgvUser_MouseDoubleClick" IsReadOnly="True"/>
+                <DataGrid x:Name="dgvUser" HorizontalAlignment="Left" Height="349" Margin="10,10,0,0" VerticalAlignment="Top" Width="850" SelectionChanged="dgvUser_SelectionChanged" MouseDoubleClick="dgvUser_MouseDoubleClick" ColumnWidth="*" IsReadOnly="True"/>
                 <Label Content="Nama Barang:" HorizontalAlignment="Left" Margin="23,384,0,0" VerticalAlignment="Top" Height="29" Width="86" RenderTransformOrigin="0.5,0.5">
                     <Label.RenderTransform>
                         <TransformGroup>
@@ -55,14 +55,14 @@
                 <Label Content="Gambar Format base 64(Code) :" HorizontalAlignment="Left" Margin="411,432,0,0" VerticalAlignment="Top"/>
             </Grid>
             <Grid x:Name="griduser" HorizontalAlignment="Left" Height="576" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Hidden">
-                <DataGrid x:Name="dgvcustomer" HorizontalAlignment="Left" Height="331" Margin="10,10,0,0" VerticalAlignment="Top" Width="849" IsReadOnly="True" Background="#FFF0F0F0" MouseDoubleClick="dgvcustomer_MouseDoubleClick"/>
+                <DataGrid x:Name="dgvcustomer" HorizontalAlignment="Left" Height="331" Margin="10,10,0,0" VerticalAlignment="Top" Width="849" IsReadOnly="True" Background="#FFF0F0F0" ColumnWidth="*" MouseDoubleClick="dgvcustomer_MouseDoubleClick"/>
                 <TextBox x:Name="tbcustomer_name" HorizontalAlignment="Left" Height="39" Margin="120,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" IsReadOnly="True"/>
                 <Label Content="Nama Customer" HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" Height="39" Width="105"/>
                 <Label Content="Saldo" HorizontalAlignment="Left" Margin="10,430,0,0" VerticalAlignment="Top" Height="39" Width="105"/>
                 <TextBox x:Name="tbcustomer_saldo" HorizontalAlignment="Left" Height="39" Margin="120,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" IsReadOnly="True"/>
             </Grid>
             <Grid x:Name="gridsaldo" HorizontalAlignment="Left" Height="576" Margin="267,23,0,0" VerticalAlignment="Top" Width="869" Visibility="Hidden">
-                <DataGrid x:Name="dgvkonfirsaldo" HorizontalAlignment="Left" Height="331" Margin="10,10,0,0" VerticalAlignment="Top" Width="849" IsReadOnly="True" Background="#FFF0F0F0" MouseDoubleClick="dgvkonfirsaldo_MouseDoubleClick"/>
+                <DataGrid x:Name="dgvkonfirsaldo" HorizontalAlignment="Left" Height="331" Margin="10,10,0,0" VerticalAlignment="Top" Width="849" IsReadOnly="True" ColumnWidth="*" Background="#FFF0F0F0" MouseDoubleClick="dgvkonfirsaldo_MouseDoubleClick"/>
                 <TextBox x:Name="tbnamacust" HorizontalAlignment="Left" Height="39" Margin="120,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" IsReadOnly="True"/>
                 <Label Content="Nama Customer" HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" Height="39" Width="105"/>
                 <Label Content="Saldo" HorizontalAlignment="Left" Margin="10,430,0,0" VerticalAlignment="Top" Height="39" Width="105"/>
@@ -74,7 +74,7 @@
                 <ComboBox x:Name="cblistcustomer" HorizontalAlignment="Left" Margin="123,10,0,0" VerticalAlignment="Top" Width="255" Height="36"/>
                 <Label Content="Nama Customer :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="36" Width="108"/>
                 <Button x:Name="btnloadlistcustomer" Content="Load" HorizontalAlignment="Left" Margin="396,10,0,0" VerticalAlignment="Top" Width="85" Height="36" Click="btnloadlistcustomer_Click"/>
-                <DataGrid x:Name="dgvLaporan" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="850" ColumnWidth="212" IsReadOnly="True"/>
+                <DataGrid x:Name="dgvLaporan" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="850" ColumnWidth="*" IsReadOnly="True"/>
                 <Label x:Name="customerLb" Content="Nama : " HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="totalLb" Content="Total: " HorizontalAlignment="Left" Margin="677,535,0,0" VerticalAlignment="Top" Width="182"/>
                 <Button Content="Print" HorizontalAlignment="Left" Margin="597,538,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
@@ -83,7 +83,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <DataGrid x:Name="dgbrg" HorizontalAlignment="Left" Height="284" Margin="10,136,0,0" VerticalAlignment="Top" Width="849" ColumnWidth="424" IsReadOnly="True"/>
+                <DataGrid x:Name="dgbrg" HorizontalAlignment="Left" Height="284" Margin="10,136,0,0" VerticalAlignment="Top" Width="849" ColumnWidth="*" IsReadOnly="True"/>
                 <DatePicker x:Name="tglbrg" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="192"/>
                 <Button x:Name="Load" Content="Load" HorizontalAlignment="Left" Margin="225,95,0,0" VerticalAlignment="Top" Width="75" Click="Load_Click"/>
                 <Button x:Name="print" Content="Print" HorizontalAlignment="Left" Margin="383,438,0,0" VerticalAlignment="Top" Width="74" Click="print_Click"/>
